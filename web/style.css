@@ -895,3 +895,27 @@ body {
 [data-theme="dark"] .scanner-col-short .scanner-row:not(:last-child) {
     border-bottom-color: rgba(248, 113, 113, 0.4);
 }
+
+/* ============================================ */
+/* LOGO REDONDO EN EL PIE                       */
+/* ============================================ */
+
+.topo-pie {
+    text-align: center;
+    margin: 24px 0 12px;
+}
+
+.topo-pie img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    object-fit: cover;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.topo-pie img:hover {
+    transform: scale(1.05);
+}
