@@ -3,21 +3,19 @@ name: Scanner Diario ELTOPO
 permissions:
   contents: write
 
+concurrency:
+  group: eltopo-scanner
+  cancel-in-progress: false
+
 on:
-  # 12 ejecuciones L-V (horario invierno España)
+  # 6 ejecuciones L-V (horario invierno España)
   schedule:
-    - cron: '0 7 * * 1-5'    # 08:00 España = pre-mercado
-    - cron: '0 10 * * 1-5'   # 11:00 España = mañana
-    - cron: '0 13 * * 1-5'   # 14:00 España = 1.5h pre-USA
-    - cron: '0 14 * * 1-5'   # 15:00 España = 30min pre-USA
-    - cron: '0 15 * * 1-5'   # 16:00 España = post-apertura
-    - cron: '0 16 * * 1-5'   # 17:00 España = 1.5h post
-    - cron: '0 17 * * 1-5'   # 18:00 España = mediodía USA
-    - cron: '0 18 * * 1-5'   # 19:00 España = tarde
-    - cron: '0 19 * * 1-5'   # 20:00 España = tarde
-    - cron: '0 20 * * 1-5'   # 21:00 España = última hora
-    - cron: '0 21 * * 1-5'   # 22:00 España = cierre USA
-    - cron: '0 22 * * 1-5'   # 23:00 España = post-cierre
+    - cron: '10 14 * * 1-5'   # 15:10 España
+    - cron: '15 15 * * 1-5'   # 16:15 España
+    - cron: '50 16 * * 1-5'   # 17:50 España
+    - cron: '35 18 * * 1-5'   # 19:35 España
+    - cron: '0 20 * * 1-5'    # 21:00 España
+    - cron: '15 21 * * 1-5'   # 22:15 España
 
   workflow_dispatch:
     inputs:
@@ -92,4 +90,10 @@ jobs:
           git add data/scanner_result.json
           [ -f data/top_1000.json ] && git add data/top_1000.json || true
           git diff --quiet && git diff --staged --quiet || git commit -m "Auto: scanner $(date +'%Y-%m-%d %H:%M')"
-          git push
+          git pull --rebase origin main
+          for i in 1 2 3; do
+            git push && break
+            echo "Push falló, reintentando ($i/3)..."
+            git pull --rebase origin main
+            sleep 5
+          done
