@@ -3,13 +3,15 @@ name: Scanner FULL ELTOPO (1786 tickers)
 permissions:
   contents: write
 
+concurrency:
+  group: eltopo-scanner
+  cancel-in-progress: false
+
 on:
-  # 4 ejecuciones L-V (horario invierno Espana)
+  # 2 ejecuciones L-V (horario invierno España)
   schedule:
-    - cron: '0 7 * * 1-5'    # 09:00 Espana
-    - cron: '0 10 * * 1-5'   # 12:00 Espana
-    - cron: '0 13 * * 1-5'   # 15:00 Espana
-    - cron: '0 16 * * 1-5'   # 18:00 Espana
+    - cron: '0 13 * * 1-5'    # 14:00 España
+    - cron: '56 17 * * 1-5'   # 18:56 España
 
   workflow_dispatch:
 
@@ -53,4 +55,10 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/scanner_result_full.json
           git diff --quiet && git diff --staged --quiet || git commit -m "Auto: scanner_full $(date +'%Y-%m-%d %H:%M')"
-          git push
+          git pull --rebase origin main
+          for i in 1 2 3; do
+            git push && break
+            echo "Push falló, reintentando ($i/3)..."
+            git pull --rebase origin main
+            sleep 5
+          done
