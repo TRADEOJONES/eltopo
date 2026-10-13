@@ -1,4 +1,4 @@
-﻿name: Scanner Diario ELTOPO
+name: Scanner Diario ELTOPO
 
 permissions:
   contents: write
@@ -79,7 +79,7 @@ jobs:
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
         run: |
           echo "Modo TOP1000: analizando top 1000 del dia"
-          python -c "from scanner.scanner import escanear; tickers_file='data/top_1000.json', top_n_long=15, top_n_short=15, save_top_long=0"
+          python -c "from scanner.scanner import escanear; escanear(max_tickers=1000, top_n_long=15, top_n_short=15, save_top_long=1000)"
 
       - name: Show result summary
         run: |
@@ -90,6 +90,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/scanner_result.json
-          git add data/top_1000.json
+          [ -f data/top_1000.json ] && git add data/top_1000.json || true
           git diff --quiet && git diff --staged --quiet || git commit -m "Auto: scanner $(date +'%Y-%m-%d %H:%M')"
           git push
