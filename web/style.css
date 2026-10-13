@@ -858,3 +858,40 @@ body {
     background: var(--accent);
     color: #fff;
 }
+/* ============================================ */
+/* SEPARADORES ENTRE TICKERS DEL SCANNER       */
+/* ============================================ */
+
+/* Separadores entre cards LONG (verde) */
+.scanner-col-long .scanner-row:not(:last-child) {
+    border-bottom: 2px solid rgba(22, 163, 74, 0.25);
+    padding-bottom: 16px;
+    margin-bottom: 8px;
+}
+
+/* Separadores entre cards SHORT (rojo) */
+.scanner-col-short .scanner-row:not(:last-child) {
+    border-bottom: 2px solid rgba(220, 38, 38, 0.25);
+    padding-bottom: 16px;
+    margin-bottom: 8px;
+}
+
+/* Ajuste fino del padding de cada row */
+.scanner-row {
+    padding: 14px 16px !important;
+    border-radius: 0 !important;
+}
+
+/* Hover más limpio */
+.scanner-row:hover {
+    background: var(--bg) !important;
+}
+
+/* Modo oscuro: separadores más visibles */
+[data-theme="dark"] .scanner-col-long .scanner-row:not(:last-child) {
+    border-bottom-color: rgba(34, 197, 94, 0.4);
+}
+
+[data-theme="dark"] .scanner-col-short .scanner-row:not(:last-child) {
+    border-bottom-color: rgba(248, 113, 113, 0.4);
+}
