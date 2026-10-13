@@ -486,7 +486,7 @@ async function cargarScanner() {
     if (meta) meta.textContent = "Cargando...";
 
     try {
-        const res = await fetch(API_BASE_URL + "/api/scanner");
+        const res = await fetch(API_BASE_URL + "/api/scanner/full");
         const data = await res.json();
 
         if (data.error) {
