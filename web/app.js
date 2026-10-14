@@ -825,9 +825,16 @@ function renderReversion(resultado) {
                 <div class="reversion-row" data-ticker="${t.ticker}">
                     <span class="reversion-rank">${i + 1}</span>
                     <div class="reversion-info">
-                        <div class="reversion-linea-1">
+                      
+                                                <div class="reversion-linea-1">
                             <span class="reversion-ticker">${t.ticker}</span>
                             <span class="reversion-categoria ${categoriaClass}">${t.categoria}</span>
+                            ${t.categoria_rebote ? `<span class="reversion-subcategoria">${{
+                                "REBOTE_RANGO": "🟢 Rango",
+                                "REBOTE_ALCISTA": "🔵 Alcista",
+                                "REBOTE_BAJISTA": "🟡 Bajista",
+                                "REBOTE_INDEFINIDO": "⚪ Indefinido"
+                            }[t.categoria_rebote] || ""}</span>` : ""}
                             <span class="reversion-precio">${t.precio != null ? "$" + Number(t.precio).toFixed(2) : ""}</span>
                             <span class="reversion-score">${Number(t.score_reversion).toFixed(2)}</span>
                         </div>
