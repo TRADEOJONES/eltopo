@@ -32,7 +32,7 @@ def _ruta_top1000():
 
 
 def _ruta_universo():
-    return Path(__file__).parent.parent / "motor" / "universe_swing.json"
+       return Path(__file__).parent.parent / "motor" / "universe_usa.json"
 
 
 def _ruta_resultado_full():
