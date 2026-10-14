@@ -919,3 +919,24 @@ body {
 .topo-pie img:hover {
     transform: scale(1.05);
 }
+
+/* ============================================ */
+/* SUBCATEGORÍA DE REBOTE (badge)                */
+/* ============================================ */
+
+.reversion-subcategoria {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: #f0f0f0;
+    color: #333;
+    margin-left: 6px;
+    font-weight: 500;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+[data-theme="dark"] .reversion-subcategoria {
+    background: #333;
+    color: #eee;
+}
