@@ -80,8 +80,9 @@ def es_operable(df, ticker):
         # Alpaca solo da volumen IEX (subestimado ~30x), por lo que
         # filtrar aqui descartaria tickers validos como JPM, TSM, MUFG.
         # Umbral muy bajo solo para descartar tickers muertos.
+        # Calibrado para IEX (subestima ~30x): 1k IEX ≈ 30k real.
         volumen_medio = float(df["Volume"].tail(20).mean())
-        if volumen_medio < 30_000:
+        if volumen_medio < 1_000:
             return False
 
         return True
