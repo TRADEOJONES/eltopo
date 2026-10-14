@@ -523,7 +523,12 @@ def escanear_reversion(tickers_file=None, top_n=15, max_tickers=500, progress_ca
         t["catalizadores"].get("dias_hasta_earnings") is not None and
         t["catalizadores"]["dias_hasta_earnings"] < 5
     )]
-
+    # AÑADIR: Extraer campos de earnings para fácil acceso en el frontend
+    for item in top:
+        cat = item.get("catalizadores") or {}
+        item["dias_hasta_earnings"] = cat.get("dias_hasta_earnings")
+        item["proximos_earnings"] = cat.get("proximos_earnings")
+        item["fecha_earnings_fiable"] = cat.get("fecha_fiable", "desconocida")
     # SEPARAR EN 2 LISTAS
     top_rebote = sorted(
         [t for t in top if t.get("categoria") == "REBOTE"],
