@@ -16,6 +16,7 @@ from datetime import datetime
 from dotenv import load_dotenv
 from motor.motores import analizar_ticker
 from scanner.scanner import escanear, escanear_reversion, escanear_full
+
 # --- Configuracion ---
 load_dotenv()
 SCANNER_TOKEN = os.getenv("SCANNER_TOKEN", "")
@@ -33,9 +34,10 @@ app.add_middleware(
 WEB_DIR = Path(__file__).parent.parent / "web"
 TICKERS_FILE = Path(__file__).parent.parent / "motor" / "tickers.json"
 SCANNER_FILE = Path(__file__).parent.parent / "data" / "scanner_result.json"
-
-
 SCANNER_FULL_FILE = Path(__file__).parent.parent / "data" / "scanner_result_full.json"
+SCANNER_REVERSION_FILE = Path(__file__).parent.parent / "data" / "scanner_result_reversion.json"
+
+
 class AnalyzeRequest(BaseModel):
     ticker: str
     modo: str = "auto"
@@ -163,7 +165,6 @@ def refresh_scanner(
     Requiere token si SCANNER_TOKEN esta configurado.
     Se pasa como query param: ?token=XXX
     """
-    # Si hay token configurado, exigirlo
     if SCANNER_TOKEN and token != SCANNER_TOKEN:
         raise HTTPException(status_code=403, detail="Token invalido")
 
@@ -202,6 +203,7 @@ def app_js():
 
 
 app.mount("/images", StaticFiles(directory=str(WEB_DIR / "images")), name="images")
+
 
 # =====================================================
 # REVERSION - Escaneo on-demand con progreso
@@ -303,8 +305,20 @@ def reversion_status(job_id: str):
         return dict(_reversion_jobs[job_id])
 
 
+@app.get("/api/reversion/result")
+def get_reversion_result():
+    """Devuelve el ultimo escaneo de reversion guardado."""
+    if not SCANNER_REVERSION_FILE.exists():
+        raise HTTPException(
+            status_code=404,
+            detail="El reversion no ha ejecutado todavia"
+        )
+    with open(SCANNER_REVERSION_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
 # =====================================================
-# SCANNER FULL (universo 1786 tickers)
+# SCANNER FULL (universo 5200 tickers)
 # =====================================================
 
 @app.get("/api/scanner/full")
