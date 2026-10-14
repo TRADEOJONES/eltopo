@@ -39,6 +39,10 @@ def _ruta_resultado_full():
     return Path(__file__).parent.parent / "data" / "scanner_result_full.json"
 
 
+def _ruta_resultado_reversion():
+    return Path(__file__).parent.parent / "data" / "scanner_result_reversion.json"
+
+
 def _es_elegible_long(item):
     """Filtro de elegibilidad para LONG: excluir empresas con ROE < -20%."""
     f = item.get("fundamental") or {}
@@ -463,7 +467,7 @@ def analizar_ticker_reversion(ticker, df_spy):
         return None
 
 
-def escanear_reversion(tickers_file=None, top_n=15, max_tickers=500, progress_callback=None):
+def escanear_reversion(tickers_file=None, top_n=15, max_tickers=5200, progress_callback=None):
     """
     Escaneo especifico para REVERSION.
     Analiza el universo USA (universe_usa.json) y calcula score_reversion.
@@ -592,7 +596,7 @@ def escanear_reversion(tickers_file=None, top_n=15, max_tickers=500, progress_ca
 
     top_rebote = top_rebote_filtrado
 
-    return {
+    resultado = {
         "fecha": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "total_analizados": len(resultados),
         "tiempo_segundos": round(elapsed, 1),
@@ -603,6 +607,15 @@ def escanear_reversion(tickers_file=None, top_n=15, max_tickers=500, progress_ca
         "top_rebote": top_rebote,
         "top_cambio": top_cambio,
     }
+
+    # Guardar en disco para persistir entre reinicios
+    ruta = _ruta_resultado_reversion()
+    ruta.parent.mkdir(exist_ok=True)
+    with open(ruta, "w", encoding="utf-8") as f:
+        json.dump(resultado, f, ensure_ascii=False, indent=2)
+    print(f"[OK] Guardado en: {ruta}")
+
+    return resultado
 
 
 def escanear_full(top_n_long=15, top_n_short=15, save_top_long=0):
