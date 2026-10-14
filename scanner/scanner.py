@@ -32,7 +32,7 @@ def _ruta_top1000():
 
 
 def _ruta_universo():
-       return Path(__file__).parent.parent / "motor" / "universe_usa.json"
+    return Path(__file__).parent.parent / "motor" / "universe_usa.json"
 
 
 def _ruta_resultado_full():
@@ -57,9 +57,10 @@ def _es_elegible_short(item):
         return False
     return True
 
+
 def _clasificar_rebote(item):
     """Clasifica el rebote en 3 subcategorías: rango, alcista, bajista.
-    
+
     Returns:
         str: "REBOTE_RANGO" | "REBOTE_ALCISTA" | "REBOTE_BAJISTA" | "REBOTE_INDEFINIDO"
     """
@@ -68,38 +69,31 @@ def _clasificar_rebote(item):
     mm50 = item.get("mm50")
     precio = item.get("precio")
     adx = item.get("adx")
-    
+
     if not precios or not precio or len(precios) < 60:
         return "REBOTE_INDEFINIDO"
-    
-    # Calcular pendiente MM200 (20 días)
-    if len(precios) >= 220:
-        mm200_hoy = sum(precios[-200:]) / 200
-        mm200_antes = sum(precios[-220:-20]) / 200
-        pend_mm200 = (mm200_hoy / mm200_antes - 1) * 100 if mm200_antes > 0 else 0
-    else:
-        pend_mm200 = 0
-    
+
     # Calcular rango de 60 días
     ultimos_60 = precios[-60:]
     rango_alto = max(ultimos_60)
     rango_bajo = min(ultimos_60)
     rango_pct = (rango_alto - rango_bajo) / rango_bajo * 100 if rango_bajo > 0 else 100
-    
-    # 1. TENDENCIA ALCISTA: MM200 ascendente + precio > MM200
-    if pend_mm200 > 0.5 and mm200 and precio > mm200:
+
+    # 1. ALCISTA: precio > MM50 y > MM200 (tendencia alcista clara)
+    if mm200 and mm50 and precio > mm200 and precio > mm50:
         return "REBOTE_ALCISTA"
-    
-    # 2. RANGO: rango estrecho + ADX bajo
-    if rango_pct < 20 and adx and adx < 25:
-        return "REBOTE_RANGO"
-    
-    # 3. TENDENCIA BAJISTA: precio < MM200 + ADX alto
-    if mm200 and precio < mm200 and adx and adx > 25:
+
+    # 2. BAJISTA: precio < MM50 y < MM200 (tendencia bajista clara)
+    if mm200 and mm50 and precio < mm200 and precio < mm50:
         return "REBOTE_BAJISTA"
-    
+
+    # 3. RANGO: rango estrecho (<25% en 60 días)
+    if rango_pct < 25:
+        return "REBOTE_RANGO"
+
     # 4. Por defecto
     return "REBOTE_INDEFINIDO"
+
 
 def _enriquecer_top(items, top_n=15):
     """Anade fundamental + sentimiento + catalizadores + recalcula score."""
@@ -145,7 +139,6 @@ def _enriquecer_top(items, top_n=15):
                 "precios_historicos": item.get("precios_historicos"),
                 "fuerza_relativa": item.get("fuerza_relativa"),
             }
-            # Si faltan indicadores en item, usar desglose
             rl = calcular_score_long(resumen_completo)
             rs = calcular_score_short(resumen_completo)
             item["score_long"] = rl["score"]
@@ -366,9 +359,9 @@ def escanear(
 
     # FILTRO DE REGIMEN DE MERCADO
     if regimen == "BAJISTA":
-        top_long = []  # Sin LONG en mercado bajista
+        top_long = []
     elif regimen == "NEUTRO":
-        top_long = top_long[:5]  # Reducir LONG en mercado neutro
+        top_long = top_long[:5]
 
     resultado_final = {
         "fecha": datetime.now().strftime("%Y-%m-%d %H:%M"),
@@ -383,7 +376,7 @@ def escanear(
     with open(ruta, "w", encoding="utf-8") as f:
         json.dump(resultado_final, f, ensure_ascii=False, indent=2)
 
-    # Guardar top N LONG en top_1000.json (solo si save_top_long > 0 y modo full)
+    # Guardar top N LONG en top_1000.json
     if save_top_long > 0 and not tickers_file:
         mejores_long = sorted(
             [r for r in resultados if r["score_long"] >= MIN_SCORE_LONG],
@@ -473,7 +466,7 @@ def analizar_ticker_reversion(ticker, df_spy):
 def escanear_reversion(tickers_file=None, top_n=15, max_tickers=500, progress_callback=None):
     """
     Escaneo especifico para REVERSION.
-    Analiza el universo completo (universe_swing.json) y calcula score_reversion.
+    Analiza el universo USA (universe_usa.json) y calcula score_reversion.
     """
     if progress_callback:
         progress_callback(0, 0, "Cargando lista de tickers...")
@@ -528,14 +521,12 @@ def escanear_reversion(tickers_file=None, top_n=15, max_tickers=500, progress_ca
         key=lambda x: x["score_reversion"],
         reverse=True
     )
-    
+
     # FILTRO R:B >= 1.5
     top = [t for t in top if t.get("rb") is None or t["rb"] >= 1.5]
 
     # FILTRO DE REGIMEN
     if regimen == "BAJISTA" and top:
-        # En mercado bajista, los rebotes son menos fiables
-        # Reducimos a la mitad
         top = top[:max(3, top_n // 2)]
 
     top = top[:top_n]
@@ -566,14 +557,15 @@ def escanear_reversion(tickers_file=None, top_n=15, max_tickers=500, progress_ca
         t["catalizadores"].get("dias_hasta_earnings") is not None and
         t["catalizadores"]["dias_hasta_earnings"] < 5
     )]
-    # AÑADIR: Extraer campos de earnings para fácil acceso en el frontend
+
+    # Extraer campos de earnings para fácil acceso en el frontend
     for item in top:
         cat = item.get("catalizadores") or {}
         item["dias_hasta_earnings"] = cat.get("dias_hasta_earnings")
         item["proximos_earnings"] = cat.get("proximos_earnings")
         item["fecha_earnings_fiable"] = cat.get("fecha_fiable", "desconocida")
+
     # SEPARAR EN 2 LISTAS
-      # SEPARAR EN 2 LISTAS
     top_rebote = sorted(
         [t for t in top if t.get("categoria") == "REBOTE"],
         key=lambda x: x["score_reversion"],
@@ -584,26 +576,29 @@ def escanear_reversion(tickers_file=None, top_n=15, max_tickers=500, progress_ca
         key=lambda x: x["score_reversion"],
         reverse=True
     )[:top_n]
-    
-    # AÑADIR: Clasificar rebotes en 3 subcategorías + excluir tendencia bajista
+
+    # Clasificar rebotes en 3 subcategorías + excluir tendencia bajista
     top_rebote_filtrado = []
     for t in top_rebote:
         cat_rebote = _clasificar_rebote(t)
         t["categoria_rebote"] = cat_rebote
-        
+
         # EXCLUIR rebotes en tendencia bajista
         if cat_rebote == "REBOTE_BAJISTA":
             print(f"[EXCLUIDO] {t['ticker']} - Rebote en tendencia bajista")
             continue
-        
+
         top_rebote_filtrado.append(t)
-    
+
     top_rebote = top_rebote_filtrado
 
     return {
         "fecha": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "total_analizados": len(resultados),
         "tiempo_segundos": round(elapsed, 1),
+        "tickers_solicitados": total,
+        "tickers_descartados": total - len(resultados),
+        "porcentaje_valido": round(100 * len(resultados) / total, 1) if total else 0,
         "top_reversion": top,
         "top_rebote": top_rebote,
         "top_cambio": top_cambio,
@@ -611,7 +606,7 @@ def escanear_reversion(tickers_file=None, top_n=15, max_tickers=500, progress_ca
 
 
 def escanear_full(top_n_long=15, top_n_short=15, save_top_long=0):
-    """Escaneo del universo ampliado (1786 tickers).
+    """Escaneo del universo ampliado (5200 tickers USA).
 
     Analiza el universo generado y guarda el resultado en
     data/scanner_result_full.json. NO toca top_1000.json.
@@ -684,6 +679,9 @@ def escanear_full(top_n_long=15, top_n_short=15, save_top_long=0):
         "total_analizados": len(resultados),
         "tiempo_segundos": round(elapsed, 1),
         "universo_usado": len(lista),
+        "tickers_solicitados": len(lista),
+        "tickers_descartados": len(lista) - len(resultados),
+        "porcentaje_valido": round(100 * len(resultados) / len(lista), 1) if lista else 0,
         "top_long": top_long,
         "top_short": top_short,
     }
