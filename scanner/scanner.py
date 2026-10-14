@@ -57,6 +57,49 @@ def _es_elegible_short(item):
         return False
     return True
 
+def _clasificar_rebote(item):
+    """Clasifica el rebote en 3 subcategorías: rango, alcista, bajista.
+    
+    Returns:
+        str: "REBOTE_RANGO" | "REBOTE_ALCISTA" | "REBOTE_BAJISTA" | "REBOTE_INDEFINIDO"
+    """
+    precios = item.get("precios_historicos") or []
+    mm200 = item.get("mm200")
+    mm50 = item.get("mm50")
+    precio = item.get("precio")
+    adx = item.get("adx")
+    
+    if not precios or not precio or len(precios) < 60:
+        return "REBOTE_INDEFINIDO"
+    
+    # Calcular pendiente MM200 (20 días)
+    if len(precios) >= 220:
+        mm200_hoy = sum(precios[-200:]) / 200
+        mm200_antes = sum(precios[-220:-20]) / 200
+        pend_mm200 = (mm200_hoy / mm200_antes - 1) * 100 if mm200_antes > 0 else 0
+    else:
+        pend_mm200 = 0
+    
+    # Calcular rango de 60 días
+    ultimos_60 = precios[-60:]
+    rango_alto = max(ultimos_60)
+    rango_bajo = min(ultimos_60)
+    rango_pct = (rango_alto - rango_bajo) / rango_bajo * 100 if rango_bajo > 0 else 100
+    
+    # 1. TENDENCIA ALCISTA: MM200 ascendente + precio > MM200
+    if pend_mm200 > 0.5 and mm200 and precio > mm200:
+        return "REBOTE_ALCISTA"
+    
+    # 2. RANGO: rango estrecho + ADX bajo
+    if rango_pct < 20 and adx and adx < 25:
+        return "REBOTE_RANGO"
+    
+    # 3. TENDENCIA BAJISTA: precio < MM200 + ADX alto
+    if mm200 and precio < mm200 and adx and adx > 25:
+        return "REBOTE_BAJISTA"
+    
+    # 4. Por defecto
+    return "REBOTE_INDEFINIDO"
 
 def _enriquecer_top(items, top_n=15):
     """Anade fundamental + sentimiento + catalizadores + recalcula score."""
@@ -530,6 +573,7 @@ def escanear_reversion(tickers_file=None, top_n=15, max_tickers=500, progress_ca
         item["proximos_earnings"] = cat.get("proximos_earnings")
         item["fecha_earnings_fiable"] = cat.get("fecha_fiable", "desconocida")
     # SEPARAR EN 2 LISTAS
+      # SEPARAR EN 2 LISTAS
     top_rebote = sorted(
         [t for t in top if t.get("categoria") == "REBOTE"],
         key=lambda x: x["score_reversion"],
@@ -540,6 +584,21 @@ def escanear_reversion(tickers_file=None, top_n=15, max_tickers=500, progress_ca
         key=lambda x: x["score_reversion"],
         reverse=True
     )[:top_n]
+    
+    # AÑADIR: Clasificar rebotes en 3 subcategorías + excluir tendencia bajista
+    top_rebote_filtrado = []
+    for t in top_rebote:
+        cat_rebote = _clasificar_rebote(t)
+        t["categoria_rebote"] = cat_rebote
+        
+        # EXCLUIR rebotes en tendencia bajista
+        if cat_rebote == "REBOTE_BAJISTA":
+            print(f"[EXCLUIDO] {t['ticker']} - Rebote en tendencia bajista")
+            continue
+        
+        top_rebote_filtrado.append(t)
+    
+    top_rebote = top_rebote_filtrado
 
     return {
         "fecha": datetime.now().strftime("%Y-%m-%d %H:%M"),
