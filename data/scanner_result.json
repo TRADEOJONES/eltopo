@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-10-15 20:43",
-  "total_analizados": 3270,
-  "tiempo_segundos": 2279.4,
+  "fecha": "2026-10-15 22:11",
+  "total_analizados": 3268,
+  "tiempo_segundos": 1786.9,
   "top_long": [
     {
       "ticker": "JRSH",
@@ -215,11 +215,11 @@
       "macd_signal": 0.7944384049027657,
       "mm50": 38.13239990234375,
       "mm200": 34.09889998435974,
-      "vol_relativo": 1.3879371075267932,
+      "vol_relativo": 1.3879522812507226,
       "atr": 1.1884026270078192,
       "adx": 32.87018086044377,
       "poc": 41.00989932378133,
-      "obv": 340502909.0,
+      "obv": 340503014.0,
       "obv_anterior": 327460100.0,
       "precios_historicos": [
         34.810001373291016,
@@ -2392,7 +2392,7 @@
         "margen_operativo": 0.41284,
         "margen_neto": 0.30191,
         "per": 11.043479,
-        "per_forward": 9.853236,
+        "per_forward": 9.861141,
         "ps": 3.0935578,
         "pb": 1.2766671,
         "ev_ebitda": null,
