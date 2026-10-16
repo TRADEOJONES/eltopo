@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-10-15 23:24",
-  "total_analizados": 3268,
-  "tiempo_segundos": 1491.0,
+  "fecha": "2026-10-16 00:06",
+  "total_analizados": 3269,
+  "tiempo_segundos": 1488.5,
   "top_long": [
     {
       "ticker": "JRSH",
@@ -118,7 +118,7 @@
         "per_forward": 9.777778,
         "ps": 0.44232634,
         "pb": 1.1850711,
-        "ev_ebitda": 7.065,
+        "ev_ebitda": 6.712,
         "deuda_equity": 13.533,
         "current_ratio": 3.111,
         "quick_ratio": 1.014,
@@ -127,7 +127,7 @@
         "dividend_yield": 3.19,
         "payout_ratio": 0.5263,
         "market_cap": 78231632.0,
-        "enterprise_value": 78862888.0,
+        "enterprise_value": 74925912.0,
         "beta": 0.967,
         "precio_objetivo": 6.5,
         "recomendacion": "none"
@@ -148,7 +148,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-10",
-        "dias_hasta_earnings": 25,
+        "dias_hasta_earnings": 24,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -173,181 +173,6 @@
             "actual": 0.04,
             "estimado": 0.0969,
             "sorpresa_pct": -58.7203
-          }
-        ],
-        "nota": "OK"
-      }
-    },
-    {
-      "ticker": "TEVA",
-      "score_long": 8.75,
-      "score_short": 4.135,
-      "precio": 41.11000061035156,
-      "desglose_long": {
-        "tendencia": 10.0,
-        "momentum": 10.0,
-        "volumen": 7.0,
-        "estructura": 10.0,
-        "fuerza_relativa": 10.0,
-        "volatilidad": 10.0,
-        "adx": 10.0,
-        "poc": 10.0,
-        "obv": 10.0,
-        "fundamental": 4.0,
-        "sentimiento": 7.0,
-        "catalizadores": 5.0
-      },
-      "desglose_short": {
-        "tendencia": 2.0,
-        "momentum": 1.5,
-        "volumen": 7.0,
-        "estructura": 3.0,
-        "fuerza_relativa": 1.0,
-        "volatilidad": 10.0,
-        "adx": 10.0,
-        "poc": 7.0,
-        "obv": 2.0,
-        "catalizadores": 5.0,
-        "fundamental": 5.0
-      },
-      "rsi": 63.30815857231421,
-      "macd": 0.8539111171591003,
-      "macd_signal": 0.7944384049027657,
-      "mm50": 38.13239990234375,
-      "mm200": 34.09889998435974,
-      "vol_relativo": 1.3879522812507226,
-      "atr": 1.1884026270078192,
-      "adx": 32.87018086044377,
-      "poc": 41.00989932378133,
-      "obv": 340503014.0,
-      "obv_anterior": 327460100.0,
-      "precios_historicos": [
-        34.810001373291016,
-        35.36000061035156,
-        36.13999938964844,
-        36.47999954223633,
-        36.7400016784668,
-        36.52000045776367,
-        36.77000045776367,
-        36.459999084472656,
-        36.58000183105469,
-        37.470001220703125,
-        36.810001373291016,
-        37.34000015258789,
-        36.93000030517578,
-        38.099998474121094,
-        37.91999816894531,
-        37.619998931884766,
-        36.439998626708984,
-        36.04999923706055,
-        36.189998626708984,
-        37.4900016784668,
-        36.619998931884766,
-        36.36000061035156,
-        36.7599983215332,
-        36.849998474121094,
-        36.349998474121094,
-        37.09000015258789,
-        38.720001220703125,
-        39.25,
-        38.529998779296875,
-        39.189998626708984,
-        38.97999954223633,
-        40.060001373291016,
-        39.52000045776367,
-        39.0099983215332,
-        40.220001220703125,
-        39.189998626708984,
-        38.880001068115234,
-        39.810001373291016,
-        39.599998474121094,
-        39.310001373291016,
-        39.529998779296875,
-        39.65999984741211,
-        39.130001068115234,
-        39.18000030517578,
-        39.25,
-        41.099998474121094,
-        41.16999816894531,
-        41.25,
-        40.720001220703125,
-        41.11000061035156
-      ],
-      "fuerza_relativa": 12.44,
-      "stop": 38.14,
-      "objetivo": 50.02,
-      "rb": 3.0,
-      "fundamental": {
-        "nombre": "Teva Pharmaceutical Industries Limited",
-        "sector": "Healthcare",
-        "industria": "Drug Manufacturers - Specialty & Generic",
-        "pais": "Israel",
-        "empleados": 31173,
-        "ingresos_yoy": -0.008,
-        "beneficios_yoy": null,
-        "crecimiento_beneficios_q": null,
-        "margen_bruto": 0.52457,
-        "margen_operativo": 0.04032,
-        "margen_neto": 0.04077,
-        "per": 68.51666,
-        "per_forward": 13.294441,
-        "ps": 2.7690609,
-        "pb": 6.1791673,
-        "ev_ebitda": 14.327,
-        "deuda_equity": 217.79,
-        "current_ratio": 0.879,
-        "quick_ratio": 0.457,
-        "roe": 0.09691,
-        "roa": 0.05126,
-        "dividend_yield": 0.0,
-        "payout_ratio": 0.0,
-        "market_cap": 47946289152.0,
-        "enterprise_value": 61148323840.0,
-        "beta": 0.817,
-        "precio_objetivo": 47.58333,
-        "recomendacion": "strong_buy"
-      },
-      "sentimiento": {
-        "recomendacion_analistas": {
-          "strong_buy": 2,
-          "buy": 4,
-          "hold": 1,
-          "sell": 0,
-          "strong_sell": 0,
-          "periodo": "2026-09-01"
-        },
-        "precio_objetivo": null,
-        "insider_compras": 4,
-        "insider_ventas": 15,
-        "nota": "OK"
-      },
-      "catalizadores": {
-        "proximos_earnings": "2026-11-03",
-        "dias_hasta_earnings": 18,
-        "historial_earnings": [
-          {
-            "periodo": "2026-06-30",
-            "actual": 0.02,
-            "estimado": 0.2516,
-            "sorpresa_pct": -92.0509
-          },
-          {
-            "periodo": "2026-03-31",
-            "actual": 0.53,
-            "estimado": 0.4872,
-            "sorpresa_pct": 8.7849
-          },
-          {
-            "periodo": "2025-12-31",
-            "actual": 0.96,
-            "estimado": 0.6929,
-            "sorpresa_pct": 38.5481
-          },
-          {
-            "periodo": "2025-09-30",
-            "actual": 0.78,
-            "estimado": 0.6695,
-            "sorpresa_pct": 16.5049
           }
         ],
         "nota": "OK"
@@ -498,7 +323,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-05",
-        "dias_hasta_earnings": 20,
+        "dias_hasta_earnings": 19,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -668,12 +493,12 @@
         },
         "precio_objetivo": null,
         "insider_compras": 10,
-        "insider_ventas": 25,
+        "insider_ventas": 24,
         "nota": "OK"
       },
       "catalizadores": {
-        "proximos_earnings": "2026-11-05",
-        "dias_hasta_earnings": 20,
+        "proximos_earnings": "2026-11-04",
+        "dias_hasta_earnings": 18,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -848,7 +673,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-04",
-        "dias_hasta_earnings": 19,
+        "dias_hasta_earnings": 18,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -993,7 +818,7 @@
         "per_forward": 10.255972,
         "ps": 1.1537831,
         "pb": 1.9179858,
-        "ev_ebitda": 7.129,
+        "ev_ebitda": 7.142,
         "deuda_equity": 108.918,
         "current_ratio": 2.074,
         "quick_ratio": 1.245,
@@ -1002,7 +827,7 @@
         "dividend_yield": 1.17,
         "payout_ratio": 0.7327,
         "market_cap": 4921140736.0,
-        "enterprise_value": 7968134144.0,
+        "enterprise_value": 7982059520.0,
         "beta": 0.976,
         "precio_objetivo": 70.3,
         "recomendacion": "buy"
@@ -1023,7 +848,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-28",
-        "dias_hasta_earnings": 12,
+        "dias_hasta_earnings": 11,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1198,7 +1023,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-18",
-        "dias_hasta_earnings": 33,
+        "dias_hasta_earnings": 32,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1341,7 +1166,7 @@
         "margen_neto": 0.10953,
         "per": 26.48956,
         "per_forward": 14.221901,
-        "ps": 2.7635496,
+        "ps": 2.763663,
         "pb": 2.9009554,
         "ev_ebitda": 11.624,
         "deuda_equity": 44.619,
@@ -1351,7 +1176,7 @@
         "roa": 0.06706,
         "dividend_yield": 0.0,
         "payout_ratio": 0.0,
-        "market_cap": 10071849984.0,
+        "market_cap": 10072263680.0,
         "enterprise_value": 10292458496.0,
         "beta": 1.417,
         "precio_objetivo": 91.66667,
@@ -1372,8 +1197,8 @@
         "nota": "OK"
       },
       "catalizadores": {
-        "proximos_earnings": "2026-11-04",
-        "dias_hasta_earnings": 19,
+        "proximos_earnings": "2026-11-02",
+        "dias_hasta_earnings": 16,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1542,13 +1367,13 @@
           "periodo": "2026-09-01"
         },
         "precio_objetivo": null,
-        "insider_compras": 11,
-        "insider_ventas": 42,
+        "insider_compras": 12,
+        "insider_ventas": 43,
         "nota": "OK"
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-21",
-        "dias_hasta_earnings": 5,
+        "dias_hasta_earnings": 4,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1693,7 +1518,7 @@
         "per_forward": 21.204937,
         "ps": 1.1885939,
         "pb": 2.367536,
-        "ev_ebitda": 17.564,
+        "ev_ebitda": 17.535,
         "deuda_equity": 0.514,
         "current_ratio": 3.346,
         "quick_ratio": 2.724,
@@ -1702,7 +1527,7 @@
         "dividend_yield": 1.95,
         "payout_ratio": 0.52,
         "market_cap": 686106304.0,
-        "enterprise_value": 571094016.0,
+        "enterprise_value": 570135296.0,
         "beta": 0.203,
         "precio_objetivo": 43.0,
         "recomendacion": "none"
@@ -1723,7 +1548,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-04",
-        "dias_hasta_earnings": 19,
+        "dias_hasta_earnings": 18,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1898,7 +1723,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-22",
-        "dias_hasta_earnings": 6,
+        "dias_hasta_earnings": 5,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -2041,9 +1866,9 @@
         "margen_neto": -0.05963,
         "per": null,
         "per_forward": 24.005003,
-        "ps": 3.6558137,
+        "ps": 3.6886554,
         "pb": 5.147237,
-        "ev_ebitda": 20.384,
+        "ev_ebitda": 20.622,
         "deuda_equity": 105.047,
         "current_ratio": 1.348,
         "quick_ratio": 0.796,
@@ -2051,8 +1876,8 @@
         "roa": 0.04107,
         "dividend_yield": 0.0,
         "payout_ratio": 0.0,
-        "market_cap": 14619551744.0,
-        "enterprise_value": 17308323840.0,
+        "market_cap": 14750884864.0,
+        "enterprise_value": 17510737920.0,
         "beta": 1.404,
         "precio_objetivo": 315.53333,
         "recomendacion": "buy"
@@ -2073,7 +1898,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-04",
-        "dias_hasta_earnings": 19,
+        "dias_hasta_earnings": 18,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -2098,6 +1923,174 @@
             "actual": 2.43,
             "estimado": 2.3619,
             "sorpresa_pct": 2.8833
+          }
+        ],
+        "nota": "OK"
+      }
+    },
+    {
+      "ticker": "FRHC",
+      "score_long": 8.04,
+      "score_short": 3.345,
+      "precio": 180.13,
+      "desglose_long": {
+        "tendencia": 10.0,
+        "momentum": 10.0,
+        "volumen": 7.0,
+        "estructura": 10.0,
+        "fuerza_relativa": 10.0,
+        "volatilidad": 10.0,
+        "adx": 2.0,
+        "poc": 8.0,
+        "obv": 10.0,
+        "fundamental": 6.5,
+        "sentimiento": 4.0,
+        "catalizadores": 5.0
+      },
+      "desglose_short": {
+        "tendencia": 2.0,
+        "momentum": 1.5,
+        "volumen": 7.0,
+        "estructura": 3.0,
+        "fuerza_relativa": 1.0,
+        "volatilidad": 10.0,
+        "adx": 2.0,
+        "poc": 4.0,
+        "obv": 2.0,
+        "catalizadores": 5.0,
+        "fundamental": 5.0
+      },
+      "rsi": 63.404211209285045,
+      "macd": 2.0850029626032267,
+      "macd_signal": 2.0461883089625696,
+      "mm50": 165.87150000000003,
+      "mm200": 146.35524999999998,
+      "vol_relativo": 1.405060658578856,
+      "atr": 4.07399420857033,
+      "adx": 12.58749037591527,
+      "poc": 170.33463333333333,
+      "obv": 78442.0,
+      "obv_anterior": 68781.0,
+      "precios_historicos": [
+        152.04,
+        148.39,
+        150.49,
+        150.96,
+        152.98,
+        146.87,
+        147.18,
+        149.95,
+        159.675,
+        158.21,
+        163.7,
+        170.02,
+        157.5,
+        169.15,
+        170.35,
+        169.865,
+        174.48,
+        174.475,
+        172.26,
+        169.3,
+        162.735,
+        164.125,
+        162.85,
+        162.38,
+        163.135,
+        166.54,
+        165.0,
+        163.205,
+        164.025,
+        165.595,
+        164.25,
+        174.95,
+        172.41,
+        173.605,
+        176.13,
+        175.2,
+        173.5,
+        170.11,
+        168.185,
+        172.75,
+        172.33,
+        175.335,
+        174.4,
+        174.5,
+        167.9,
+        168.52,
+        167.635,
+        170.88,
+        173.42,
+        180.13
+      ],
+      "fuerza_relativa": 10.86,
+      "stop": 169.95,
+      "objetivo": 210.68,
+      "rb": 3.0,
+      "fundamental": {
+        "nombre": "Freedom Holdings Corp.",
+        "sector": "Financial Services",
+        "industria": "Financial Conglomerates",
+        "pais": "United States",
+        "empleados": 12100,
+        "ingresos_yoy": 0.278,
+        "beneficios_yoy": -0.148,
+        "crecimiento_beneficios_q": -0.152,
+        "margen_bruto": 0.84793,
+        "margen_operativo": 0.05009,
+        "margen_neto": 0.08425,
+        "per": 70.46484,
+        "per_forward": 40.086666,
+        "ps": 6.5664177,
+        "pb": 7.217621,
+        "ev_ebitda": null,
+        "deuda_equity": 181.589,
+        "current_ratio": 1.229,
+        "quick_ratio": 1.076,
+        "roe": 0.106809996,
+        "roa": 0.01244,
+        "dividend_yield": 0.0,
+        "payout_ratio": 0.0,
+        "market_cap": 11506656256.0,
+        "enterprise_value": 9968815104.0,
+        "beta": 0.694,
+        "precio_objetivo": null,
+        "recomendacion": "none"
+      },
+      "sentimiento": {
+        "recomendacion_analistas": null,
+        "precio_objetivo": null,
+        "insider_compras": 1,
+        "insider_ventas": 13,
+        "nota": "OK"
+      },
+      "catalizadores": {
+        "proximos_earnings": "2026-11-06",
+        "dias_hasta_earnings": 20,
+        "historial_earnings": [
+          {
+            "periodo": "2026-09-30",
+            "actual": 1.25,
+            "estimado": null,
+            "sorpresa_pct": null
+          },
+          {
+            "periodo": "2026-06-30",
+            "actual": 0.63,
+            "estimado": null,
+            "sorpresa_pct": null
+          },
+          {
+            "periodo": "2026-03-31",
+            "actual": 0.5,
+            "estimado": null,
+            "sorpresa_pct": null
+          },
+          {
+            "periodo": "2022-03-31",
+            "actual": -1.6,
+            "estimado": 1.1628,
+            "sorpresa_pct": -237.5989
           }
         ],
         "nota": "OK"
@@ -2248,7 +2241,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-30",
-        "dias_hasta_earnings": 45,
+        "dias_hasta_earnings": 44,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -2425,7 +2418,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-01-13",
-        "dias_hasta_earnings": 89,
+        "dias_hasta_earnings": 88,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -2570,7 +2563,7 @@
         "per_forward": 9.92133,
         "ps": 2.8482387,
         "pb": 1.9653349,
-        "ev_ebitda": 6.626,
+        "ev_ebitda": 6.752,
         "deuda_equity": 3.702,
         "current_ratio": 4.039,
         "quick_ratio": 4.039,
@@ -2579,7 +2572,7 @@
         "dividend_yield": 5.13,
         "payout_ratio": 0.5161,
         "market_cap": 21623828480.0,
-        "enterprise_value": 19637125120.0,
+        "enterprise_value": 20010428416.0,
         "beta": 1.471,
         "precio_objetivo": 105.92308,
         "recomendacion": "hold"
@@ -2600,7 +2593,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-29",
-        "dias_hasta_earnings": 13,
+        "dias_hasta_earnings": 12,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -2775,7 +2768,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-05",
-        "dias_hasta_earnings": 20,
+        "dias_hasta_earnings": 19,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -2920,7 +2913,7 @@
         "per_forward": 15.851527,
         "ps": 5.5088983,
         "pb": 2.8255777,
-        "ev_ebitda": 10.69,
+        "ev_ebitda": 11.424,
         "deuda_equity": 0.97,
         "current_ratio": 7.912,
         "quick_ratio": 6.806,
@@ -2929,7 +2922,7 @@
         "dividend_yield": 0.0,
         "payout_ratio": 0.0,
         "market_cap": 25705668608.0,
-        "enterprise_value": 19949850624.0,
+        "enterprise_value": 21320820736.0,
         "beta": 1.058,
         "precio_objetivo": 39.0,
         "recomendacion": "buy"
@@ -2950,7 +2943,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-18",
-        "dias_hasta_earnings": 33,
+        "dias_hasta_earnings": 32,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -3125,7 +3118,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-26",
-        "dias_hasta_earnings": 10,
+        "dias_hasta_earnings": 9,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -3411,9 +3404,9 @@
         "margen_neto": 0.03955,
         "per": 20.708332,
         "per_forward": 11.438435,
-        "ps": 0.8318037,
+        "ps": null,
         "pb": 1.0436791,
-        "ev_ebitda": 6.807,
+        "ev_ebitda": 6.788,
         "deuda_equity": 51.172,
         "current_ratio": 1.585,
         "quick_ratio": 0.811,
@@ -3421,8 +3414,8 @@
         "roa": 0.04103,
         "dividend_yield": 4.13,
         "payout_ratio": 0.7942,
-        "market_cap": 6414870016.0,
-        "enterprise_value": 9372593152.0,
+        "market_cap": null,
+        "enterprise_value": 9346779136.0,
         "beta": 1.049,
         "precio_objetivo": 5.8125,
         "recomendacion": "hold"
@@ -3708,7 +3701,7 @@
         "dividend_yield": 3.19,
         "payout_ratio": 0.2824,
         "market_cap": 11477453824.0,
-        "enterprise_value": 28285077504.0,
+        "enterprise_value": 28583264256.0,
         "beta": 1.098,
         "precio_objetivo": 48.78333,
         "recomendacion": "buy"
@@ -3983,9 +3976,9 @@
         "margen_neto": 0.116960004,
         "per": 17.867378,
         "per_forward": 17.37281,
-        "ps": 2.0703456,
+        "ps": 2.0587435,
         "pb": 5.045781,
-        "ev_ebitda": 14.352,
+        "ev_ebitda": 13.954,
         "deuda_equity": 50.676,
         "current_ratio": 2.354,
         "quick_ratio": 1.421,
@@ -3993,8 +3986,8 @@
         "roa": 0.107650004,
         "dividend_yield": 0.65,
         "payout_ratio": 0.113199994,
-        "market_cap": 8761963520.0,
-        "enterprise_value": 9732436992.0,
+        "market_cap": 8712861696.0,
+        "enterprise_value": 9462168576.0,
         "beta": 1.347,
         "precio_objetivo": 624.5,
         "recomendacion": "none"
@@ -4128,7 +4121,7 @@
         "per_forward": 22.585848,
         "ps": 3.6737077,
         "pb": 4.2568474,
-        "ev_ebitda": 19.33,
+        "ev_ebitda": 18.901,
         "deuda_equity": 74.985,
         "current_ratio": 2.404,
         "quick_ratio": 1.736,
@@ -4137,7 +4130,7 @@
         "dividend_yield": 0.48,
         "payout_ratio": 0.15439999,
         "market_cap": 3275466752.0,
-        "enterprise_value": 3699681280.0,
+        "enterprise_value": 3617511424.0,
         "beta": 1.069,
         "precio_objetivo": 335.33334,
         "recomendacion": "buy"
@@ -4271,7 +4264,7 @@
         "per_forward": 10.317991,
         "ps": 0.2457991,
         "pb": 0.563361,
-        "ev_ebitda": 8.29,
+        "ev_ebitda": 8.631,
         "deuda_equity": 39.12,
         "current_ratio": 2.373,
         "quick_ratio": 0.841,
@@ -4280,7 +4273,7 @@
         "dividend_yield": 6.21,
         "payout_ratio": 1.0221,
         "market_cap": 697110848.0,
-        "enterprise_value": 1078528768.0,
+        "enterprise_value": 1122910848.0,
         "beta": 1.184,
         "precio_objetivo": 37.3,
         "recomendacion": "buy"
