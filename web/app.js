@@ -251,33 +251,62 @@ function renderizar(data) {
     const ganador = rec && rec.mejor_estrategia ? rec.mejor_estrategia : null;
 
     // --- NUEVA CABECERA CON LOGO Y NOMBRE ---
-    const header = document.createElement("div");
+   const header = document.createElement("div");
     header.className = "card card-header-ticker";
     header.innerHTML = `
-        <div style="display: flex; align-items: center; gap: 15px;">
-            <img id="logo-empresa" alt="Logo" 
-                 style="width: 48px; height: 48px; border-radius: 50%; object-fit: contain; background: white; padding: 4px; border: 1px solid #eee;">
-            <div>
-                <h2 style="margin: 0;">${data.ticker} <span id="nombre-empresa" style="font-size: 0.6em; color: #666; font-weight: normal; margin-left: 10px;">Cargando...</span></h2>
-                <p class="fecha" style="margin: 2px 0 0 0;">${data.fecha} ${data.hora}</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <img id="logo-empresa" alt="Logo" style="width: 48px; height: 48px; border-radius: 50%; object-fit: contain; background: white; padding: 4px; border: 1px solid #eee;">
+                <div>
+                    <h2 style="margin: 0;">${data.ticker} <span id="nombre-empresa" style="font-size: 0.6em; color: #666; font-weight: normal; margin-left: 10px;">Cargando...</span></h2>
+                    <p class="fecha" style="margin: 2px 0 0 0;">${data.fecha} ${data.hora}</p>
+                </div>
+            </div>
+            
+            <!-- TERMÓMETRO CIRCULAR -->
+            <div id="termometro-container" class="circle-wrap" style="display: none;">
+                <svg class="circle-svg" viewBox="0 0 60 60">
+                    <circle class="circle-bg" cx="30" cy="30" r="25"></circle>
+                    <circle id="circle-progress" class="circle-progress" cx="30" cy="30" r="25"></circle>
+                </svg>
+                <div id="circle-text" class="circle-text">-</div>
             </div>
         </div>
     `;
     resultado.appendChild(header);
 
-    // Pedir nombre y logo a nuestro backend
+    // Pedir nombre y logo
     fetch(`${API_BASE_URL}/api/info/${data.ticker}`)
         .then(r => r.json())
         .then(info => {
             const span = document.getElementById('nombre-empresa');
             if (span) span.innerText = info.nombre || "";
-            
             if (info.dominio) {
                 const img = document.getElementById('logo-empresa');
                 img.src = `https://cdn.brandfetch.io/${info.dominio}?c=1idSu-Lz7oOsxV86lc6`;
             }
         })
         .catch(() => {});
+
+    // Actualizar termómetro circular
+    if (rec) {
+        const score = rec.score || 0;
+        const container = document.getElementById('termometro-container');
+        const progress = document.getElementById('circle-progress');
+        const text = document.getElementById('circle-text');
+        
+        if (container && progress && text) {
+            container.style.display = 'block';
+            text.innerText = score.toFixed(1);
+            
+            const offset = 157 - (157 * score / 10);
+            progress.style.strokeDashoffset = offset;
+            
+            if (score < 4) progress.style.stroke = '#ef4444';
+            else if (score < 7) progress.style.stroke = '#eab308';
+            else progress.style.stroke = '#22c55e';
+        }
+    }
     // --- FIN NUEVA CABECERA ---
 
     if (rec && rec.mejor_estrategia) {
