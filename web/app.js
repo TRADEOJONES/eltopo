@@ -1,7 +1,7 @@
 // ELTOPO - Frontend JS
 
-// URL base del API (VACIO PARA PRODUCCION. PARA LOCAL: "http://127.0.0.1:8000")
-const API_BASE_URL = "";
+// URL base del API (VACIO PARA PRODUCCION)
+const API_BASE_URL = ""; 
 
 // -- Tema claro/oscuro --
 const themeToggle = document.getElementById("themeToggle");
@@ -250,8 +250,8 @@ function renderizar(data) {
     const rec = data.recomendacion_final;
     const ganador = rec && rec.mejor_estrategia ? rec.mejor_estrategia : null;
 
-    // --- NUEVA CABECERA CON LOGO Y NOMBRE ---
-   const header = document.createElement("div");
+    // --- NUEVA CABECERA CON LOGO, NOMBRE Y TERMÓMETRO ---
+    const header = document.createElement("div");
     header.className = "card card-header-ticker";
     header.innerHTML = `
         <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
@@ -275,12 +275,13 @@ function renderizar(data) {
     `;
     resultado.appendChild(header);
 
-    // Pedir nombre y logo
+    // Pedir nombre y logo a nuestro backend
     fetch(`${API_BASE_URL}/api/info/${data.ticker}`)
         .then(r => r.json())
         .then(info => {
             const span = document.getElementById('nombre-empresa');
             if (span) span.innerText = info.nombre || "";
+            
             if (info.dominio) {
                 const img = document.getElementById('logo-empresa');
                 img.src = `https://cdn.brandfetch.io/${info.dominio}?c=1idSu-Lz7oOsxV86lc6`;
@@ -473,13 +474,11 @@ function renderizar(data) {
     cardC.innerHTML = htmlCat;
     resultado.appendChild(cardC);
 
-        // Buscar precios en la estrategia ganadora, o en la primera que tenga
+    // Buscar precios en la estrategia ganadora, o en la primera que tenga
     let precios = null;
     if (estiloGanador && estiloGanador.valido && estiloGanador.indicadores) {
         precios = estiloGanador.indicadores.precios_historicos;
     }
-    
-    // Si la ganadora no tiene, buscamos en las demás
     if (!precios) {
         for (const nombre of estilosOrden) {
             const est = data.estilos[nombre];
@@ -489,12 +488,9 @@ function renderizar(data) {
             }
         }
     }
-
-    // Si encontramos precios, dibujamos el gráfico
     if (precios && precios.length > 0) {
         dibujarGrafico(precios, data.ticker);
     } else {
-        // Si no hay precios, forzamos el gráfico igualmente
         dibujarGrafico([], data.ticker);
     }
 }
@@ -652,6 +648,11 @@ function renderScannerList(container, lista, tipo) {
     container.innerHTML = lista.map((t, i) => {
         const score = t[scoreKey] != null ? Number(t[scoreKey]).toFixed(3) : "-";
         const precio = t.precio != null ? "$" + Number(t.precio).toFixed(2) : "-";
+        
+        // Lógica para el termómetro horizontal
+        const colorBarra = tipo === "long" ? "bg-verde" : "bg-rojo";
+        const textBarra = tipo === "long" ? "text-verde" : "text-rojo";
+        const porcentajeBarra = (Number(score) / 10) * 100;
 
         const f = t.fundamental || {};
         const s = t.sentimiento || {};
@@ -706,10 +707,20 @@ function renderScannerList(container, lista, tipo) {
 
         return `
             <div class="scanner-row ${rowClass}" data-ticker="${t.ticker}">
-                <div class="scanner-row-top">
-                    <span class="scanner-rank">${i + 1}</span>
-                    <span class="scanner-ticker">${t.ticker}</span>
-                    <span class="scanner-score">${score}</span>
+                <div class="scanner-row-top" style="display: flex; align-items: center; justify-content: space-between;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span class="scanner-rank">${i + 1}</span>
+                        <span class="scanner-ticker">${t.ticker}</span>
+                    </div>
+                    
+                    <!-- TERMÓMETRO BARRA (TOP LONG / SHORT) -->
+                    <div class="termo-barra-wrap" style="margin-left: auto; margin-right: 10px;">
+                        <div class="termo-barra-text ${textBarra}">${score}</div>
+                        <div class="termo-barra-bg">
+                            <div class="termo-barra-fill ${colorBarra}" style="width: ${porcentajeBarra}%;"></div>
+                        </div>
+                    </div>
+                    
                     <span class="scanner-precio">${precio}</span>
                 </div>
                 ${lineaFund}
@@ -934,6 +945,9 @@ function renderReversion(resultado) {
                 lineaEstado = `<div class="reversion-linea-estado ${estadoInfo.clase}">${estadoInfo.icono} ${estadoInfo.texto}</div>`;
             }
 
+            // Barra alargada para reversión
+            const porcentajeBarra = (Number(t.score_reversion) / 10) * 100;
+
             html += `
                 <div class="reversion-row" data-ticker="${t.ticker}">
                     <span class="reversion-rank">${i + 1}</span>
@@ -941,14 +955,16 @@ function renderReversion(resultado) {
                         <div class="reversion-linea-1">
                             <span class="reversion-ticker">${t.ticker}</span>
                             <span class="reversion-categoria ${categoriaClass}">${t.categoria}</span>
-                            ${t.categoria_rebote ? `<span class="reversion-subcategoria">${{
-                                "REBOTE_RANGO": "🟢 Rango",
-                                "REBOTE_ALCISTA": "🔵 Alcista",
-                                "REBOTE_BAJISTA": "🟡 Bajista",
-                                "REBOTE_INDEFINIDO": "⚪ Indefinido"
-                            }[t.categoria_rebote] || ""}</span>` : ""}
+                            ${t.categoria_rebote ? `<span class="reversion-subcategoria">${{"REBOTE_RANGO": "🟢 Rango", "REBOTE_ALCISTA": "🔵 Alcista", "REBOTE_BAJISTA": "🟡 Bajista", "REBOTE_INDEFINIDO": "⚪ Indefinido"}[t.categoria_rebote] || ""}</span>` : ""}
                             <span class="reversion-precio">${t.precio != null ? "$" + Number(t.precio).toFixed(2) : ""}</span>
-                            <span class="reversion-score">${Number(t.score_reversion).toFixed(2)}</span>
+                            
+                            <!-- TERMÓMETRO BARRA (REVERSION) -->
+                            <div class="termo-barra-wrap" style="width: 60px; margin-left: auto;">
+                                <div class="termo-barra-bg">
+                                    <div class="termo-barra-fill bg-verde" style="width: ${porcentajeBarra}%;"></div>
+                                </div>
+                                <div class="termo-barra-text text-verde" style="margin-top: 2px; margin-bottom: 0;">${Number(t.score_reversion).toFixed(2)}</div>
+                            </div>
                         </div>
                         <div class="reversion-linea-2">
                             Rebote: <strong>${Number(t.score_rebote).toFixed(2)}</strong>
