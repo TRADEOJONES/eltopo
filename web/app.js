@@ -244,6 +244,7 @@ function fmtBig(v) {
 }
 
 function renderizar(data) {
+    const estilosOrden = ["swing", "day_trading", "scalping"]; // <--- DECLARADO AL PRINCIPIO
     const resultado = document.getElementById("resultado");
     resultado.innerHTML = "";
 
@@ -292,11 +293,9 @@ function renderizar(data) {
     // Actualizar termómetro circular (usando la mejor nota disponible)
     let scoreTermometro = 0;
     
-    // Si hay recomendación final, usamos su score
     if (rec && rec.score) {
         scoreTermometro = rec.score;
     } else {
-        // Si no, buscamos el score más alto de las estrategias válidas
         for (const nombre of estilosOrden) {
             const est = data.estilos[nombre];
             if (est && est.valido && est.score > scoreTermometro) {
@@ -320,7 +319,7 @@ function renderizar(data) {
             if (scoreTermometro < 4) progress.style.stroke = '#ef4444';
             else if (scoreTermometro < 7) progress.style.stroke = '#eab308';
             else progress.style.stroke = '#22c55e';
-              }
+        }
     }
     // --- FIN NUEVA CABECERA ---
 
@@ -331,7 +330,6 @@ function renderizar(data) {
         resultado.appendChild(cardRec);
     }
 
-    const estilosOrden = ["swing", "day_trading", "scalping"];
     const semaforo = document.createElement("div");
     semaforo.className = "card";
     let htmlSemaforo = '<h2>SEMAFORO OPERATIVO</h2><div class="semaforo-lista">';
@@ -488,7 +486,6 @@ function renderizar(data) {
     cardC.innerHTML = htmlCat;
     resultado.appendChild(cardC);
 
-    // Buscar precios en la estrategia ganadora, o en la primera que tenga
     let precios = null;
     if (estiloGanador && estiloGanador.valido && estiloGanador.indicadores) {
         precios = estiloGanador.indicadores.precios_historicos;
