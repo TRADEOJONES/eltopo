@@ -289,24 +289,38 @@ function renderizar(data) {
         })
         .catch(() => {});
 
-    // Actualizar termómetro circular
-    if (rec) {
-        const score = rec.score || 0;
+    // Actualizar termómetro circular (usando la mejor nota disponible)
+    let scoreTermometro = 0;
+    
+    // Si hay recomendación final, usamos su score
+    if (rec && rec.score) {
+        scoreTermometro = rec.score;
+    } else {
+        // Si no, buscamos el score más alto de las estrategias válidas
+        for (const nombre of estilosOrden) {
+            const est = data.estilos[nombre];
+            if (est && est.valido && est.score > scoreTermometro) {
+                scoreTermometro = est.score;
+            }
+        }
+    }
+
+    if (scoreTermometro > 0) {
         const container = document.getElementById('termometro-container');
         const progress = document.getElementById('circle-progress');
         const text = document.getElementById('circle-text');
         
         if (container && progress && text) {
             container.style.display = 'block';
-            text.innerText = score.toFixed(1);
+            text.innerText = scoreTermometro.toFixed(1);
             
-            const offset = 157 - (157 * score / 10);
+            const offset = 157 - (157 * scoreTermometro / 10);
             progress.style.strokeDashoffset = offset;
             
-            if (score < 4) progress.style.stroke = '#ef4444';
-            else if (score < 7) progress.style.stroke = '#eab308';
+            if (scoreTermometro < 4) progress.style.stroke = '#ef4444';
+            else if (scoreTermometro < 7) progress.style.stroke = '#eab308';
             else progress.style.stroke = '#22c55e';
-        }
+              }
     }
     // --- FIN NUEVA CABECERA ---
 
