@@ -252,10 +252,32 @@ function renderizar(data) {
     const rec = data.recomendacion_final;
     const ganador = rec && rec.mejor_estrategia ? rec.mejor_estrategia : null;
 
+    // --- NUEVA CABECERA CON LOGO Y NOMBRE ---
     const header = document.createElement("div");
     header.className = "card card-header-ticker";
-    header.innerHTML = '<h2>' + data.ticker + '</h2><p class="fecha">' + data.fecha + ' ' + data.hora + '</p>';
+    header.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <img src="https://logo.clearbit.com/${data.ticker.toLowerCase()}.com" 
+                 onerror="this.style.display='none'" 
+                 style="width: 48px; height: 48px; border-radius: 50%; object-fit: contain; background: white; padding: 4px; border: 1px solid #eee;">
+            <div>
+                <h2 style="margin: 0;">${data.ticker} <span id="nombre-empresa" style="font-size: 0.6em; color: #666; font-weight: normal; margin-left: 10px;">Cargando...</span></h2>
+                <p class="fecha" style="margin: 2px 0 0 0;">${data.fecha} ${data.hora}</p>
+            </div>
+        </div>
+    `;
     resultado.appendChild(header);
+
+    // Pedir nombre a Yahoo Finance (silencioso)
+    fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${data.ticker}?interval=1d&range=1d`)
+        .then(r => r.json())
+        .then(d => {
+            const meta = d.chart.result[0].meta;
+            const span = document.getElementById('nombre-empresa');
+            if (span) span.innerText = meta.longName || meta.shortName || "";
+        })
+        .catch(() => {});
+    // --- FIN NUEVA CABECERA ---
 
     if (rec && rec.mejor_estrategia) {
         const cardRec = document.createElement("div");
@@ -429,15 +451,26 @@ function renderizar(data) {
     }
 }
 
+// --- NUEVA FUNCION DE DIBUJAR GRAFICO (TRADINGVIEW) ---
 function dibujarGrafico(precios, ticker) {
     const viejo = document.getElementById("chartContainer");
     if (viejo) viejo.remove();
-    if (!precios || precios.length === 0) return;
 
     const card = document.createElement("div");
     card.className = "card card-info color-azul";
     card.id = "chartContainer";
-    card.innerHTML = '<h2>GRAFICO DE PRECIO (ultimos ' + precios.length + ' dias)</h2><canvas id="precioChart" height="120"></canvas>';
+    card.innerHTML = `
+        <h2>GRÁFICO DE PRECIO</h2>
+        <div style="display: flex; gap: 8px; margin-bottom: 10px;" id="botones-tiempo">
+            <button class="btn-tiempo" data-rango="1d" style="padding: 4px 12px; border-radius: 4px; border: 1px solid #ccc; cursor: pointer; background: #007bff; color: white;">1D</button>
+            <button class="btn-tiempo" data-rango="5d" style="padding: 4px 12px; border-radius: 4px; border: 1px solid #ccc; cursor: pointer;">5D</button>
+            <button class="btn-tiempo" data-rango="1mo" style="padding: 4px 12px; border-radius: 4px; border: 1px solid #ccc; cursor: pointer;">1M</button>
+            <button class="btn-tiempo" data-rango="6mo" style="padding: 4px 12px; border-radius: 4px; border: 1px solid #ccc; cursor: pointer;">6M</button>
+            <button class="btn-tiempo" data-rango="1y" style="padding: 4px 12px; border-radius: 4px; border: 1px solid #ccc; cursor: pointer;">1A</button>
+            <button class="btn-tiempo" data-rango="5y" style="padding: 4px 12px; border-radius: 4px; border: 1px solid #ccc; cursor: pointer;">5A</button>
+        </div>
+        <div id="grafico-contenedor" style="width: 100%; height: 350px; position: relative;"></div>
+    `;
 
     const resultado = document.getElementById("resultado");
     const header = resultado.querySelector(".card-header-ticker");
@@ -447,31 +480,70 @@ function dibujarGrafico(precios, ticker) {
         resultado.appendChild(card);
     }
 
-    const ctx = document.getElementById("precioChart").getContext("2d");
-    new Chart(ctx, {
-        type: "line",
-        data: {
-            labels: precios.map((_, i) => i + 1),
-            datasets: [{
-                label: ticker,
-                data: precios,
-                borderColor: "#2563EB",
-                backgroundColor: "rgba(37, 99, 235, 0.1)",
-                borderWidth: 2,
-                fill: true,
-                tension: 0.3,
-                pointRadius: 0
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: { legend: { display: false } },
-            scales: {
-                x: { display: false },
-                y: { ticks: { color: "#6B7280" }, grid: { color: "rgba(0,0,0,0.05)" } }
+    async function cargarGrafico(tk, rango = '1d') {
+        const contenedor = document.getElementById('grafico-contenedor');
+        contenedor.innerHTML = '<div style="text-align:center; padding: 50px;">Cargando gráfico...</div>';
+        
+        try {
+            const interval = rango === '1d' ? '5m' : (rango === '5d' ? '15m' : '1d');
+            const res = await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${tk}?interval=${interval}&range=${rango}`);
+            const dataYahoo = await res.json();
+            const result = dataYahoo.chart.result[0];
+            
+            const timestamps = result.timestamp;
+            const quotes = result.indicators.quote[0];
+            
+            const dataGrafico = [];
+            for (let i = 0; i < timestamps.length; i++) {
+                if (quotes.close[i] === null) continue;
+                dataGrafico.push({
+                    time: (timestamps[i]),
+                    open: quotes.open[i],
+                    high: quotes.high[i],
+                    low: quotes.low[i],
+                    close: quotes.close[i]
+                });
             }
+            
+            contenedor.innerHTML = ""; 
+            
+            const chart = LightweightCharts.createChart(contenedor, {
+                width: contenedor.clientWidth,
+                height: 350,
+                layout: { backgroundColor: '#ffffff', textColor: '#333' },
+                grid: { vertLines: { color: '#f0f3fa' }, horzLines: { color: '#f0f3fa' } },
+                timeScale: { timeVisible: true, secondsVisible: false },
+            });
+            
+            const candlestickSeries = chart.addCandlestickSeries({
+                upColor: '#26a69a', downColor: '#ef5350', borderVisible: false,
+                wickUpColor: '#26a69a', wickDownColor: '#ef5350'
+            });
+            
+            candlestickSeries.setData(dataGrafico);
+            chart.timeScale().fitContent();
+            
+            window.addEventListener('resize', () => chart.applyOptions({ width: contenedor.clientWidth }));
+            
+        } catch (e) {
+            contenedor.innerHTML = '<div style="text-align:center; padding: 50px; color: red;">Error al cargar el gráfico</div>';
         }
-    });
+    }
+
+    setTimeout(() => {
+        document.querySelectorAll('.btn-tiempo').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.btn-tiempo').forEach(b => {
+                    b.style.background = 'transparent';
+                    b.style.color = 'black';
+                });
+                e.target.style.background = '#007bff';
+                e.target.style.color = 'white';
+                cargarGrafico(ticker, e.target.dataset.rango);
+            });
+        });
+        cargarGrafico(ticker, '1d');
+    }, 50);
 }
 
 async function cargarScanner() {
@@ -569,7 +641,6 @@ function renderScannerList(container, lista, tipo) {
             lineaCat = '<div class="scanner-linea-cat">' + c.nota + '</div>';
         }
 
-        // Linea de Stop / Objetivo / RB
         let lineaRB = "";
         if (t.stop || t.objetivo || t.rb) {
             lineaRB = '<div class="scanner-linea-rb">';
@@ -639,7 +710,6 @@ function mostrarReversion() {
     const viewRev = document.getElementById("viewReversion");
     if (!viewRev) return;
 
-    // Buscar contenedores (los creamos dinamicamente si no existen)
     let contenedor = document.getElementById("reversionContenido");
     if (!contenedor) {
         contenedor = document.createElement("div");
@@ -647,7 +717,6 @@ function mostrarReversion() {
         viewRev.appendChild(contenedor);
     }
 
-    // Comprobar cache
     const cache = localStorage.getItem(REVERSION_CACHE_KEY);
     if (cache) {
         try {
@@ -660,7 +729,6 @@ function mostrarReversion() {
         } catch (e) {}
     }
 
-    // No hay cache valida -> arrancar escaneo
     arrancarReversion();
 }
 
@@ -668,7 +736,6 @@ async function arrancarReversion() {
     const contenedor = document.getElementById("reversionContenido");
     if (!contenedor) return;
 
-    // Mostrar spinner + barra
     contenedor.innerHTML = `
         <div class="reversion-progress">
             <div class="spinner"></div>
@@ -695,11 +762,9 @@ async function arrancarReversion() {
             console.log("Reutilizando job activo:", data.job_id);
         }
 
-        // Empezar polling
         if (reversionPollInterval) clearInterval(reversionPollInterval);
         reversionPollInterval = setInterval(() => pollReversion(data.job_id), 3000);
 
-        // Primera consulta inmediata
         pollReversion(data.job_id);
 
     } catch (e) {
@@ -727,7 +792,6 @@ async function pollReversion(jobId) {
                 return;
             }
 
-            // Guardar en cache
             const cacheData = {
                 timestamp: Date.now(),
                 resultado: status.resultado,
@@ -760,17 +824,14 @@ function renderReversion(resultado) {
     if (!contenedor) return;
 
     if (!resultado || !resultado.top_rebote || !resultado.top_cambio) {
-        // Fallback: usar top_reversion si no hay separados
         if (!resultado || !resultado.top_reversion || resultado.top_reversion.length === 0) {
             contenedor.innerHTML = '<p class="scanner-loading">Sin resultados con score suficiente.</p>';
             return;
         }
     }
 
-    // Guardar resultado globalmente para los tabs
     window._reversionResultado = resultado;
 
-    // Determinar tab activa (por defecto: rebotes)
     const tabActiva = window._reversionTab || "rebote";
     const lista = (tabActiva === "rebote" ? resultado.top_rebote : resultado.top_cambio) || [];
     const nombreLista = (tabActiva === "rebote" ? "Rebotes" : "Cambios");
@@ -805,7 +866,6 @@ function renderReversion(resultado) {
             const categoriaClass = t.categoria === "REBOTE" ? "cat-rebote" : "cat-cambio";
             const estadoInfo = formatearEstado(t.estado);
 
-            // Linea de stop/objetivo/RB
             let lineaRB = "";
             if (t.stop || t.objetivo || t.rb) {
                 lineaRB = '<div class="reversion-linea-rb">';
@@ -815,7 +875,6 @@ function renderReversion(resultado) {
                 lineaRB += '</div>';
             }
 
-            // Linea de estado
             let lineaEstado = "";
             if (estadoInfo) {
                 lineaEstado = `<div class="reversion-linea-estado ${estadoInfo.clase}">${estadoInfo.icono} ${estadoInfo.texto}</div>`;
@@ -825,8 +884,7 @@ function renderReversion(resultado) {
                 <div class="reversion-row" data-ticker="${t.ticker}">
                     <span class="reversion-rank">${i + 1}</span>
                     <div class="reversion-info">
-                      
-                                                <div class="reversion-linea-1">
+                        <div class="reversion-linea-1">
                             <span class="reversion-ticker">${t.ticker}</span>
                             <span class="reversion-categoria ${categoriaClass}">${t.categoria}</span>
                             ${t.categoria_rebote ? `<span class="reversion-subcategoria">${{
@@ -855,7 +913,6 @@ function renderReversion(resultado) {
     html += '</div>';
     contenedor.innerHTML = html;
 
-    // Listener de tabs
     contenedor.querySelectorAll(".reversion-tab").forEach(tab => {
         tab.addEventListener("click", () => {
             window._reversionTab = tab.dataset.tab;
@@ -863,7 +920,6 @@ function renderReversion(resultado) {
         });
     });
 
-    // Click en fila -> analizar ticker
     contenedor.querySelectorAll(".reversion-row").forEach(row => {
         row.addEventListener("click", () => {
             const ticker = row.dataset.ticker;
@@ -873,7 +929,6 @@ function renderReversion(resultado) {
         });
     });
 
-    // Boton refrescar
     const btnRef = document.getElementById("btnRefreshReversion");
     if (btnRef) {
         btnRef.addEventListener("click", () => {
