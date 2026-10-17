@@ -258,6 +258,45 @@ def _cargar_universo():
     return list(data)
 
 
+def _cargar_tickers_reversion(max_tickers=500):
+    """Carga tickers para REVERSION.
+
+    Prioridad:
+      1. data/top_1000.json       (generado por el FULL)
+      2. motor/universe_usa.json  (fallback)
+    """
+    # 1) top_1000.json
+    ruta_top = _ruta_top1000()
+    if ruta_top.exists():
+        try:
+            with open(ruta_top, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            tickers = data.get("tickers", []) if isinstance(data, dict) else data
+            tickers = [t for t in tickers if isinstance(t, str) and t]
+            if tickers:
+                fecha = data.get("fecha", "?") if isinstance(data, dict) else "?"
+                print(f"[REVERSION] Fuente: top_1000.json "
+                      f"({len(tickers)} tickers, fecha={fecha} -> usando {min(max_tickers, len(tickers))})")
+                return tickers[:max_tickers]
+            print("[REVERSION] top_1000.json vacio -> fallback")
+        except Exception as e:
+            print(f"[REVERSION] Error leyendo top_1000.json: {e} -> fallback")
+
+    # 2) Fallback universe_usa.json
+    ruta_uni = _ruta_universo()
+    if ruta_uni.exists():
+        with open(ruta_uni, "r", encoding="utf-8") as f:
+            universo = json.load(f)
+        if isinstance(universo, dict):
+            universo = universo.get("tickers", [])
+        print(f"[REVERSION] Fuente: universe_usa.json (FALLBACK, "
+              f"{len(universo)} tickers -> usando {min(max_tickers, len(universo))})")
+        return universo[:max_tickers]
+
+    print("[REVERSION] WARN: No hay fuente de tickers disponible")
+    return []
+
+
 def escanear(
     max_tickers=None,
     top_n_long=None,
@@ -467,26 +506,41 @@ def analizar_ticker_reversion(ticker, df_spy):
         return None
 
 
-def escanear_reversion(tickers_file=None, top_n=15, max_tickers=5200, progress_callback=None):
+def escanear_reversion(tickers_file=None, top_n=15, max_tickers=500, progress_callback=None):
     """
     Escaneo especifico para REVERSION.
-    Analiza el universo USA (universe_usa.json) y calcula score_reversion.
+    Prioridad: data/top_1000.json -> motor/universe_usa.json (fallback).
     """
     if progress_callback:
         progress_callback(0, 0, "Cargando lista de tickers...")
 
-    if tickers_file is None:
-        tickers_file = _ruta_universo()
-
-    with open(tickers_file, "r", encoding="utf-8") as f:
-        data = json.load(f)
-
-    if isinstance(data, dict) and "tickers" in data:
-        tickers = data["tickers"]
+    if tickers_file is not None:
+        # Modo manual: respeta el archivo que pase el caller
+        with open(tickers_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        if isinstance(data, dict) and "tickers" in data:
+            tickers = data["tickers"]
+        else:
+            tickers = data
+        tickers = tickers[:max_tickers]
     else:
-        tickers = data
+        # Modo normal: top_1000.json con fallback a universe_usa.json
+        tickers = _cargar_tickers_reversion(max_tickers=max_tickers)
 
-    tickers = tickers[:max_tickers]
+    if not tickers:
+        print("[REVERSION] Sin tickers para escanear, abortando.")
+        return {
+            "fecha": datetime.now().strftime("%Y-%m-%d %H:%M"),
+            "total_analizados": 0,
+            "tiempo_segundos": 0,
+            "tickers_solicitados": 0,
+            "tickers_descartados": 0,
+            "porcentaje_valido": 0,
+            "top_reversion": [],
+            "top_rebote": [],
+            "top_cambio": [],
+        }
+
     total = len(tickers)
 
     if progress_callback:
