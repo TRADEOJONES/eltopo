@@ -1,9 +1,7 @@
 // ELTOPO - Frontend JS
 
-// URL base del API
-const API_BASE_URL = window.location.hostname === "localhost"
-    ? ""
-    : "";
+// URL base del API (VACIO PARA PRODUCCION. PARA LOCAL: "http://127.0.0.1:8000")
+const API_BASE_URL = "http://127.0.0.1:8000";
 
 // -- Tema claro/oscuro --
 const themeToggle = document.getElementById("themeToggle");
@@ -257,9 +255,8 @@ function renderizar(data) {
     header.className = "card card-header-ticker";
     header.innerHTML = `
         <div style="display: flex; align-items: center; gap: 15px;">
-            <img src="https://logo.clearbit.com/${data.ticker.toLowerCase()}.com" 
-                 onerror="this.style.display='none'" 
-                 style="width: 48px; height: 48px; border-radius: 50%; object-fit: contain; background: white; padding: 4px; border: 1px solid #eee;">
+            <img id="logo-empresa" src="" onerror="this.style.display='none'" 
+                 style="width: 48px; height: 48px; border-radius: 50%; object-fit: contain; background: white; padding: 4px; border: 1px solid #eee; display: none;">
             <div>
                 <h2 style="margin: 0;">${data.ticker} <span id="nombre-empresa" style="font-size: 0.6em; color: #666; font-weight: normal; margin-left: 10px;">Cargando...</span></h2>
                 <p class="fecha" style="margin: 2px 0 0 0;">${data.fecha} ${data.hora}</p>
@@ -268,13 +265,18 @@ function renderizar(data) {
     `;
     resultado.appendChild(header);
 
-    // Pedir nombre a Yahoo Finance (silencioso)
-    fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${data.ticker}?interval=1d&range=1d`)
+    // Pedir nombre y logo a nuestro backend
+    fetch(`${API_BASE_URL}/api/info/${data.ticker}`)
         .then(r => r.json())
-        .then(d => {
-            const meta = d.chart.result[0].meta;
+        .then(info => {
             const span = document.getElementById('nombre-empresa');
-            if (span) span.innerText = meta.longName || meta.shortName || "";
+            if (span) span.innerText = info.nombre || "";
+            
+            if (info.dominio) {
+                const img = document.getElementById('logo-empresa');
+                img.src = `https://logo.clearbit.com/${info.dominio}`;
+                img.style.display = 'block';
+            }
         })
         .catch(() => {});
     // --- FIN NUEVA CABECERA ---
@@ -451,7 +453,7 @@ function renderizar(data) {
     }
 }
 
-// --- NUEVA FUNCION DE DIBUJAR GRAFICO (TRADINGVIEW) ---
+// --- NUEVA FUNCION DE DIBUJAR GRAFICO (USANDO TU BACKEND) ---
 function dibujarGrafico(precios, ticker) {
     const viejo = document.getElementById("chartContainer");
     if (viejo) viejo.remove();
@@ -485,19 +487,18 @@ function dibujarGrafico(precios, ticker) {
         contenedor.innerHTML = '<div style="text-align:center; padding: 50px;">Cargando gráfico...</div>';
         
         try {
-            const interval = rango === '1d' ? '5m' : (rango === '5d' ? '15m' : '1d');
-            const res = await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${tk}?interval=${interval}&range=${rango}`);
-            const dataYahoo = await res.json();
-            const result = dataYahoo.chart.result[0];
+            const res = await fetch(`${API_BASE_URL}/api/grafico/${tk}?rango=${rango}`);
+            if (!res.ok) throw new Error("Error en API");
+            const result = await res.json();
             
             const timestamps = result.timestamp;
             const quotes = result.indicators.quote[0];
             
             const dataGrafico = [];
             for (let i = 0; i < timestamps.length; i++) {
-                if (quotes.close[i] === null) continue;
+                if (quotes.open[i] === null || quotes.high[i] === null || quotes.low[i] === null || quotes.close[i] === null) continue;
                 dataGrafico.push({
-                    time: (timestamps[i]),
+                    time: timestamps[i],
                     open: quotes.open[i],
                     high: quotes.high[i],
                     low: quotes.low[i],
@@ -510,8 +511,14 @@ function dibujarGrafico(precios, ticker) {
             const chart = LightweightCharts.createChart(contenedor, {
                 width: contenedor.clientWidth,
                 height: 350,
-                layout: { backgroundColor: '#ffffff', textColor: '#333' },
-                grid: { vertLines: { color: '#f0f3fa' }, horzLines: { color: '#f0f3fa' } },
+                layout: { 
+                    backgroundColor: document.documentElement.getAttribute('data-theme') === 'dark' ? '#1e222d' : '#ffffff', 
+                    textColor: document.documentElement.getAttribute('data-theme') === 'dark' ? '#d1d4dc' : '#333' 
+                },
+                grid: { 
+                    vertLines: { color: document.documentElement.getAttribute('data-theme') === 'dark' ? '#2b2b43' : '#f0f3fa' }, 
+                    horzLines: { color: document.documentElement.getAttribute('data-theme') === 'dark' ? '#2b2b43' : '#f0f3fa' } 
+                },
                 timeScale: { timeVisible: true, secondsVisible: false },
             });
             
@@ -526,6 +533,7 @@ function dibujarGrafico(precios, ticker) {
             window.addEventListener('resize', () => chart.applyOptions({ width: contenedor.clientWidth }));
             
         } catch (e) {
+            console.error(e);
             contenedor.innerHTML = '<div style="text-align:center; padding: 50px; color: red;">Error al cargar el gráfico</div>';
         }
     }
@@ -535,7 +543,7 @@ function dibujarGrafico(precios, ticker) {
             btn.addEventListener('click', (e) => {
                 document.querySelectorAll('.btn-tiempo').forEach(b => {
                     b.style.background = 'transparent';
-                    b.style.color = 'black';
+                    b.style.color = document.documentElement.getAttribute('data-theme') === 'dark' ? 'white' : 'black';
                 });
                 e.target.style.background = '#007bff';
                 e.target.style.color = 'white';

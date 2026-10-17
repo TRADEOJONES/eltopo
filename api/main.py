@@ -12,6 +12,8 @@ import threading
 import uuid
 import time
 from datetime import datetime
+import urllib.request
+import urllib.parse
 
 from dotenv import load_dotenv
 from motor.motores import analizar_ticker
@@ -331,3 +333,113 @@ def get_scanner_full():
         )
     with open(SCANNER_FULL_FILE, "r", encoding="utf-8") as f:
         return json.load(f)
+
+
+# =====================================================
+# ENDPOINTS PARA LA GRÁFICA Y LOGO (YAHOO FINANCE)
+# =====================================================
+
+@app.get("/api/info/{ticker}")
+def get_info(ticker: str):
+    """Obtiene el nombre y el dominio de la empresa para el logo."""
+    ticker = ticker.upper()
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}?interval=1d&range=1d"
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    
+    try:
+        with urllib.request.urlopen(req) as response:
+            data = json.loads(response.read().decode())
+            meta = data["chart"]["result"][0]["meta"]
+            nombre = meta.get("longName") or meta.get("shortName") or ticker
+            
+            dominios_conocidos = {
+                "NVDA": "nvidia.com", "AAPL": "apple.com", "MSFT": "microsoft.com",
+                "TSLA": "tesla.com", "AMZN": "amazon.com", "GOOGL": "google.com",
+                "GOOG": "google.com", "META": "meta.com", "NFLX": "netflix.com",
+                "AMD": "amd.com", "INTC": "intel.com", "JPM": "jpmorgan.com",
+                "BAC": "bankofamerica.com", "V": "visa.com", "MA": "mastercard.com",
+                "WMT": "walmart.com", "PG": "pg.com", "JNJ": "jnj.com",
+                "DIS": "disney.com", "KO": "coca-cola.com", "PEP": "pepsico.com",
+                "XOM": "exxonmobil.com", "CVX": "chevron.com", "PFE": "pfizer.com",
+                "MRNA": "modernatx.com", "BABA": "alibaba.com", "PYPL": "paypal.com",
+                "ADBE": "adobe.com", "CRM": "salesforce.com", "ORCL": "oracle.com",
+                "CSCO": "cisco.com", "QCOM": "qualcomm.com", "TXN": "ti.com",
+                "AVGO": "broadcom.com", "COST": "costco.com", "HD": "homedepot.com",
+                "NKE": "nike.com", "MCD": "mcdonalds.com", "SBUX": "starbucks.com",
+                "BA": "boeing.com", "CAT": "caterpillar.com", "GE": "ge.com",
+                "F": "ford.com", "GM": "gm.com", "UBER": "uber.com",
+                "LYFT": "lyft.com", "ABNB": "airbnb.com", "COIN": "coinbase.com",
+                "PLTR": "palantir.com", "SNOW": "snowflake.com", "NET": "cloudflare.com"
+            }
+            
+            dominio = dominios_conocidos.get(ticker, "")
+            
+            if not dominio and nombre:
+                limpio = nombre.lower()
+                for palabra in ["inc.", "corp.", "corporation", "company", "ltd.", "plc", "holdings", "group", "international"]:
+                    limpio = limpio.replace(palabra, "")
+                limpio = limpio.replace(".", "").replace(",", "").strip()
+                partes = limpio.split()
+                if partes:
+                    dominio = partes[0] + ".com"
+
+            return {"nombre": nombre, "dominio": dominio}
+    except Exception as e:
+        print(f"Error en /api/info: {e}")
+        return {"nombre": ticker, "dominio": ""}
+
+
+@app.get("/api/grafico/{ticker}")
+def get_grafico(ticker: str, rango: str = "1d"):
+    """Descarga los datos del gráfico desde Yahoo Finance."""
+    ticker = ticker.upper()
+    
+    intervalos = {
+        "1d": "5m",
+        "5d": "15m",
+        "1mo": "1d",
+        "6mo": "1d",
+        "1y": "1d",
+        "5y": "1wk"
+    }
+    intervalo = intervalos.get(rango, "1d")
+    
+    try:
+        import yfinance as yf
+        t = yf.Ticker(ticker)
+        hist = t.history(period=rango, interval=intervalo)
+        
+        if hist.empty:
+            raise Exception("No hay datos")
+            
+        timestamps = []
+        open_list = []
+        high_list = []
+        low_list = []
+        close_list = []
+        
+        for date, row in hist.iterrows():
+            ts = int(date.timestamp())
+            if row['Open'] is None or row['High'] is None or row['Low'] is None or row['Close'] is None:
+                continue
+                
+            timestamps.append(ts)
+            open_list.append(float(row['Open']))
+            high_list.append(float(row['High']))
+            low_list.append(float(row['Low']))
+            close_list.append(float(row['Close']))
+            
+        return {
+            "timestamp": timestamps,
+            "indicators": {
+                "quote": [{
+                    "open": open_list,
+                    "high": high_list,
+                    "low": low_list,
+                    "close": close_list
+                }]
+            }
+        }
+    except Exception as e:
+        print(f"Error en /api/grafico: {e}")
+        raise HTTPException(status_code=500, detail="Error al descargar datos")

@@ -1,113 +1,445 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELTOPO</title>
-    <link rel="icon" type="image/x-icon" href="images/icono.ico">
-    <link rel="icon" type="image/png" href="images/icono.png">
-    <link rel="stylesheet" href="style.css">
-    <!-- LIBRERÍA PARA EL GRÁFICO INTERACTIVO -->
-    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
-</head>
-<body>
+"""ELTOPO - API REST con FastAPI."""
 
-<!-- Header con logo y toggle -->
-<header class="header">
-    <div class="header-top">
-        <div class="logo-wrap">
-            <img src="images/icono.png" alt="ELTOPO" class="logo-img" />
-            <span class="logo-text">ELTOPO</span>
-        </div>
-        <button class="theme-toggle" id="themeToggle">&#127769;</button>
-    </div>
-</header>
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+from pydantic import BaseModel
+from pathlib import Path
+import json
+import os
+import threading
+import uuid
+import time
+from datetime import datetime
+import urllib.request
+import urllib.parse
 
-<main class="content">
+from dotenv import load_dotenv
+from motor.motores import analizar_ticker
+from scanner.scanner import escanear, escanear_reversion, escanear_full
 
-    <!-- Buscador (siempre visible) -->
-    <div class="search-wrap">
-        <div class="search-box">
-            <span class="search-icon">&#9935;</span>
-            <input type="text" id="tickerInput" placeholder="Buscar acción o ticker..." autocomplete="off" />
-            <button class="btn-escarbar" id="btnEscarbar">Escarbar</button>
-        </div>
-    </div>
+# --- Configuracion ---
+load_dotenv()
+SCANNER_TOKEN = os.getenv("SCANNER_TOKEN", "")
 
-    <!-- Pantalla de bienvenida -->
-    <div id="welcome" class="welcome">
-        <img src="images/logo.png" alt="ELTOPO" class="welcome-logo" />
-        <h1 class="welcome-title">ELTOPO</h1>
-        <p class="welcome-subtitle">Análisis técnico, fundamental y cuantitativo del mercado bursátil</p>
-    </div>
+app = FastAPI(title="ELTOPO API", version="1.0")
 
-    <!-- Botones de modulo -->
-    <div class="mode-selector">
-        <button class="mode-btn active" data-mode="tendencia">&#128200; TENDENCIA</button>
-        <button class="mode-btn" data-mode="reversion">&#128201;&#128200; REVERSION</button>
-    </div>
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-    <!-- Loading -->
-    <div id="loading" class="loading" style="display: none;">
-        <div class="spinner"></div>
-        <p>Analizando...</p>
-    </div>
+WEB_DIR = Path(__file__).parent.parent / "web"
+TICKERS_FILE = Path(__file__).parent.parent / "motor" / "tickers.json"
+SCANNER_FILE = Path(__file__).parent.parent / "data" / "scanner_result.json"
+SCANNER_FULL_FILE = Path(__file__).parent.parent / "data" / "scanner_result_full.json"
+SCANNER_REVERSION_FILE = Path(__file__).parent.parent / "data" / "scanner_result_reversion.json"
 
-    <!-- Resultado del buscador individual -->
-    <div id="resultado" class="cards"></div>
 
-    <!-- VISTA TENDENCIA -->
-    <div id="viewTendencia" style="display: none;">
+class AnalyzeRequest(BaseModel):
+    ticker: str
+    modo: str = "auto"
 
-        <div class="scanner-header">
-            <div class="scanner-titulo-wrap">
-                <h2 class="scanner-titulo">Tendencia</h2>
-                <p class="scanner-subtitulo" id="scannerMeta">Cargando...</p>
-            </div>
-            <button class="btn-refresh" id="btnRefreshScanner" title="Ejecutar scanner de nuevo (45s)">
-                &#128260; Actualizar
-            </button>
-        </div>
 
-        <div class="scanner-grid">
+_tickers_cache = None
 
-            <div class="scanner-col scanner-col-long">
-                <div class="scanner-col-header">
-                    <span class="scanner-col-titulo">&#128994; TOP 15 LONG</span>
-                    <span class="scanner-col-hint">Mejores para comprar</span>
-                </div>
-                <div id="scannerLong" class="scanner-list"></div>
-            </div>
 
-            <div class="scanner-col scanner-col-short">
-                <div class="scanner-col-header">
-                    <span class="scanner-col-titulo">&#128308; TOP 15 SHORT</span>
-                    <span class="scanner-col-hint">Mejores para vender</span>
-                </div>
-                <div id="scannerShort" class="scanner-list"></div>
-            </div>
+def _cargar_tickers():
+    global _tickers_cache
+    if _tickers_cache is None:
+        try:
+            with open(TICKERS_FILE, "r", encoding="utf-8") as f:
+                _tickers_cache = json.load(f)
+        except Exception:
+            _tickers_cache = {}
+    return _tickers_cache
 
-        </div>
 
-        <p class="scanner-pie">
-    Click en un ticker para analizarlo con el motor completo
-</p>
+# --- API endpoints ---
 
-<div class="topo-pie">
-    <img src="images/icono.png" alt="ELTOPO" />
-</div>
+@app.get("/api/health")
+def health():
+    return {"status": "ok"}
 
-    </div>
 
-  <div id="viewReversion" style="display: none;"></div>
+@app.get("/api/buscar")
+def buscar(q: str):
+    q = q.strip().lower()
+    if not q:
+        return {"resultados": []}
 
-</main>
+    tickers = _cargar_tickers()
+    resultados = []
+    ya_incluidos = set()
 
-<footer class="footer">
-    ELTOPO &copy; 2026 &mdash; Análisis técnico, fundamental y cuantitativo
-</footer>
+    for symbol, nombre in tickers.items():
+        if symbol.lower().startswith(q) or nombre.lower().startswith(q):
+            resultados.append({"symbol": symbol, "nombre": nombre})
+            ya_incluidos.add(symbol)
+            if len(resultados) >= 10:
+                break
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="app.js"></script>
-</body>
-</html>
+    if len(resultados) < 10:
+        for symbol, nombre in tickers.items():
+            if symbol in ya_incluidos:
+                continue
+            if q in symbol.lower() or q in nombre.lower():
+                resultados.append({"symbol": symbol, "nombre": nombre})
+                if len(resultados) >= 10:
+                    break
+
+    return {"resultados": resultados}
+
+
+@app.post("/api/analyze")
+def analizar(req: AnalyzeRequest):
+    ticker = req.ticker.strip().upper()
+    if not ticker:
+        raise HTTPException(status_code=400, detail="Ticker vacio")
+    if len(ticker) > 10:
+        raise HTTPException(status_code=400, detail="Ticker demasiado largo")
+    try:
+        resultado = analizar_ticker(ticker)
+        return resultado
+    except Exception as e:
+        raise HTTPException(status_code=500, detail="Error: " + str(e))
+
+
+# --- SCANNER endpoints ---
+
+@app.get("/api/scanner")
+def get_scanner():
+    """Devuelve el Top 15 LONG + Top 15 SHORT del scanner."""
+    if not SCANNER_FILE.exists():
+        return {
+            "error": "Scanner no ejecutado todavia",
+            "hint": "Ejecuta: python -m scanner",
+            "top_long": [],
+            "top_short": [],
+        }
+    try:
+        with open(SCANNER_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail="Error leyendo scanner: " + str(e))
+
+
+@app.get("/api/scanner/long")
+def get_scanner_long():
+    """Devuelve solo el Top LONG."""
+    if not SCANNER_FILE.exists():
+        return {"error": "Scanner no ejecutado", "top_long": []}
+    with open(SCANNER_FILE, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return {
+        "fecha": data.get("fecha"),
+        "total_analizados": data.get("total_analizados"),
+        "top_long": data.get("top_long", []),
+    }
+
+
+@app.get("/api/scanner/short")
+def get_scanner_short():
+    """Devuelve solo el Top SHORT."""
+    if not SCANNER_FILE.exists():
+        return {"error": "Scanner no ejecutado", "top_short": []}
+    with open(SCANNER_FILE, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return {
+        "fecha": data.get("fecha"),
+        "total_analizados": data.get("total_analizados"),
+        "top_short": data.get("top_short", []),
+    }
+
+
+@app.post("/api/scanner/refresh")
+def refresh_scanner(
+    max_tickers: int = 5158,
+    top_n: int = 15,
+    token: str = "",
+):
+    """Ejecuta el scanner de nuevo (tarda ~45s).
+
+    Requiere token si SCANNER_TOKEN esta configurado.
+    Se pasa como query param: ?token=XXX
+    """
+    if SCANNER_TOKEN and token != SCANNER_TOKEN:
+        raise HTTPException(status_code=403, detail="Token invalido")
+
+    try:
+        resultado = escanear(max_tickers=max_tickers, top_n_long=top_n, top_n_short=top_n)
+        return {
+            "status": "ok",
+            "fecha": resultado.get("fecha"),
+            "total_analizados": resultado.get("total_analizados"),
+            "tiempo_segundos": resultado.get("tiempo_segundos"),
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail="Error ejecutando scanner: " + str(e))
+
+
+# --- Frontend ---
+
+@app.get("/")
+def raiz():
+    return FileResponse(WEB_DIR / "index.html")
+
+
+@app.get("/index.html")
+def index_html():
+    return FileResponse(WEB_DIR / "index.html")
+
+
+@app.get("/style.css")
+def style_css():
+    return FileResponse(WEB_DIR / "style.css", media_type="text/css")
+
+
+@app.get("/app.js")
+def app_js():
+    return FileResponse(WEB_DIR / "app.js", media_type="application/javascript")
+
+
+app.mount("/images", StaticFiles(directory=str(WEB_DIR / "images")), name="images")
+
+
+# =====================================================
+# REVERSION - Escaneo on-demand con progreso
+# =====================================================
+
+_reversion_jobs = {}
+_reversion_lock = threading.Lock()
+_reversion_job_activo = {"job_id": None}
+
+
+def _run_reversion(job_id, max_tickers=5200, top_n=15):
+    """Ejecuta el escaneo de reversion en un hilo de background."""
+    try:
+        def progress_callback(i, total, msg):
+            with _reversion_lock:
+                if job_id in _reversion_jobs:
+                    _reversion_jobs[job_id]["progreso"] = i
+                    _reversion_jobs[job_id]["total"] = total
+                    if msg:
+                        _reversion_jobs[job_id]["mensaje"] = msg
+                    elif total > 0:
+                        pct = int(i * 100 / total)
+                        _reversion_jobs[job_id]["mensaje"] = f"Analizando {i}/{total} ({pct}%)..."
+
+        resultado = escanear_reversion(
+            max_tickers=max_tickers,
+            top_n=top_n,
+            progress_callback=progress_callback,
+        )
+
+        with _reversion_lock:
+            if job_id in _reversion_jobs:
+                _reversion_jobs[job_id]["completado"] = True
+                _reversion_jobs[job_id]["resultado"] = resultado
+                _reversion_jobs[job_id]["mensaje"] = "Completado"
+                _reversion_jobs[job_id]["tiempo"] = time.time()
+
+    except Exception as e:
+        with _reversion_lock:
+            if job_id in _reversion_jobs:
+                _reversion_jobs[job_id]["completado"] = True
+                _reversion_jobs[job_id]["error"] = str(e)
+                _reversion_jobs[job_id]["mensaje"] = f"Error: {str(e)}"
+
+    finally:
+        with _reversion_lock:
+            if _reversion_job_activo["job_id"] == job_id:
+                _reversion_job_activo["job_id"] = None
+
+
+@app.post("/api/reversion/start")
+def reversion_start(max_tickers: int = 5200, top_n: int = 15):
+    """Arranca un escaneo de reversion. Devuelve job_id."""
+    with _reversion_lock:
+        ahora = time.time()
+        viejos = [
+            jid for jid, j in _reversion_jobs.items()
+            if j.get("tiempo", 0) and (ahora - j["tiempo"]) > 900
+        ]
+        for jid in viejos:
+            del _reversion_jobs[jid]
+
+        activo = _reversion_job_activo["job_id"]
+        if activo and activo in _reversion_jobs:
+            if not _reversion_jobs[activo].get("completado", False):
+                return {
+                    "job_id": activo,
+                    "ya_en_progreso": True,
+                    "mensaje": "Ya hay un escaneo en curso",
+                }
+
+        job_id = str(uuid.uuid4())
+        _reversion_jobs[job_id] = {
+            "progreso": 0,
+            "total": 0,
+            "mensaje": "Iniciando...",
+            "completado": False,
+            "resultado": None,
+            "tiempo": time.time(),
+        }
+        _reversion_job_activo["job_id"] = job_id
+
+    thread = threading.Thread(
+        target=_run_reversion,
+        args=(job_id, max_tickers, top_n),
+        daemon=True,
+    )
+    thread.start()
+
+    return {"job_id": job_id, "ya_en_progreso": False}
+
+
+@app.get("/api/reversion/status/{job_id}")
+def reversion_status(job_id: str):
+    """Consulta el estado de un job de reversion."""
+    with _reversion_lock:
+        if job_id not in _reversion_jobs:
+            raise HTTPException(status_code=404, detail="Job no encontrado")
+        return dict(_reversion_jobs[job_id])
+
+
+@app.get("/api/reversion/result")
+def get_reversion_result():
+    """Devuelve el ultimo escaneo de reversion guardado."""
+    if not SCANNER_REVERSION_FILE.exists():
+        raise HTTPException(
+            status_code=404,
+            detail="El reversion no ha ejecutado todavia"
+        )
+    with open(SCANNER_REVERSION_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+# =====================================================
+# SCANNER FULL (universo 5200 tickers)
+# =====================================================
+
+@app.get("/api/scanner/full")
+def get_scanner_full():
+    """Devuelve el ultimo escaneo del universo completo."""
+    if not SCANNER_FULL_FILE.exists():
+        raise HTTPException(
+            status_code=404,
+            detail="El scanner full no ha ejecutado todavia"
+        )
+    with open(SCANNER_FULL_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+# =====================================================
+# ENDPOINTS PARA LA GRÁFICA Y LOGO (YAHOO FINANCE)
+# =====================================================
+
+@app.get("/api/info/{ticker}")
+def get_info(ticker: str):
+    """Obtiene el nombre y el dominio de la empresa para el logo."""
+    ticker = ticker.upper()
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}?interval=1d&range=1d"
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    
+    try:
+        with urllib.request.urlopen(req) as response:
+            data = json.loads(response.read().decode())
+            meta = data["chart"]["result"][0]["meta"]
+            nombre = meta.get("longName") or meta.get("shortName") or ticker
+            
+            dominios_conocidos = {
+                "NVDA": "nvidia.com", "AAPL": "apple.com", "MSFT": "microsoft.com",
+                "TSLA": "tesla.com", "AMZN": "amazon.com", "GOOGL": "google.com",
+                "GOOG": "google.com", "META": "meta.com", "NFLX": "netflix.com",
+                "AMD": "amd.com", "INTC": "intel.com", "JPM": "jpmorgan.com",
+                "BAC": "bankofamerica.com", "V": "visa.com", "MA": "mastercard.com",
+                "WMT": "walmart.com", "PG": "pg.com", "JNJ": "jnj.com",
+                "DIS": "disney.com", "KO": "coca-cola.com", "PEP": "pepsico.com",
+                "XOM": "exxonmobil.com", "CVX": "chevron.com", "PFE": "pfizer.com",
+                "MRNA": "modernatx.com", "BABA": "alibaba.com", "PYPL": "paypal.com",
+                "ADBE": "adobe.com", "CRM": "salesforce.com", "ORCL": "oracle.com",
+                "CSCO": "cisco.com", "QCOM": "qualcomm.com", "TXN": "ti.com",
+                "AVGO": "broadcom.com", "COST": "costco.com", "HD": "homedepot.com",
+                "NKE": "nike.com", "MCD": "mcdonalds.com", "SBUX": "starbucks.com",
+                "BA": "boeing.com", "CAT": "caterpillar.com", "GE": "ge.com",
+                "F": "ford.com", "GM": "gm.com", "UBER": "uber.com",
+                "LYFT": "lyft.com", "ABNB": "airbnb.com", "COIN": "coinbase.com",
+                "PLTR": "palantir.com", "SNOW": "snowflake.com", "NET": "cloudflare.com"
+            }
+            
+            dominio = dominios_conocidos.get(ticker, "")
+            
+            if not dominio and nombre:
+                limpio = nombre.lower()
+                for palabra in ["inc.", "corp.", "corporation", "company", "ltd.", "plc", "holdings", "group", "international"]:
+                    limpio = limpio.replace(palabra, "")
+                limpio = limpio.replace(".", "").replace(",", "").strip()
+                partes = limpio.split()
+                if partes:
+                    dominio = partes[0] + ".com"
+
+            return {"nombre": nombre, "dominio": dominio}
+    except Exception as e:
+        print(f"Error en /api/info: {e}")
+        return {"nombre": ticker, "dominio": ""}
+
+
+@app.get("/api/grafico/{ticker}")
+def get_grafico(ticker: str, rango: str = "1d"):
+    """Descarga los datos del gráfico desde Yahoo Finance."""
+    ticker = ticker.upper()
+    
+    intervalos = {
+        "1d": "5m",
+        "5d": "15m",
+        "1mo": "1d",
+        "6mo": "1d",
+        "1y": "1d",
+        "5y": "1wk"
+    }
+    intervalo = intervalos.get(rango, "1d")
+    
+    try:
+        import yfinance as yf
+        t = yf.Ticker(ticker)
+        hist = t.history(period=rango, interval=intervalo)
+        
+        if hist.empty:
+            raise Exception("No hay datos")
+            
+        timestamps = []
+        open_list = []
+        high_list = []
+        low_list = []
+        close_list = []
+        
+        for date, row in hist.iterrows():
+            ts = int(date.timestamp())
+            if row['Open'] is None or row['High'] is None or row['Low'] is None or row['Close'] is None:
+                continue
+                
+            timestamps.append(ts)
+            open_list.append(float(row['Open']))
+            high_list.append(float(row['High']))
+            low_list.append(float(row['Low']))
+            close_list.append(float(row['Close']))
+            
+        return {
+            "timestamp": timestamps,
+            "indicators": {
+                "quote": [{
+                    "open": open_list,
+                    "high": high_list,
+                    "low": low_list,
+                    "close": close_list
+                }]
+            }
+        }
+    except Exception as e:
+        print(f"Error en /api/grafico: {e}")
+        raise HTTPException(status_code=500, detail="Error al descargar datos")
