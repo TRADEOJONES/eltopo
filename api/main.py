@@ -336,7 +336,7 @@ def get_scanner_full():
 
 
 # =====================================================
-# ENDPOINTS PARA LA GRÁFICA Y LOGO (YAHOO FINANCE)
+# ENDPOINTS PARA LA GRAFICA Y LOGO (YAHOO FINANCE)
 # =====================================================
 
 @app.get("/api/info/{ticker}")
@@ -391,7 +391,7 @@ def get_info(ticker: str):
 
 @app.get("/api/grafico/{ticker}")
 def get_grafico(ticker: str, rango: str = "1d"):
-    """Descarga los datos del gráfico desde Yahoo Finance."""
+    """Descarga los datos del grafico desde Yahoo Finance."""
     ticker = ticker.upper()
     
     intervalos = {

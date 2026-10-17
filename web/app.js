@@ -1,7 +1,7 @@
 // ELTOPO - Frontend JS
 
 // URL base del API (VACIO PARA PRODUCCION. PARA LOCAL: "http://127.0.0.1:8000")
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "";
 
 // -- Tema claro/oscuro --
 const themeToggle = document.getElementById("themeToggle");
@@ -255,8 +255,8 @@ function renderizar(data) {
     header.className = "card card-header-ticker";
     header.innerHTML = `
         <div style="display: flex; align-items: center; gap: 15px;">
-            <img id="logo-empresa" src="" onerror="this.style.display='none'" 
-                 style="width: 48px; height: 48px; border-radius: 50%; object-fit: contain; background: white; padding: 4px; border: 1px solid #eee; display: none;">
+            <img id="logo-empresa" alt="Logo" 
+                 style="width: 48px; height: 48px; border-radius: 50%; object-fit: contain; background: white; padding: 4px; border: 1px solid #eee;">
             <div>
                 <h2 style="margin: 0;">${data.ticker} <span id="nombre-empresa" style="font-size: 0.6em; color: #666; font-weight: normal; margin-left: 10px;">Cargando...</span></h2>
                 <p class="fecha" style="margin: 2px 0 0 0;">${data.fecha} ${data.hora}</p>
@@ -274,8 +274,7 @@ function renderizar(data) {
             
             if (info.dominio) {
                 const img = document.getElementById('logo-empresa');
-                img.src = `https://logo.clearbit.com/${info.dominio}`;
-                img.style.display = 'block';
+                img.src = `https://cdn.brandfetch.io/${info.dominio}?c=1idSu-Lz7oOsxV86lc6`;
             }
         })
         .catch(() => {});
@@ -445,11 +444,29 @@ function renderizar(data) {
     cardC.innerHTML = htmlCat;
     resultado.appendChild(cardC);
 
-    if (estiloGanador && estiloGanador.valido) {
-        const precios = estiloGanador.indicadores ? estiloGanador.indicadores.precios_historicos : null;
-        if (precios && precios.length > 0) {
-            dibujarGrafico(precios, data.ticker);
+        // Buscar precios en la estrategia ganadora, o en la primera que tenga
+    let precios = null;
+    if (estiloGanador && estiloGanador.valido && estiloGanador.indicadores) {
+        precios = estiloGanador.indicadores.precios_historicos;
+    }
+    
+    // Si la ganadora no tiene, buscamos en las demás
+    if (!precios) {
+        for (const nombre of estilosOrden) {
+            const est = data.estilos[nombre];
+            if (est && est.valido && est.indicadores && est.indicadores.precios_historicos) {
+                precios = est.indicadores.precios_historicos;
+                break;
+            }
         }
+    }
+
+    // Si encontramos precios, dibujamos el gráfico
+    if (precios && precios.length > 0) {
+        dibujarGrafico(precios, data.ticker);
+    } else {
+        // Si no hay precios, forzamos el gráfico igualmente
+        dibujarGrafico([], data.ticker);
     }
 }
 
