@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-19 23:12",
+  "fecha": "2026-10-19 23:56",
   "total": 1000,
   "tickers": [
     "EXPO",
@@ -245,7 +245,6 @@
     "BZH",
     "CDW",
     "G",
-    "ADI",
     "GNE",
     "NIQ",
     "WLTH",
@@ -282,6 +281,7 @@
     "ALEX",
     "META",
     "PAHC",
+    "ADI",
     "DOCS",
     "ECPG",
     "EXLS",
