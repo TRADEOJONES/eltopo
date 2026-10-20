@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-20 20:53",
+  "fecha": "2026-10-20 22:16",
   "total": 1000,
   "tickers": [
     "TMO",
@@ -348,8 +348,8 @@
     "SAP",
     "CCC",
     "CVE",
-    "MSM",
     "MSGM",
+    "MSM",
     "VSXY",
     "WSR",
     "COCO",
@@ -710,8 +710,8 @@
     "GO",
     "GSBC",
     "NDAQ",
-    "PBR",
     "PCB",
+    "PBR",
     "WELL",
     "BR",
     "CROX",
