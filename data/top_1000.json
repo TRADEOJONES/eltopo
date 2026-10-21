@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-20 23:30",
+  "fecha": "2026-10-21 00:17",
   "total": 1000,
   "tickers": [
     "TMO",
@@ -42,7 +42,6 @@
     "VTS",
     "BTI",
     "CRCT",
-    "TEVA",
     "HLX",
     "BBY",
     "INSP",
@@ -92,8 +91,8 @@
     "NTRA",
     "OPLN",
     "EXPD",
-    "LAUR",
     "LAW",
+    "LAUR",
     "PR",
     "HBB",
     "MED",
@@ -176,8 +175,8 @@
     "HALO",
     "FBLA",
     "NOG",
-    "TDY",
     "TECH",
+    "TDY",
     "DVN",
     "MTW",
     "UGI",
@@ -284,7 +283,6 @@
     "SXT",
     "UHS",
     "EGBN",
-    "RCBC",
     "MOH",
     "MQ",
     "NCNO",
@@ -348,8 +346,8 @@
     "SAP",
     "CCC",
     "CVE",
-    "MSGM",
     "MSM",
+    "MSGM",
     "VSXY",
     "WSR",
     "COCO",
@@ -704,6 +702,7 @@
     "CCL",
     "ERIE",
     "INTR",
+    "TEVA",
     "UNP",
     "AMLX",
     "CBRL",
@@ -1001,6 +1000,7 @@
     "KVYO",
     "MIDD",
     "NWFL",
-    "PCOR"
+    "PCOR",
+    "SJM"
   ]
 }

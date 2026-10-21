@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-10-20 23:30",
-  "total_analizados": 3237,
-  "tiempo_segundos": 1490.6,
+  "fecha": "2026-10-21 00:17",
+  "total_analizados": 3240,
+  "tiempo_segundos": 1488.3,
   "top_long": [
     {
       "ticker": "TMO",
@@ -148,7 +148,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-21",
-        "dias_hasta_earnings": 0,
+        "dias_hasta_earnings": -1,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -323,7 +323,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-29",
-        "dias_hasta_earnings": 8,
+        "dias_hasta_earnings": 7,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -498,7 +498,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-12-14",
-        "dias_hasta_earnings": 54,
+        "dias_hasta_earnings": 53,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -672,8 +672,8 @@
         "nota": "OK"
       },
       "catalizadores": {
-        "proximos_earnings": "2026-11-02",
-        "dias_hasta_earnings": 12,
+        "proximos_earnings": "2026-11-04",
+        "dias_hasta_earnings": 13,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -848,7 +848,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-27",
-        "dias_hasta_earnings": 6,
+        "dias_hasta_earnings": 5,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1023,7 +1023,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-04",
-        "dias_hasta_earnings": 14,
+        "dias_hasta_earnings": 13,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1198,7 +1198,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-21",
-        "dias_hasta_earnings": 0,
+        "dias_hasta_earnings": -1,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1373,7 +1373,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-04",
-        "dias_hasta_earnings": 14,
+        "dias_hasta_earnings": 13,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1548,7 +1548,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-22",
-        "dias_hasta_earnings": 1,
+        "dias_hasta_earnings": 0,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1723,7 +1723,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-02",
-        "dias_hasta_earnings": 12,
+        "dias_hasta_earnings": 11,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1898,7 +1898,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-04",
-        "dias_hasta_earnings": 14,
+        "dias_hasta_earnings": 13,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -2065,8 +2065,8 @@
         "nota": "OK"
       },
       "catalizadores": {
-        "proximos_earnings": "2026-11-02",
-        "dias_hasta_earnings": 12,
+        "proximos_earnings": "2026-11-09",
+        "dias_hasta_earnings": 18,
         "historial_earnings": [
           {
             "periodo": "2023-09-30",
@@ -2241,7 +2241,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-21",
-        "dias_hasta_earnings": 0,
+        "dias_hasta_earnings": -1,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -2397,7 +2397,7 @@
         "market_cap": 16048793600.0,
         "enterprise_value": 26181693440.0,
         "beta": 0.508,
-        "precio_objetivo": 51.224724,
+        "precio_objetivo": 51.2178,
         "recomendacion": "buy"
       },
       "sentimiento": {
@@ -2416,7 +2416,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-28",
-        "dias_hasta_earnings": 7,
+        "dias_hasta_earnings": 6,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -2592,8 +2592,8 @@
         "nota": "OK"
       },
       "catalizadores": {
-        "proximos_earnings": "2026-11-02",
-        "dias_hasta_earnings": 12,
+        "proximos_earnings": "2026-10-29",
+        "dias_hasta_earnings": 7,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -2768,7 +2768,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-03",
-        "dias_hasta_earnings": 13,
+        "dias_hasta_earnings": 12,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -2943,7 +2943,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-22",
-        "dias_hasta_earnings": 1,
+        "dias_hasta_earnings": 0,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -3118,7 +3118,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-26",
-        "dias_hasta_earnings": 5,
+        "dias_hasta_earnings": 4,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -3260,7 +3260,7 @@
         "margen_operativo": 0.14849,
         "margen_neto": 0.116960004,
         "per": 17.590944,
-        "per_forward": 17.353134,
+        "per_forward": 17.268028,
         "ps": 2.0557785,
         "pb": 5.0385146,
         "ev_ebitda": 13.935,
@@ -3292,8 +3292,8 @@
         "nota": "OK"
       },
       "catalizadores": {
-        "proximos_earnings": "2026-10-20",
-        "dias_hasta_earnings": -1,
+        "proximos_earnings": null,
+        "dias_hasta_earnings": null,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -4171,7 +4171,7 @@
         "recomendacion_analistas": null,
         "precio_objetivo": null,
         "insider_compras": 8,
-        "insider_ventas": 3,
+        "insider_ventas": 1,
         "nota": "OK"
       },
       "catalizadores": {
