@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-10-21 21:03",
+  "fecha": "2026-10-21 22:21",
   "total_analizados": 3243,
-  "tiempo_segundos": 2393.2,
+  "tiempo_segundos": 1489.3,
   "top_long": [
     {
       "ticker": "WOR",
@@ -815,9 +815,9 @@
         "margen_operativo": 0.19777,
         "margen_neto": 0.15948,
         "per": 41.686275,
-        "per_forward": 25.134184,
+        "per_forward": 25.139397,
         "ps": 6.5479875,
-        "pb": 3.1262197,
+        "pb": 3.1468325,
         "ev_ebitda": 22.566,
         "deuda_equity": 52.97,
         "current_ratio": 1.651,
@@ -4911,7 +4911,7 @@
         "market_cap": 11854708736.0,
         "enterprise_value": 15366753280.0,
         "beta": null,
-        "precio_objetivo": 68.21053,
+        "precio_objetivo": 68.05263,
         "recomendacion": "buy"
       },
       "sentimiento": {
