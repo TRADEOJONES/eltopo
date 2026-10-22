@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-10-22 20:57",
+  "fecha": "2026-10-22 22:18",
   "total_analizados": 3227,
-  "tiempo_segundos": 2199.0,
+  "tiempo_segundos": 1490.8,
   "top_long": [
     {
       "ticker": "WOR",
@@ -1265,11 +1265,11 @@
       "macd_signal": 2.1237622635991547,
       "mm50": 234.05489999999998,
       "mm200": 198.7498,
-      "vol_relativo": 2.152273314261867,
+      "vol_relativo": 2.1522868322151516,
       "atr": 8.573844377276968,
       "adx": 20.041058423832872,
       "poc": 246.83946666666665,
-      "obv": -3749793.0,
+      "obv": -3749788.0,
       "obv_anterior": -4893726.0,
       "precios_historicos": [
         201.32,
@@ -2756,7 +2756,7 @@
         "market_cap": 4161358336.0,
         "enterprise_value": null,
         "beta": 0.638,
-        "precio_objetivo": 7.4052205,
+        "precio_objetivo": 7.3945503,
         "recomendacion": "strong_buy"
       },
       "sentimiento": {
