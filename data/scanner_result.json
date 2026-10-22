@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-10-21 23:34",
-  "total_analizados": 3243,
-  "tiempo_segundos": 1490.3,
+  "fecha": "2026-10-22 00:25",
+  "total_analizados": 3251,
+  "tiempo_segundos": 1488.3,
   "top_long": [
     {
       "ticker": "WOR",
@@ -148,7 +148,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-12-14",
-        "dias_hasta_earnings": 53,
+        "dias_hasta_earnings": 52,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -322,8 +322,8 @@
         "nota": "OK"
       },
       "catalizadores": {
-        "proximos_earnings": "2026-10-21",
-        "dias_hasta_earnings": -1,
+        "proximos_earnings": null,
+        "dias_hasta_earnings": null,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -498,7 +498,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-27",
-        "dias_hasta_earnings": 5,
+        "dias_hasta_earnings": 4,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -673,7 +673,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-02",
-        "dias_hasta_earnings": 11,
+        "dias_hasta_earnings": 10,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -815,7 +815,7 @@
         "margen_operativo": 0.19777,
         "margen_neto": 0.15948,
         "per": 41.686275,
-        "per_forward": 25.165369,
+        "per_forward": 25.17577,
         "ps": 6.5479875,
         "pb": 3.1468325,
         "ev_ebitda": 22.566,
@@ -847,8 +847,8 @@
         "nota": "OK"
       },
       "catalizadores": {
-        "proximos_earnings": "2026-10-21",
-        "dias_hasta_earnings": -1,
+        "proximos_earnings": null,
+        "dias_hasta_earnings": null,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -1023,7 +1023,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-26",
-        "dias_hasta_earnings": 4,
+        "dias_hasta_earnings": 3,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1198,7 +1198,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-30",
-        "dias_hasta_earnings": 8,
+        "dias_hasta_earnings": 7,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1373,7 +1373,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-18",
-        "dias_hasta_earnings": 27,
+        "dias_hasta_earnings": 26,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1548,7 +1548,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-04",
-        "dias_hasta_earnings": 13,
+        "dias_hasta_earnings": 12,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1722,8 +1722,8 @@
         "nota": "OK"
       },
       "catalizadores": {
-        "proximos_earnings": "2026-10-21",
-        "dias_hasta_earnings": -1,
+        "proximos_earnings": null,
+        "dias_hasta_earnings": null,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -1898,7 +1898,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-02",
-        "dias_hasta_earnings": 11,
+        "dias_hasta_earnings": 10,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -2066,7 +2066,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-09",
-        "dias_hasta_earnings": 18,
+        "dias_hasta_earnings": 17,
         "historial_earnings": [
           {
             "periodo": "2023-09-30",
@@ -2241,7 +2241,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-12-07",
-        "dias_hasta_earnings": 46,
+        "dias_hasta_earnings": 45,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -2382,7 +2382,7 @@
         "margen_bruto": 0.54976004,
         "margen_operativo": 0.17052999,
         "margen_neto": 0.08158,
-        "per": 74.933014,
+        "per": 74.576195,
         "per_forward": 26.56915,
         "ps": 6.0016074,
         "pb": 2.4174552,
@@ -2416,7 +2416,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-03",
-        "dias_hasta_earnings": 12,
+        "dias_hasta_earnings": 11,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -2591,7 +2591,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-10",
-        "dias_hasta_earnings": 19,
+        "dias_hasta_earnings": 18,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -2768,7 +2768,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-01-19",
-        "dias_hasta_earnings": 89,
+        "dias_hasta_earnings": 88,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -2943,7 +2943,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-29",
-        "dias_hasta_earnings": 7,
+        "dias_hasta_earnings": 6,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -3118,7 +3118,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-26",
-        "dias_hasta_earnings": 4,
+        "dias_hasta_earnings": 3,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -3287,13 +3287,13 @@
           "periodo": "2026-10-01"
         },
         "precio_objetivo": null,
-        "insider_compras": null,
-        "insider_ventas": null,
+        "insider_compras": 1,
+        "insider_ventas": 2,
         "nota": "OK"
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-04",
-        "dias_hasta_earnings": 13,
+        "dias_hasta_earnings": 12,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -3467,8 +3467,8 @@
         "nota": "OK"
       },
       "catalizadores": {
-        "proximos_earnings": "2026-10-29",
-        "dias_hasta_earnings": 7,
+        "proximos_earnings": "2026-11-03",
+        "dias_hasta_earnings": 11,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -4202,7 +4202,7 @@
       "sentimiento": {
         "recomendacion_analistas": null,
         "precio_objetivo": null,
-        "insider_compras": 3,
+        "insider_compras": 2,
         "insider_ventas": 6,
         "nota": "OK"
       },

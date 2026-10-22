@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-21 23:34",
+  "fecha": "2026-10-22 00:25",
   "total": 1000,
   "tickers": [
     "WOR",
@@ -27,7 +27,6 @@
     "KMI",
     "WRB",
     "OPLN",
-    "RCBC",
     "PVH",
     "CB",
     "KRT",
@@ -165,7 +164,6 @@
     "HMC",
     "TEN",
     "PRGO",
-    "TEVA",
     "UTMD",
     "ZETA",
     "ACIW",
@@ -611,7 +609,6 @@
     "MRVI",
     "PAYC",
     "SU",
-    "TRLV",
     "JVA",
     "MA",
     "MRVL",
@@ -840,6 +837,7 @@
     "CCSI",
     "GAP",
     "SSD",
+    "TEVA",
     "WEC",
     "WSM",
     "CHPT",
@@ -979,6 +977,7 @@
     "R",
     "SYY",
     "WM",
+    "RCBC",
     "SEPN",
     "AVA",
     "BBUC",
@@ -1001,6 +1000,7 @@
     "CRMD",
     "DOW",
     "FELE",
-    "KEX"
+    "KEX",
+    "L"
   ]
 }
