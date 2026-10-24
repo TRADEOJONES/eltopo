@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-23 23:25",
+  "fecha": "2026-10-24 00:17",
   "total": 1000,
   "tickers": [
     "PRSU",
@@ -234,7 +234,6 @@
     "ULTA",
     "ZD",
     "JVA",
-    "RCBC",
     "GHC",
     "REXR",
     "RRC",
@@ -446,7 +445,6 @@
     "BKE",
     "COR",
     "XZO",
-    "TEVA",
     "BIIB",
     "DIS",
     "EXEL",
@@ -932,8 +930,8 @@
     "DIG",
     "PAGP",
     "PSIG",
-    "SAM",
     "SAIL",
+    "SAM",
     "ABNB",
     "AMSF",
     "PLSE",
@@ -1001,6 +999,8 @@
     "TBCH",
     "VRA",
     "GRC",
-    "ATKR"
+    "ATKR",
+    "JJSF",
+    "KYIV"
   ]
 }

@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-10-23 23:25",
-  "total_analizados": 3216,
-  "tiempo_segundos": 1488.4,
+  "fecha": "2026-10-24 00:17",
+  "total_analizados": 3218,
+  "tiempo_segundos": 1489.7,
   "top_long": [
     {
       "ticker": "PRSU",
@@ -116,7 +116,7 @@
         "margen_neto": 0.079450004,
         "per": 37.340134,
         "per_forward": 29.717175,
-        "ps": 3.1179562,
+        "ps": 3.09693,
         "pb": 2.790544,
         "ev_ebitda": 14.819,
         "deuda_equity": 39.955,
@@ -126,7 +126,7 @@
         "roa": 0.051620003,
         "dividend_yield": 0.0,
         "payout_ratio": 0.0,
-        "market_cap": 1506690048.0,
+        "market_cap": 1496529536.0,
         "enterprise_value": 1778687488.0,
         "beta": 1.427,
         "precio_objetivo": 62.28571,
@@ -148,7 +148,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-04",
-        "dias_hasta_earnings": 11,
+        "dias_hasta_earnings": 10,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -291,7 +291,7 @@
         "margen_neto": 0.04849,
         "per": 27.859648,
         "per_forward": 17.401976,
-        "ps": 1.3588645,
+        "ps": 1.3583219,
         "pb": 6.7930984,
         "ev_ebitda": 22.556,
         "deuda_equity": 305.265,
@@ -301,7 +301,7 @@
         "roa": 0.04597,
         "dividend_yield": 0.0,
         "payout_ratio": 0.0,
-        "market_cap": 7543108608.0,
+        "market_cap": 7540096512.0,
         "enterprise_value": 10788578304.0,
         "beta": -0.081,
         "precio_objetivo": 59.0,
@@ -323,7 +323,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-17",
-        "dias_hasta_earnings": 24,
+        "dias_hasta_earnings": 23,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -498,7 +498,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-17",
-        "dias_hasta_earnings": 24,
+        "dias_hasta_earnings": 23,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -673,7 +673,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-12-14",
-        "dias_hasta_earnings": 51,
+        "dias_hasta_earnings": 50,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -843,12 +843,12 @@
         },
         "precio_objetivo": null,
         "insider_compras": 9,
-        "insider_ventas": 19,
+        "insider_ventas": 20,
         "nota": "OK"
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-05",
-        "dias_hasta_earnings": 12,
+        "dias_hasta_earnings": 11,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -990,7 +990,7 @@
         "margen_operativo": 0.26396,
         "margen_neto": 0.18229,
         "per": 24.250002,
-        "per_forward": 21.747646,
+        "per_forward": 21.730299,
         "ps": 4.2447786,
         "pb": 6.883256,
         "ev_ebitda": 16.295,
@@ -1023,7 +1023,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-01-20",
-        "dias_hasta_earnings": 88,
+        "dias_hasta_earnings": 87,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -1198,7 +1198,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-04",
-        "dias_hasta_earnings": 11,
+        "dias_hasta_earnings": 10,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1339,7 +1339,7 @@
         "margen_bruto": 0.79036003,
         "margen_operativo": 0.62987,
         "margen_neto": 0.31034002,
-        "per": 51.265396,
+        "per": 51.87389,
         "per_forward": 33.549816,
         "ps": 15.417211,
         "pb": -12.519425,
@@ -1373,7 +1373,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-27",
-        "dias_hasta_earnings": 3,
+        "dias_hasta_earnings": 2,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1548,7 +1548,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-27",
-        "dias_hasta_earnings": 3,
+        "dias_hasta_earnings": 2,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1723,7 +1723,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-30",
-        "dias_hasta_earnings": 6,
+        "dias_hasta_earnings": 5,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1866,7 +1866,7 @@
         "margen_neto": 0.10953,
         "per": 26.48956,
         "per_forward": 14.221901,
-        "ps": 2.763663,
+        "ps": 2.7635496,
         "pb": 2.9009554,
         "ev_ebitda": 11.624,
         "deuda_equity": 44.619,
@@ -1876,7 +1876,7 @@
         "roa": 0.06706,
         "dividend_yield": 0.0,
         "payout_ratio": 0.0,
-        "market_cap": 10072263680.0,
+        "market_cap": 10071849984.0,
         "enterprise_value": 10292458496.0,
         "beta": 1.417,
         "precio_objetivo": 91.66667,
@@ -1898,7 +1898,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-02",
-        "dias_hasta_earnings": 9,
+        "dias_hasta_earnings": 8,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -2041,7 +2041,7 @@
         "margen_neto": 0.08768,
         "per": 15.723433,
         "per_forward": 14.661224,
-        "ps": 1.301651,
+        "ps": 1.333746,
         "pb": -15.391659,
         "ev_ebitda": 9.869,
         "deuda_equity": null,
@@ -2051,7 +2051,7 @@
         "roa": 0.12291,
         "dividend_yield": 0.67,
         "payout_ratio": 0.100600004,
-        "market_cap": 101545697280.0,
+        "market_cap": 104049524736.0,
         "enterprise_value": 155400699904.0,
         "beta": 1.11,
         "precio_objetivo": 460.5909,
@@ -2073,7 +2073,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-27",
-        "dias_hasta_earnings": 3,
+        "dias_hasta_earnings": 2,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -2568,7 +2568,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-26",
-        "dias_hasta_earnings": 2,
+        "dias_hasta_earnings": 1,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -2743,7 +2743,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-16",
-        "dias_hasta_earnings": 23,
+        "dias_hasta_earnings": 22,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -2918,7 +2918,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-26",
-        "dias_hasta_earnings": 2,
+        "dias_hasta_earnings": 1,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -3093,7 +3093,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-12-07",
-        "dias_hasta_earnings": 44,
+        "dias_hasta_earnings": 43,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -3268,7 +3268,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-10-27",
-        "dias_hasta_earnings": 3,
+        "dias_hasta_earnings": 2,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -3409,7 +3409,7 @@
         "margen_bruto": 0.06625,
         "margen_operativo": 0.07248,
         "margen_neto": 0.028719999,
-        "per": 17.82,
+        "per": 17.470589,
         "per_forward": 8.099999,
         "ps": 0.4561242,
         "pb": 0.384981,
@@ -3983,7 +3983,7 @@
         "margen_neto": 0.43280998,
         "per": 14.935644,
         "per_forward": 14.164318,
-        "ps": 6.430196,
+        "ps": 6.4298515,
         "pb": 2.3597968,
         "ev_ebitda": null,
         "deuda_equity": null,
@@ -3993,7 +3993,7 @@
         "roa": 0.0194,
         "dividend_yield": 2.9,
         "payout_ratio": 0.4225,
-        "market_cap": 4324190720.0,
+        "market_cap": 4323959296.0,
         "enterprise_value": 3914917632.0,
         "beta": 0.834,
         "precio_objetivo": 34.71429,
@@ -4553,10 +4553,10 @@
         "margen_bruto": 0.66616,
         "margen_operativo": 0.10918,
         "margen_neto": 0.090550005,
-        "per": 9.128349,
-        "per_forward": 9.410136,
+        "per": 8.963989,
+        "per_forward": 8.981044,
         "ps": 0.81684035,
-        "pb": 1.2003635,
+        "pb": 1.1744637,
         "ev_ebitda": null,
         "deuda_equity": 49.421,
         "current_ratio": null,
