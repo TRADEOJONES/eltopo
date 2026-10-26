@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-10-26 21:06",
+  "fecha": "2026-10-26 21:51",
   "total_analizados": 3214,
-  "tiempo_segundos": 2333.6,
+  "tiempo_segundos": 2206.9,
   "top_long": [
     {
       "ticker": "SBC",
@@ -215,11 +215,11 @@
       "macd_signal": 22.091167532040892,
       "mm50": 1188.8996,
       "mm200": 1086.02315,
-      "vol_relativo": 1.4303080903317364,
+      "vol_relativo": 1.4303346381083906,
       "atr": 36.04879612649655,
       "adx": 31.178358435835854,
       "poc": 1176.173866666667,
-      "obv": 3740163.0,
+      "obv": 3740166.0,
       "obv_anterior": 3594300.0,
       "precios_historicos": [
         1185.04,
@@ -2229,7 +2229,7 @@
         "market_cap": 1332239104.0,
         "enterprise_value": 877861440.0,
         "beta": 0.697,
-        "precio_objetivo": 45.0,
+        "precio_objetivo": 51.0,
         "recomendacion": "hold"
       },
       "sentimiento": {
@@ -3631,7 +3631,7 @@
         "market_cap": 668197376.0,
         "enterprise_value": 463651520.0,
         "beta": 0.647,
-        "precio_objetivo": 47.98,
+        "precio_objetivo": 47.605,
         "recomendacion": "buy"
       },
       "sentimiento": {
@@ -4346,7 +4346,7 @@
         "market_cap": 365290304.0,
         "enterprise_value": 579767360.0,
         "beta": 0.725,
-        "precio_objetivo": 18.9375,
+        "precio_objetivo": 18.25,
         "recomendacion": "strong_buy"
       },
       "sentimiento": {
