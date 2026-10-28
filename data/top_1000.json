@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-28 00:06",
+  "fecha": "2026-10-28 00:56",
   "total": 1000,
   "tickers": [
     "CTAS",
@@ -311,7 +311,6 @@
     "LIND",
     "GDEN",
     "KVUE",
-    "RCBC",
     "SPT",
     "CRVL",
     "FMAO",
@@ -379,8 +378,8 @@
     "WMT",
     "XMTR",
     "INVX",
-    "TXN",
     "TXG",
+    "TXN",
     "BTE",
     "RMD",
     "SNAP",
@@ -1001,6 +1000,7 @@
     "SPFI",
     "TBI",
     "AMN",
-    "CRL"
+    "CRL",
+    "KUST"
   ]
 }

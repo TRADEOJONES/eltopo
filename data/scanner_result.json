@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-10-28 00:06",
-  "total_analizados": 3237,
-  "tiempo_segundos": 1489.0,
+  "fecha": "2026-10-28 00:56",
+  "total_analizados": 3243,
+  "tiempo_segundos": 1489.8,
   "top_long": [
     {
       "ticker": "CTAS",
@@ -4886,7 +4886,7 @@
         "market_cap": 17162957824.0,
         "enterprise_value": 66333958144.0,
         "beta": 0.841,
-        "precio_objetivo": 39.107895,
+        "precio_objetivo": 39.080902,
         "recomendacion": "buy"
       },
       "sentimiento": {
