@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-28 23:20",
+  "fecha": "2026-10-29 00:22",
   "total": 1000,
   "tickers": [
     "SLDE",
@@ -257,8 +257,8 @@
     "PM",
     "SYNA",
     "TK",
-    "AMTB",
     "AMT",
+    "AMTB",
     "ANIK",
     "CAH",
     "PLUS",
@@ -499,7 +499,6 @@
     "PENG",
     "PYPL",
     "SIGA",
-    "TEVA",
     "CSV",
     "PANW",
     "PFS",
@@ -812,7 +811,6 @@
     "TGTX",
     "AUDC",
     "PI",
-    "RCBC",
     "TNMG",
     "VCTR",
     "ERIE",
@@ -1001,6 +999,8 @@
     "NIC",
     "QCRH",
     "SOBO",
-    "TWST"
+    "TWST",
+    "EXEL",
+    "VSAT"
   ]
 }
