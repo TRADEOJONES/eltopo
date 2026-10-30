@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-10-30 00:18",
-  "total_analizados": 3256,
-  "tiempo_segundos": 1488.4,
+  "fecha": "2026-10-30 01:24",
+  "total_analizados": 3261,
+  "tiempo_segundos": 1490.8,
   "top_long": [
     {
       "ticker": "AII",
@@ -1518,7 +1518,7 @@
         "per_forward": 21.92984,
         "ps": 7.915196,
         "pb": -20.872278,
-        "ev_ebitda": 19.051,
+        "ev_ebitda": 19.057,
         "deuda_equity": null,
         "current_ratio": 1.005,
         "quick_ratio": 0.903,
@@ -1527,7 +1527,7 @@
         "dividend_yield": 1.05,
         "payout_ratio": 0.2919,
         "market_cap": 24822054912.0,
-        "enterprise_value": 28877842432.0,
+        "enterprise_value": 28886953984.0,
         "beta": 0.692,
         "precio_objetivo": 226.4706,
         "recomendacion": "buy"
@@ -2920,7 +2920,7 @@
         "per_forward": 21.015429,
         "ps": 3.3764067,
         "pb": 1.2856704,
-        "ev_ebitda": 13.739,
+        "ev_ebitda": 13.736,
         "deuda_equity": 94.927,
         "current_ratio": 1.896,
         "quick_ratio": 1.804,
@@ -2929,7 +2929,7 @@
         "dividend_yield": 2.85,
         "payout_ratio": 0.677,
         "market_cap": 2830043392.0,
-        "enterprise_value": 4347600896.0,
+        "enterprise_value": 4346634240.0,
         "beta": 0.32,
         "precio_objetivo": 64.57143,
         "recomendacion": "buy"
@@ -4302,7 +4302,7 @@
         "per": 21.896173,
         "per_forward": 16.29072,
         "ps": 2.6475337,
-        "pb": 7.057995,
+        "pb": 7.0116806,
         "ev_ebitda": 13.718,
         "deuda_equity": 129.821,
         "current_ratio": 1.18,
