@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-30 21:43",
+  "fecha": "2026-10-30 23:12",
   "total": 1000,
   "tickers": [
     "CUBI",
@@ -870,6 +870,7 @@
     "FISV",
     "PB",
     "RBA",
+    "EFU",
     "INCY",
     "JVA",
     "UTI",
@@ -1000,7 +1001,6 @@
     "KNSL",
     "PVLA",
     "TGNA",
-    "TUSK",
-    "EFX"
+    "TUSK"
   ]
 }
