@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-29 23:24",
+  "fecha": "2026-10-30 00:18",
   "total": 1000,
   "tickers": [
     "AII",
@@ -53,7 +53,6 @@
     "PNW",
     "TYL",
     "HAE",
-    "TEVA",
     "CB",
     "PNTG",
     "GDDY",
@@ -529,7 +528,6 @@
     "MUR",
     "SLB",
     "SPOK",
-    "STHH",
     "EXEL",
     "FRPT",
     "RLI",
@@ -716,7 +714,6 @@
     "TCBI",
     "TLYS",
     "ITW",
-    "RCBC",
     "WTBA",
     "CNXC",
     "JBI",
@@ -1001,6 +998,9 @@
     "OLED",
     "OZK",
     "P",
-    "ACI"
+    "ACI",
+    "AL",
+    "CCBG",
+    "DB"
   ]
 }
