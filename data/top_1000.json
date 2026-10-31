@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-30 23:12",
+  "fecha": "2026-10-31 00:01",
   "total": 1000,
   "tickers": [
     "CUBI",
@@ -614,8 +614,8 @@
     "SIRI",
     "CVX",
     "HTFL",
-    "MED",
     "MEOH",
+    "MED",
     "SCHL",
     "DNOW",
     "EPC",
@@ -870,7 +870,6 @@
     "FISV",
     "PB",
     "RBA",
-    "EFU",
     "INCY",
     "JVA",
     "UTI",
@@ -1001,6 +1000,7 @@
     "KNSL",
     "PVLA",
     "TGNA",
-    "TUSK"
+    "TUSK",
+    "EFX"
   ]
 }
