@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-31 00:01",
+  "fecha": "2026-10-31 01:13",
   "total": 1000,
   "tickers": [
     "CUBI",
@@ -77,7 +77,6 @@
     "CHKP",
     "IRTC",
     "NIQ",
-    "TEVA",
     "LFST",
     "NSIT",
     "BDX",
@@ -242,7 +241,6 @@
     "RTX",
     "BHB",
     "CME",
-    "RCBC",
     "SWKS",
     "DOCS",
     "SBC",
@@ -614,8 +612,8 @@
     "SIRI",
     "CVX",
     "HTFL",
-    "MEOH",
     "MED",
+    "MEOH",
     "SCHL",
     "DNOW",
     "EPC",
@@ -1001,6 +999,8 @@
     "PVLA",
     "TGNA",
     "TUSK",
-    "EFX"
+    "EFX",
+    "ESNT",
+    "TPG"
   ]
 }
