@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-03 01:36",
+  "fecha": "2026-11-03 02:34",
   "total": 1000,
   "tickers": [
     "CNQ",
@@ -77,8 +77,8 @@
     "CAI",
     "DIG",
     "PGNY",
-    "WST",
     "WSM",
+    "WST",
     "AVPT",
     "PFE",
     "BWMX",
@@ -87,6 +87,7 @@
     "STAA",
     "ISRG",
     "ADP",
+    "TEVA",
     "ADI",
     "CTS",
     "FBLA",
@@ -168,6 +169,7 @@
     "DDI",
     "TGTX",
     "OPRX",
+    "RCBC",
     "HAE",
     "LIND",
     "HBNC",
@@ -900,7 +902,6 @@
     "TILE",
     "YUM",
     "APAM",
-    "TEVA",
     "EPC",
     "ICE",
     "KMT",
@@ -1000,7 +1001,6 @@
     "RBRK",
     "VRDN",
     "BCBP",
-    "BCPC",
-    "CD"
+    "BCPC"
   ]
 }
