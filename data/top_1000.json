@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-03 22:33",
+  "fecha": "2026-11-04 00:02",
   "total": 1000,
   "tickers": [
     "KDP",
@@ -933,8 +933,8 @@
     "BOC",
     "POST",
     "RAMP",
-    "SPOK",
     "SPOT",
+    "SPOK",
     "TAP",
     "FTV",
     "NRIX",
