@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-04 00:57",
+  "fecha": "2026-11-04 01:46",
   "total": 1000,
   "tickers": [
     "KDP",
@@ -14,14 +14,13 @@
     "BLFS",
     "PFE",
     "UVE",
-    "TEVA",
     "IFF",
     "AMPH",
-    "QRVO",
     "VRSN",
     "AMT",
     "CL",
     "MCK",
+    "QRVO",
     "FLYW",
     "BWMX",
     "PYPD",
@@ -555,7 +554,6 @@
     "FCF",
     "LNC",
     "PLBC",
-    "RCBC",
     "CDW",
     "OWL",
     "AZO",
@@ -1001,6 +999,8 @@
     "SBAC",
     "AVBH",
     "GEHC",
-    "INTT"
+    "INTT",
+    "MANH",
+    "UE"
   ]
 }
