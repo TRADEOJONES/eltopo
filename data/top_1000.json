@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-04 21:35",
+  "fecha": "2026-11-04 22:58",
   "total": 1000,
   "tickers": [
     "EVRG",
@@ -358,7 +358,6 @@
     "HURN",
     "ROK",
     "UNP",
-    "BANF",
     "EBAY",
     "ODD",
     "PAYS",
@@ -650,6 +649,7 @@
     "SMA",
     "SPFI",
     "AMRX",
+    "BANF",
     "BMRC",
     "BPRN",
     "ECHO",
@@ -660,8 +660,8 @@
     "SRTA",
     "TXN",
     "BB",
-    "COF",
     "COFS",
+    "COF",
     "INTA",
     "ROKU",
     "BRCC",
