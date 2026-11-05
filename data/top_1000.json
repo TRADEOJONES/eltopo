@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-05 00:19",
+  "fecha": "2026-11-05 01:14",
   "total": 1000,
   "tickers": [
     "EVRG",
@@ -51,7 +51,6 @@
     "GO",
     "XERS",
     "GCO",
-    "TEVA",
     "MQ",
     "AEP",
     "EPAM",
@@ -311,7 +310,6 @@
     "MCK",
     "MDLZ",
     "OTIS",
-    "RCBC",
     "REYN",
     "TSLA",
     "CNXN",
@@ -660,8 +658,8 @@
     "SRTA",
     "TXN",
     "BB",
-    "COFS",
     "COF",
+    "COFS",
     "INTA",
     "ROKU",
     "BRCC",
@@ -833,6 +831,7 @@
     "GWRS",
     "PBAM",
     "RPC",
+    "TEVA",
     "ZETA",
     "ALRS",
     "EVH",
@@ -1001,6 +1000,7 @@
     "CNNE",
     "GTM",
     "IA",
-    "MAIN"
+    "MAIN",
+    "MSCI"
   ]
 }
