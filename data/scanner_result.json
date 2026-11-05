@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-05 21:39",
+  "fecha": "2026-11-05 22:55",
   "total_analizados": 3197,
-  "tiempo_segundos": 1622.8,
+  "tiempo_segundos": 1897.9,
   "top_long": [
     {
       "ticker": "RL",
@@ -1354,7 +1354,7 @@
         "market_cap": 3753695744.0,
         "enterprise_value": 4950930944.0,
         "beta": 0.919,
-        "precio_objetivo": 15.123025,
+        "precio_objetivo": 15.1247225,
         "recomendacion": "buy"
       },
       "sentimiento": {
@@ -2070,6 +2070,12 @@
         "dias_hasta_earnings": -1,
         "historial_earnings": [
           {
+            "periodo": "2026-09-30",
+            "actual": 1.14,
+            "estimado": 0.8757,
+            "sorpresa_pct": 30.1816
+          },
+          {
             "periodo": "2026-06-30",
             "actual": 0.91,
             "estimado": 0.6325,
@@ -2086,12 +2092,6 @@
             "actual": 0.73,
             "estimado": 0.9407,
             "sorpresa_pct": -22.3982
-          },
-          {
-            "periodo": "2025-09-30",
-            "actual": 0.93,
-            "estimado": 0.841,
-            "sorpresa_pct": 10.5826
           }
         ],
         "nota": "OK"
@@ -2129,14 +2129,14 @@
         "catalizadores": 5.0,
         "fundamental": 5.0
       },
-      "rsi": 60.9205590369191,
-      "macd": 0.4962412269919412,
-      "macd_signal": 0.4318515013152076,
+      "rsi": 60.9205590367798,
+      "macd": 0.4962412269915859,
+      "macd_signal": 0.43185150131469485,
       "mm50": 45.688134841918945,
-      "mm200": 42.24956130981445,
+      "mm200": 42.24956125259399,
       "vol_relativo": 1.5432592338866014,
-      "atr": 0.7442164186930206,
-      "adx": 34.71778071455554,
+      "atr": 0.7442164186950436,
+      "adx": 34.71778071037673,
       "poc": 45.92189339955648,
       "obv": 194061.0,
       "obv_anterior": 194600.0,
