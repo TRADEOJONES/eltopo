@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-05 01:14",
+  "fecha": "2026-11-05 01:52",
   "total": 1000,
   "tickers": [
     "EVRG",
@@ -441,8 +441,8 @@
     "SAFT",
     "CVX",
     "INN",
-    "NWS",
     "NWSA",
+    "NWS",
     "SU",
     "AI",
     "CPF",
