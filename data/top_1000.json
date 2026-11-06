@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-06 00:14",
+  "fecha": "2026-11-06 01:20",
   "total": 1000,
   "tickers": [
     "RL",
@@ -53,7 +53,6 @@
     "PNW",
     "GBCI",
     "ICFI",
-    "TEVA",
     "GCO",
     "GHC",
     "PYPD",
@@ -109,7 +108,6 @@
     "DAL",
     "RS",
     "FCNCA",
-    "RCBC",
     "HLX",
     "HOFT",
     "KDP",
@@ -959,6 +957,7 @@
     "CDNA",
     "HZO",
     "SMG",
+    "TEVA",
     "UBS",
     "UTZ",
     "CNXC",
@@ -1001,6 +1000,7 @@
     "UAA",
     "ACT",
     "DGICA",
-    "NVST"
+    "NVST",
+    "RLI"
   ]
 }
