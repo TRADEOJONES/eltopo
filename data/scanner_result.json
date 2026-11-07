@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-07 00:27",
-  "total_analizados": 3216,
-  "tiempo_segundos": 1490.3,
+  "fecha": "2026-11-07 01:21",
+  "total_analizados": 3219,
+  "tiempo_segundos": 1490.6,
   "top_long": [
     {
       "ticker": "SWBI",
@@ -2568,7 +2568,7 @@
         "per_forward": 16.219326,
         "ps": 3.7042446,
         "pb": 2.095431,
-        "ev_ebitda": 15.829,
+        "ev_ebitda": 15.594,
         "deuda_equity": 53.867,
         "current_ratio": 0.667,
         "quick_ratio": 0.601,
@@ -2577,7 +2577,7 @@
         "dividend_yield": 1.93,
         "payout_ratio": 0.3518,
         "market_cap": 61490462720.0,
-        "enterprise_value": 72590196736.0,
+        "enterprise_value": 71511949312.0,
         "beta": null,
         "precio_objetivo": 117.33333,
         "recomendacion": "none"
