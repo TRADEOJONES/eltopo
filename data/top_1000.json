@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-10 03:03",
+  "fecha": "2026-11-10 03:59",
   "total": 1000,
   "tickers": [
     "GBCI",
@@ -560,8 +560,8 @@
     "FLO",
     "HMC",
     "L",
-    "NSC",
     "NSIT",
+    "NSC",
     "ORKA",
     "RVTY",
     "WAB",
