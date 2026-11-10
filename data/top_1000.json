@@ -1,13 +1,13 @@
 {
-  "fecha": "2026-11-10 00:53",
+  "fecha": "2026-11-10 02:09",
   "total": 1000,
   "tickers": [
     "GBCI",
     "CRON",
     "MEOH",
     "FRBA",
-    "RCBC",
     "PACS",
+    "RHP",
     "CUBI",
     "DORM",
     "KMB",
@@ -17,7 +17,6 @@
     "HQY",
     "RDNT",
     "LAMR",
-    "RHP",
     "CCNE",
     "QRVO",
     "TDG",
@@ -301,7 +300,6 @@
     "OABI",
     "ZTS",
     "COKE",
-    "QNBC",
     "CI",
     "EXTR",
     "TWO",
@@ -342,7 +340,6 @@
     "INFU",
     "FMAO",
     "MCBS",
-    "TEVA",
     "AAPL",
     "ALL",
     "BRX",
@@ -560,8 +557,8 @@
     "FLO",
     "HMC",
     "L",
-    "NSC",
     "NSIT",
+    "NSC",
     "ORKA",
     "RVTY",
     "WAB",
@@ -857,6 +854,7 @@
     "KARO",
     "LEVI",
     "OR",
+    "RCBC",
     "SKT",
     "STE",
     "IA",
@@ -1001,6 +999,8 @@
     "AEE",
     "AUGO",
     "BB",
-    "PFGC"
+    "PFGC",
+    "VEEA",
+    "AN"
   ]
 }
