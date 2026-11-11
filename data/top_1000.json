@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-11 00:14",
+  "fecha": "2026-11-11 01:18",
   "total": 1000,
   "tickers": [
     "FRBA",
@@ -27,7 +27,6 @@
     "GBCI",
     "NWFL",
     "SHO",
-    "RCBC",
     "LPX",
     "BUD",
     "CCEP",
@@ -86,7 +85,6 @@
     "SYNA",
     "ASND",
     "FCNCA",
-    "TEVA",
     "BALL",
     "EPC",
     "HUM",
@@ -476,7 +474,6 @@
     "TXRH",
     "FOX",
     "PRGS",
-    "QNBC",
     "ADV",
     "ALKS",
     "ARQT",
@@ -630,7 +627,6 @@
     "DEO",
     "PKOH",
     "SBGI",
-    "SBXE",
     "AAL",
     "MZTI",
     "NOC",
@@ -782,6 +778,7 @@
     "SYBT",
     "ELAN",
     "FAF",
+    "FTRE",
     "NWL",
     "POST",
     "SIGI",
@@ -936,7 +933,6 @@
     "AZN",
     "BLCO",
     "CR",
-    "FTRE",
     "HRI",
     "PVLA",
     "ZBH",
@@ -1001,6 +997,10 @@
     "ALRM",
     "DSGX",
     "MYGN",
-    "SAIC"
+    "SAIC",
+    "AL",
+    "BN",
+    "HIG",
+    "SAM"
   ]
 }
