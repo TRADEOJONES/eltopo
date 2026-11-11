@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-11 22:04",
-  "total_analizados": 3226,
-  "tiempo_segundos": 2748.0,
+  "fecha": "2026-11-11 23:44",
+  "total_analizados": 3225,
+  "tiempo_segundos": 2185.5,
   "top_long": [
     {
       "ticker": "AII",
@@ -326,6 +326,12 @@
         "dias_hasta_earnings": 75,
         "historial_earnings": [
           {
+            "periodo": "2026-12-31",
+            "actual": 0.49,
+            "estimado": 0.4777,
+            "sorpresa_pct": 2.5748
+          },
+          {
             "periodo": "2026-06-30",
             "actual": 0.42,
             "estimado": 0.4046,
@@ -342,12 +348,6 @@
             "actual": 0.35,
             "estimado": 0.3213,
             "sorpresa_pct": 8.9325
-          },
-          {
-            "periodo": "2025-09-30",
-            "actual": 0.45,
-            "estimado": 0.4117,
-            "sorpresa_pct": 9.3029
           }
         ],
         "nota": "OK"
@@ -1004,7 +1004,7 @@
         "market_cap": 51705462784.0,
         "enterprise_value": 62777561088.0,
         "beta": 0.456,
-        "precio_objetivo": 113.97206,
+        "precio_objetivo": 114.02267,
         "recomendacion": "buy"
       },
       "sentimiento": {
@@ -2140,11 +2140,11 @@
       "macd_signal": 0.6888106118003174,
       "mm50": 39.902399978637696,
       "mm200": 34.9928000164032,
-      "vol_relativo": 1.368624546980696,
+      "vol_relativo": 1.3686499209323977,
       "atr": 1.2253330200031207,
       "adx": 23.596728133889147,
       "poc": 41.07836733500163,
-      "obv": 322966339.0,
+      "obv": 322966529.0,
       "obv_anterior": 308869000.0,
       "precios_historicos": [
         37.4900016784668,
@@ -2919,7 +2919,7 @@
         "per": 34.5,
         "per_forward": 8.94979,
         "ps": 0.42526433,
-        "pb": 1.0018735,
+        "pb": 1.0105829,
         "ev_ebitda": 10.629,
         "deuda_equity": 95.424,
         "current_ratio": 1.982,
@@ -3442,7 +3442,7 @@
         "margen_operativo": -0.34140998,
         "margen_neto": -0.91449,
         "per": null,
-        "per_forward": 8.421172,
+        "per_forward": 8.432652,
         "ps": 2.473465,
         "pb": 0.27706254,
         "ev_ebitda": null,

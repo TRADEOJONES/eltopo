@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-11 22:04",
+  "fecha": "2026-11-11 23:44",
   "total": 1000,
   "tickers": [
     "AII",
@@ -489,7 +489,6 @@
     "GSAT",
     "NWN",
     "TXT",
-    "ZIP",
     "HOMB",
     "LYFT",
     "PKOH",
@@ -646,6 +645,7 @@
     "PH",
     "SBUX",
     "TGT",
+    "ZIP",
     "BWFG",
     "ACCO",
     "GLRE",
@@ -684,6 +684,7 @@
     "FLYW",
     "UFI",
     "WS",
+    "BNY",
     "S",
     "BCML",
     "CHH",
@@ -1000,7 +1001,6 @@
     "OSPN",
     "CBOE",
     "CDRE",
-    "SWIM",
-    "UI"
+    "SWIM"
   ]
 }
