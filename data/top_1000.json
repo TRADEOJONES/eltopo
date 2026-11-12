@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-12 01:32",
+  "fecha": "2026-11-12 02:40",
   "total": 1000,
   "tickers": [
     "AII",
@@ -14,6 +14,7 @@
     "BLFS",
     "ASH",
     "BSET",
+    "TEVA",
     "ALC",
     "SR",
     "SGC",
@@ -268,6 +269,7 @@
     "CENT",
     "CNMD",
     "D",
+    "MSEX",
     "EMBC",
     "WSFS",
     "ES",
@@ -601,7 +603,6 @@
     "PRI",
     "CERT",
     "COCO",
-    "EVH",
     "ADI",
     "ALV",
     "DMRC",
@@ -745,8 +746,8 @@
     "CCBG",
     "DSGX",
     "MTD",
-    "RM",
     "RMBI",
+    "RM",
     "AMLX",
     "ANGX",
     "BLK",
@@ -914,7 +915,6 @@
     "KNSA",
     "NEE",
     "RDWR",
-    "TEVA",
     "G",
     "ONON",
     "CARL",
@@ -963,6 +963,7 @@
     "MAS",
     "RUSHB",
     "SMC",
+    "TRLV",
     "ACA",
     "BKH",
     "CBZ",
@@ -1000,7 +1001,6 @@
     "UI",
     "COSO",
     "EFOR",
-    "GCMG",
-    "GRAL"
+    "GCMG"
   ]
 }
