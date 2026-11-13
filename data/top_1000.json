@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-13 21:50",
+  "fecha": "2026-11-13 23:11",
   "total": 1000,
   "tickers": [
     "DUK",
@@ -731,7 +731,6 @@
     "VEEV",
     "BSET",
     "ETSY",
-    "FXP",
     "GO",
     "NDSN",
     "ROIV",
@@ -1001,6 +1000,7 @@
     "CASY",
     "NYT",
     "OBDC",
-    "EAF"
+    "EAF",
+    "EGAN"
   ]
 }
