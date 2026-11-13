@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-13 01:36",
+  "fecha": "2026-11-13 02:25",
   "total": 1000,
   "tickers": [
     "GATX",
@@ -118,7 +118,6 @@
     "ECL",
     "HLI",
     "DHR",
-    "AVNT",
     "CALY",
     "FMX",
     "GPN",
@@ -569,7 +568,6 @@
     "WS",
     "AYI",
     "MTD",
-    "AAMI",
     "AMTB",
     "ASND",
     "GPK",
@@ -1001,6 +999,8 @@
     "COTY",
     "FFBC",
     "IBP",
-    "MRX"
+    "MRX",
+    "OVV",
+    "SFNC"
   ]
 }

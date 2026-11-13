@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-13 01:36",
+  "fecha": "2026-11-13 02:25",
   "total_analizados": 3218,
-  "tiempo_segundos": 2227.5,
+  "tiempo_segundos": 2164.9,
   "top_long": [
     {
       "ticker": "GATX",
@@ -1340,7 +1340,7 @@
         "margen_operativo": 0.13696,
         "margen_neto": 0.100030005,
         "per": 23.753014,
-        "per_forward": 20.483118,
+        "per_forward": 20.403622,
         "ps": 2.3162613,
         "pb": 5.4514036,
         "ev_ebitda": 15.921,
@@ -4632,7 +4632,7 @@
         "market_cap": 40477773824.0,
         "enterprise_value": -58454097920.0,
         "beta": 0.761,
-        "precio_objetivo": 64.779915,
+        "precio_objetivo": 64.77946,
         "recomendacion": "hold"
       },
       "sentimiento": {
