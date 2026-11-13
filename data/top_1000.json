@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-13 00:45",
+  "fecha": "2026-11-13 01:36",
   "total": 1000,
   "tickers": [
     "GATX",
@@ -30,7 +30,6 @@
     "EL",
     "HUM",
     "VRSK",
-    "QNBC",
     "EVI",
     "PNW",
     "UVE",
@@ -115,7 +114,6 @@
     "KMB",
     "BSVN",
     "ICUI",
-    "RCBC",
     "AWK",
     "ECL",
     "HLI",
@@ -168,7 +166,6 @@
     "BLK",
     "BWFG",
     "KTB",
-    "TEVA",
     "VVX",
     "EBC",
     "JNJ",
@@ -606,6 +603,7 @@
     "SAIC",
     "SBRA",
     "SKYH",
+    "ACI",
     "AI",
     "ARQT",
     "EUM",
@@ -723,7 +721,6 @@
     "LOW",
     "POOL",
     "TNC",
-    "ACI",
     "AWI",
     "BKE",
     "SAIL",
@@ -986,6 +983,8 @@
     "FITB",
     "FISV",
     "KNSA",
+    "QNBC",
+    "TEVA",
     "DNUT",
     "KRRO",
     "RPAY",
@@ -1001,6 +1000,7 @@
     "APPN",
     "COTY",
     "FFBC",
-    "IBP"
+    "IBP",
+    "MRX"
   ]
 }
