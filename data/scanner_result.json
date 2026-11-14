@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-13 23:11",
+  "fecha": "2026-11-14 00:31",
   "total_analizados": 3205,
-  "tiempo_segundos": 1772.0,
+  "tiempo_segundos": 2204.1,
   "top_long": [
     {
       "ticker": "DUK",
@@ -143,12 +143,12 @@
         },
         "precio_objetivo": null,
         "insider_compras": 1,
-        "insider_ventas": 1,
+        "insider_ventas": 2,
         "nota": "OK"
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-08",
-        "dias_hasta_earnings": 86,
+        "dias_hasta_earnings": 85,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -492,13 +492,13 @@
           "periodo": "2026-11-01"
         },
         "precio_objetivo": null,
-        "insider_compras": 12,
-        "insider_ventas": 26,
+        "insider_compras": 9,
+        "insider_ventas": 23,
         "nota": "OK"
       },
       "catalizadores": {
         "proximos_earnings": "2027-01-27",
-        "dias_hasta_earnings": 74,
+        "dias_hasta_earnings": 73,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -848,7 +848,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-01",
-        "dias_hasta_earnings": 79,
+        "dias_hasta_earnings": 78,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -1023,7 +1023,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-11-17",
-        "dias_hasta_earnings": 3,
+        "dias_hasta_earnings": 2,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1179,7 +1179,7 @@
         "market_cap": 108963184640.0,
         "enterprise_value": 184164220928.0,
         "beta": 0.286,
-        "precio_objetivo": 96.21053,
+        "precio_objetivo": 95.84211,
         "recomendacion": "hold"
       },
       "sentimiento": {
@@ -1373,7 +1373,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-01",
-        "dias_hasta_earnings": 79,
+        "dias_hasta_earnings": 78,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -1547,8 +1547,8 @@
         "nota": "OK"
       },
       "catalizadores": {
-        "proximos_earnings": "2026-12-16",
-        "dias_hasta_earnings": 32,
+        "proximos_earnings": "2026-12-11",
+        "dias_hasta_earnings": 26,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -2073,7 +2073,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-02",
-        "dias_hasta_earnings": 80,
+        "dias_hasta_earnings": 79,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -2248,7 +2248,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-03",
-        "dias_hasta_earnings": 81,
+        "dias_hasta_earnings": 80,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -2423,7 +2423,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-01-25",
-        "dias_hasta_earnings": 72,
+        "dias_hasta_earnings": 71,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -2580,7 +2580,7 @@
         "enterprise_value": 29593151488.0,
         "beta": 0.221,
         "precio_objetivo": 69.17647,
-        "recomendacion": "none"
+        "recomendacion": "hold"
       },
       "sentimiento": {
         "recomendacion_analistas": {
@@ -2598,7 +2598,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-01-25",
-        "dias_hasta_earnings": 72,
+        "dias_hasta_earnings": 71,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -2775,7 +2775,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-09",
-        "dias_hasta_earnings": 87,
+        "dias_hasta_earnings": 86,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -4651,7 +4651,7 @@
     },
     {
       "ticker": "BKD",
-      "score_long": 3.815,
+      "score_long": 3.905,
       "score_short": 8.41,
       "precio": 9.18,
       "desglose_long": {
@@ -4665,7 +4665,7 @@
         "poc": 4.0,
         "obv": 2.0,
         "fundamental": 3.5,
-        "sentimiento": 4.0,
+        "sentimiento": 5.0,
         "catalizadores": 5.0
       },
       "desglose_short": {
@@ -4781,7 +4781,7 @@
       "sentimiento": {
         "recomendacion_analistas": null,
         "precio_objetivo": null,
-        "insider_compras": 0,
+        "insider_compras": 1,
         "insider_ventas": 1,
         "nota": "OK"
       },
