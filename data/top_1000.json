@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-14 00:31",
+  "fecha": "2026-11-14 01:42",
   "total": 1000,
   "tickers": [
     "DUK",
@@ -262,7 +262,6 @@
     "AOS",
     "EVTC",
     "MMS",
-    "RCBC",
     "AMH",
     "CWK",
     "LLYVA",
@@ -354,7 +353,6 @@
     "CGON",
     "IDT",
     "MTW",
-    "QNBC",
     "SRTA",
     "AVNT",
     "BZH",
@@ -1001,6 +999,8 @@
     "NYT",
     "OBDC",
     "EAF",
-    "EGAN"
+    "EGAN",
+    "GRAB",
+    "FISV"
   ]
 }
