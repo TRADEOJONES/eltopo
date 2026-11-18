@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-18 00:55",
+  "fecha": "2026-11-18 02:06",
   "total": 1000,
   "tickers": [
     "ORLY",
@@ -37,7 +37,6 @@
     "D",
     "WMG",
     "GWW",
-    "TEVA",
     "CCEP",
     "JNJ",
     "ECL",
@@ -52,7 +51,6 @@
     "EHC",
     "ED",
     "LNT",
-    "RCBC",
     "SR",
     "BRX",
     "JKHY",
@@ -510,7 +508,6 @@
     "WAB",
     "CMG",
     "KAI",
-    "QNBC",
     "SEM",
     "STAA",
     "SVV",
@@ -707,7 +704,6 @@
     "GRAB",
     "LCII",
     "MYFW",
-    "SBXE",
     "TTE",
     "ALH",
     "BSVN",
@@ -971,6 +967,7 @@
     "AIZ",
     "ASO",
     "CROX",
+    "TEVA",
     "COLB",
     "GVA",
     "NWE",
@@ -1001,6 +998,9 @@
     "LZM",
     "RMNI",
     "SIG",
-    "PODD"
+    "PODD",
+    "BNY",
+    "TSBK",
+    "EVR"
   ]
 }
