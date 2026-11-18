@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-17 23:13",
+  "fecha": "2026-11-18 00:55",
   "total": 1000,
   "tickers": [
     "ORLY",
@@ -561,7 +561,6 @@
     "RPM",
     "ASND",
     "GFR",
-    "MSGE",
     "NVRI",
     "RGLD",
     "FDS",
@@ -617,6 +616,7 @@
     "PNFP",
     "MSI",
     "ARCB",
+    "MSGE",
     "UE",
     "ELF",
     "FWRG",
@@ -637,6 +637,7 @@
     "PKG",
     "AER",
     "FDX",
+    "STE",
     "TGLS",
     "ASB",
     "CLMB",
@@ -825,7 +826,6 @@
     "BLCO",
     "FWONK",
     "GEN",
-    "STE",
     "VRE",
     "BOOM",
     "CASS",
