@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-19 01:26",
-  "total_analizados": 3176,
-  "tiempo_segundos": 2608.2,
+  "fecha": "2026-11-19 02:40",
+  "total_analizados": 3181,
+  "tiempo_segundos": 3083.3,
   "top_long": [
     {
       "ticker": "ORLY",
@@ -479,7 +479,7 @@
         "market_cap": 52117159936.0,
         "enterprise_value": 63358124032.0,
         "beta": 0.456,
-        "precio_objetivo": 113.43259,
+        "precio_objetivo": 113.38279,
         "recomendacion": "buy"
       },
       "sentimiento": {
