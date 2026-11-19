@@ -1,11 +1,11 @@
 {
-  "fecha": "2026-11-18 22:11",
-  "total_analizados": 3199,
-  "tiempo_segundos": 3557.7,
+  "fecha": "2026-11-19 00:34",
+  "total_analizados": 3195,
+  "tiempo_segundos": 2489.6,
   "universo_usado": 5200,
   "tickers_solicitados": 5200,
-  "tickers_descartados": 2001,
-  "porcentaje_valido": 61.5,
+  "tickers_descartados": 2005,
+  "porcentaje_valido": 61.4,
   "top_long": [
     {
       "ticker": "ORLY",
