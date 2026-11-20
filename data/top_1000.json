@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-19 22:45",
+  "fecha": "2026-11-20 00:29",
   "total": 1000,
   "tickers": [
     "ASND",
@@ -10,11 +10,12 @@
     "BLFS",
     "MGEE",
     "GME",
-    "TNC",
     "TCBI",
     "CPB",
     "SHO",
     "ALC",
+    "QRVO",
+    "TNC",
     "CME",
     "RLGT",
     "SKY",
@@ -155,6 +156,7 @@
     "FLYW",
     "FTDR",
     "WMG",
+    "AJG",
     "COR",
     "PUBM",
     "AAPL",
@@ -188,7 +190,6 @@
     "SHW",
     "LFCR",
     "MKTX",
-    "AJG",
     "AWK",
     "EG",
     "HIPO",
@@ -540,7 +541,6 @@
     "ADMA",
     "PAR",
     "UE",
-    "VSTS",
     "ZTS",
     "ANRO",
     "LNTH",
@@ -708,6 +708,7 @@
     "TRC",
     "WWD",
     "FE",
+    "VSTS",
     "BBW",
     "CKX",
     "CRL",
@@ -841,6 +842,7 @@
     "LXFR",
     "NWE",
     "QLYS",
+    "TWLV",
     "KOD",
     "TSN",
     "CURB",
@@ -943,7 +945,6 @@
     "KFRC",
     "REPL",
     "SITE",
-    "VRA",
     "ZONE",
     "MCO",
     "ONCO",
@@ -1000,7 +1001,6 @@
     "HBNC",
     "HMC",
     "MYFW",
-    "OCFC",
-    "ACVA"
+    "OCFC"
   ]
 }
