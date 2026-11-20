@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-19 21:55",
+  "fecha": "2026-11-20 01:13",
   "total_analizados": 3188,
-  "tiempo_segundos": 2415.3,
+  "tiempo_segundos": 2571.3,
   "universo_usado": 5200,
   "tickers_solicitados": 5200,
   "tickers_descartados": 2012,
@@ -444,11 +444,11 @@
       "macd_signal": 0.3168191099597417,
       "mm50": 24.775,
       "mm200": 22.839275,
-      "vol_relativo": 2.4009512333169014,
+      "vol_relativo": 2.40099586106024,
       "atr": 0.9941206304120903,
       "adx": 21.750719317414525,
       "poc": 25.453849999999996,
-      "obv": 2854759.0,
+      "obv": 2854779.0,
       "obv_anterior": 1946647.0,
       "precios_historicos": [
         21.155,
