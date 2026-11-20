@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-20 02:11",
-  "total_analizados": 3181,
-  "tiempo_segundos": 3445.3,
+  "fecha": "2026-11-20 03:28",
+  "total_analizados": 3168,
+  "tiempo_segundos": 2669.0,
   "top_long": [
     {
       "ticker": "ASND",
@@ -129,7 +129,7 @@
         "market_cap": 16789749760.0,
         "enterprise_value": 16273190912.0,
         "beta": null,
-        "precio_objetivo": 314.65656,
+        "precio_objetivo": 314.93283,
         "recomendacion": "strong_buy"
       },
       "sentimiento": {
@@ -2025,7 +2025,7 @@
         "enterprise_value": 8622362624.0,
         "beta": 1.401,
         "precio_objetivo": 610.75,
-        "recomendacion": "none"
+        "recomendacion": "strong_buy"
       },
       "sentimiento": {
         "recomendacion_analistas": null,
@@ -2167,7 +2167,7 @@
         "market_cap": 5260184064.0,
         "enterprise_value": 11524802560.0,
         "beta": 0.459,
-        "precio_objetivo": 64.74504,
+        "precio_objetivo": 64.746925,
         "recomendacion": "buy"
       },
       "sentimiento": {
