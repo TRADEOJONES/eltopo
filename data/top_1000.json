@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-21 00:55",
+  "fecha": "2026-11-21 01:55",
   "total": 1000,
   "tickers": [
     "ALH",
@@ -197,7 +197,6 @@
     "EVRG",
     "HLT",
     "NDAQ",
-    "CTKB",
     "MCW",
     "STEL",
     "CMS",
@@ -236,7 +235,6 @@
     "AUC",
     "GXO",
     "MA",
-    "RCBC",
     "TM",
     "BIPC",
     "GSAT",
@@ -795,7 +793,6 @@
     "PERI",
     "THO",
     "WAT",
-    "TEVA",
     "CHOW",
     "JSPR",
     "PATK",
@@ -871,6 +868,7 @@
     "EXPD",
     "GDYN",
     "LAW",
+    "RCBC",
     "TTD",
     "TTWO",
     "EXPO",
@@ -925,7 +923,6 @@
     "ALSN",
     "CCNE",
     "KYMR",
-    "QNBC",
     "TPR",
     "PSO",
     "AHCO",
@@ -1001,6 +998,9 @@
     "VRA",
     "APA",
     "BH",
-    "CVV"
+    "CVV",
+    "MEDP",
+    "AN",
+    "ASB"
   ]
 }
