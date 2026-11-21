@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-21 01:55",
-  "total_analizados": 3148,
-  "tiempo_segundos": 2197.9,
+  "fecha": "2026-11-21 02:46",
+  "total_analizados": 3146,
+  "tiempo_segundos": 1926.5,
   "top_long": [],
   "top_short": [
     {
@@ -816,7 +816,7 @@
         "margen_operativo": 0.07511,
         "margen_neto": -0.01837,
         "per": null,
-        "per_forward": 11.298245,
+        "per_forward": null,
         "ps": 0.27762562,
         "pb": -64.4,
         "ev_ebitda": 10.581,
@@ -992,7 +992,7 @@
         "margen_neto": 0.01549,
         "per": 73.4375,
         "per_forward": 22.741789,
-        "ps": 1.1142067,
+        "ps": 1.1151973,
         "pb": 1.2556102,
         "ev_ebitda": 7.754,
         "deuda_equity": 0.038,
@@ -1002,7 +1002,7 @@
         "roa": 0.00435,
         "dividend_yield": 2.0,
         "payout_ratio": 1.5,
-        "market_cap": 958672320.0,
+        "market_cap": 959524672.0,
         "enterprise_value": 868315584.0,
         "beta": 1.02,
         "precio_objetivo": 15.75,
