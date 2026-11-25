@@ -1,11 +1,11 @@
 {
-  "fecha": "2026-11-24 23:44",
-  "total_analizados": 3184,
-  "tiempo_segundos": 2848.1,
+  "fecha": "2026-11-25 02:38",
+  "total_analizados": 3189,
+  "tiempo_segundos": 2531.6,
   "universo_usado": 5200,
   "tickers_solicitados": 5200,
-  "tickers_descartados": 2016,
-  "porcentaje_valido": 61.2,
+  "tickers_descartados": 2011,
+  "porcentaje_valido": 61.3,
   "top_long": [
     {
       "ticker": "NJR",
