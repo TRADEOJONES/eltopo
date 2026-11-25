@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-25 03:28",
-  "total_analizados": 3158,
-  "tiempo_segundos": 2617.1,
+  "fecha": "2026-11-25 04:48",
+  "total_analizados": 3159,
+  "tiempo_segundos": 1623.3,
   "top_long": [
     {
       "ticker": "NJR",
@@ -814,7 +814,7 @@
         "margen_bruto": 0.36034,
         "margen_operativo": 0.097440004,
         "margen_neto": 0.08789,
-        "per": 13.392802,
+        "per": 13.309487,
         "per_forward": 12.397598,
         "ps": 1.1322781,
         "pb": 2.568119,
@@ -1757,7 +1757,7 @@
     },
     {
       "ticker": "ESOA",
-      "score_long": 5.15,
+      "score_long": 5.11,
       "score_short": 8.545,
       "precio": 8.6,
       "desglose_long": {
@@ -1770,7 +1770,7 @@
         "adx": 10.0,
         "poc": 7.0,
         "obv": 2.0,
-        "fundamental": 9.0,
+        "fundamental": 8.5,
         "sentimiento": 5.0,
         "catalizadores": 5.0
       },
@@ -1866,7 +1866,7 @@
         "margen_bruto": 0.11767,
         "margen_operativo": 0.03872,
         "margen_neto": 0.02236,
-        "per": 14.333333,
+        "per": 15.08772,
         "per_forward": 10.661114,
         "ps": 0.34334746,
         "pb": 1.9085665,
@@ -2009,7 +2009,7 @@
         "margen_bruto": 0.92379,
         "margen_operativo": 0.59702,
         "margen_neto": 0.45132,
-        "per": 23.587946,
+        "per": 22.73537,
         "per_forward": 21.85153,
         "ps": 10.243604,
         "pb": -25.143713,
@@ -2581,7 +2581,7 @@
         "margen_bruto": 1.0,
         "margen_operativo": 0.57566,
         "margen_neto": 0.12772,
-        "per": 31.650795,
+        "per": 31.156252,
         "per_forward": 15.338167,
         "ps": 9.624515,
         "pb": 1.5027508,
