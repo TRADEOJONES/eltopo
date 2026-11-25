@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-25 00:40",
+  "fecha": "2026-11-25 01:55",
   "total": 1000,
   "tickers": [
     "NJR",
@@ -242,7 +242,6 @@
     "AII",
     "ORLY",
     "AVBH",
-    "RCBC",
     "SLGN",
     "BIIB",
     "BIPC",
@@ -420,7 +419,6 @@
     "STGW",
     "MO",
     "TDC",
-    "APXT",
     "CWT",
     "JCAP",
     "PRG",
@@ -431,7 +429,6 @@
     "LNTH",
     "AIG",
     "BAH",
-    "CCEP",
     "DORM",
     "RSVR",
     "SWIM",
@@ -789,7 +786,6 @@
     "DSGR",
     "JAZZ",
     "SLS",
-    "AAP",
     "BANF",
     "CATY",
     "CWK",
@@ -846,6 +842,7 @@
     "COSO",
     "IRD",
     "MCFT",
+    "AAP",
     "BLMN",
     "CNA",
     "EXTR",
@@ -980,7 +977,6 @@
     "KW",
     "MATW",
     "WTS",
-    "ASB",
     "CAKE",
     "TXT",
     "FENC",
@@ -993,6 +989,7 @@
     "CAR",
     "NVCT",
     "VSTM",
+    "ASB",
     "TGLS",
     "VCIG",
     "HZO",
@@ -1001,6 +998,9 @@
     "SXT",
     "ALV",
     "CDRE",
-    "CPNG"
+    "CPNG",
+    "IBN",
+    "ASUR",
+    "BMRN"
   ]
 }
