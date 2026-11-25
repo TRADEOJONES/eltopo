@@ -1,13 +1,13 @@
 {
-  "fecha": "2026-11-25 01:55",
+  "fecha": "2026-11-25 03:28",
   "total": 1000,
   "tickers": [
     "NJR",
     "MORN",
     "BLFS",
+    "A",
     "URBN",
     "CON",
-    "A",
     "SKWD",
     "DOO",
     "NWN",
@@ -242,6 +242,7 @@
     "AII",
     "ORLY",
     "AVBH",
+    "RCBC",
     "SLGN",
     "BIIB",
     "BIPC",
@@ -429,6 +430,7 @@
     "LNTH",
     "AIG",
     "BAH",
+    "CCEP",
     "DORM",
     "RSVR",
     "SWIM",
@@ -999,8 +1001,6 @@
     "ALV",
     "CDRE",
     "CPNG",
-    "IBN",
-    "ASUR",
-    "BMRN"
+    "IBN"
   ]
 }
