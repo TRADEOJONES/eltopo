@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-26 01:21",
+  "fecha": "2026-11-26 03:13",
   "total": 1000,
   "tickers": [
     "NJR",
@@ -408,6 +408,7 @@
     "WEC",
     "CMCSA",
     "CMG",
+    "KNSL",
     "TTWO",
     "ZIP",
     "PSN",
@@ -489,7 +490,6 @@
     "DLTR",
     "DOC",
     "L",
-    "MSGE",
     "NATL",
     "THC",
     "EVRG",
@@ -508,7 +508,6 @@
     "VSTS",
     "BCO",
     "CCAP",
-    "KNSL",
     "JNJ",
     "PRME",
     "SGHT",
@@ -518,6 +517,7 @@
     "RNR",
     "SYK",
     "ARHS",
+    "RCBC",
     "RHI",
     "SMP",
     "ARX",
@@ -545,6 +545,7 @@
     "OSW",
     "PCOR",
     "TDOC",
+    "MSGE",
     "TGTX",
     "WEYS",
     "ESNT",
@@ -924,6 +925,7 @@
     "PEG",
     "RLAY",
     "SEZL",
+    "SGP",
     "CHKP",
     "CTRA",
     "HRB",
@@ -971,6 +973,7 @@
     "DTIL",
     "MGN",
     "PRAX",
+    "QNBC",
     "WPC",
     "SPT",
     "VSNT",
@@ -987,7 +990,6 @@
     "CHRW",
     "FDX",
     "LXFR",
-    "NWE",
     "EP",
     "IBP",
     "MEOH",
@@ -999,8 +1001,6 @@
     "NYT",
     "EQH",
     "TEX",
-    "PAC",
-    "TXT",
-    "AMLX"
+    "PAC"
   ]
 }
