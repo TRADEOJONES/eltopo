@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-26 03:13",
+  "fecha": "2026-11-26 04:39",
   "total": 1000,
   "tickers": [
     "NJR",
@@ -490,6 +490,7 @@
     "DLTR",
     "DOC",
     "L",
+    "MSGE",
     "NATL",
     "THC",
     "EVRG",
@@ -545,7 +546,6 @@
     "OSW",
     "PCOR",
     "TDOC",
-    "MSGE",
     "TGTX",
     "WEYS",
     "ESNT",
@@ -990,6 +990,7 @@
     "CHRW",
     "FDX",
     "LXFR",
+    "NWE",
     "EP",
     "IBP",
     "MEOH",
@@ -1000,7 +1001,6 @@
     "MODG",
     "NYT",
     "EQH",
-    "TEX",
-    "PAC"
+    "TEX"
   ]
 }
