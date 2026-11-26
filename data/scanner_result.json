@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-25 23:47",
-  "total_analizados": 3169,
-  "tiempo_segundos": 2700.4,
+  "fecha": "2026-11-26 01:21",
+  "total_analizados": 3171,
+  "tiempo_segundos": 2297.5,
   "top_long": [
     {
       "ticker": "NJR",
@@ -118,7 +118,7 @@
         "per_forward": 15.500807,
         "ps": 2.5468285,
         "pb": 2.1963015,
-        "ev_ebitda": 12.731,
+        "ev_ebitda": 12.715,
         "deuda_equity": 153.426,
         "current_ratio": 0.731,
         "quick_ratio": 0.219,
@@ -127,7 +127,7 @@
         "dividend_yield": 3.52,
         "payout_ratio": 0.53180003,
         "market_cap": 5775697920.0,
-        "enterprise_value": 9784249344.0,
+        "enterprise_value": 9772041216.0,
         "beta": 0.461,
         "precio_objetivo": 59.71429,
         "recomendacion": "buy"
@@ -148,7 +148,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-01",
-        "dias_hasta_earnings": 67,
+        "dias_hasta_earnings": 66,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -293,7 +293,7 @@
         "per_forward": 7.9013867,
         "ps": 1.2078397,
         "pb": 1.2990369,
-        "ev_ebitda": 2.731,
+        "ev_ebitda": 2.679,
         "deuda_equity": 4.882,
         "current_ratio": 2.019,
         "quick_ratio": 1.209,
@@ -302,7 +302,7 @@
         "dividend_yield": 0.0,
         "payout_ratio": 0.0,
         "market_cap": 3811572736.0,
-        "enterprise_value": 2536445440.0,
+        "enterprise_value": 2488169728.0,
         "beta": 0.436,
         "precio_objetivo": 39.85714,
         "recomendacion": "none"
@@ -323,7 +323,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-17",
-        "dias_hasta_earnings": 83,
+        "dias_hasta_earnings": 82,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -643,7 +643,7 @@
         "per_forward": 19.995277,
         "ps": 2.1209235,
         "pb": 10.405104,
-        "ev_ebitda": 15.363,
+        "ev_ebitda": 15.4,
         "deuda_equity": 95.472,
         "current_ratio": 1.345,
         "quick_ratio": 0.203,
@@ -652,7 +652,7 @@
         "dividend_yield": 0.0,
         "payout_ratio": 0.0,
         "market_cap": 27477661696.0,
-        "enterprise_value": 29718118400.0,
+        "enterprise_value": 29788241920.0,
         "beta": 0.838,
         "precio_objetivo": 655.56,
         "recomendacion": "buy"
@@ -673,7 +673,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-12-03",
-        "dias_hasta_earnings": 7,
+        "dias_hasta_earnings": 6,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -818,7 +818,7 @@
         "per_forward": 16.098354,
         "ps": 3.7530344,
         "pb": 2.0421014,
-        "ev_ebitda": 14.015,
+        "ev_ebitda": 13.671,
         "deuda_equity": 41.229,
         "current_ratio": 1.946,
         "quick_ratio": 0.946,
@@ -827,7 +827,7 @@
         "dividend_yield": 0.0,
         "payout_ratio": 0.0,
         "market_cap": 38646120448.0,
-        "enterprise_value": 46277300224.0,
+        "enterprise_value": 45143519232.0,
         "beta": 0.086,
         "precio_objetivo": 269.1978,
         "recomendacion": "buy"
@@ -848,7 +848,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-04",
-        "dias_hasta_earnings": 70,
+        "dias_hasta_earnings": 69,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -1025,7 +1025,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-09",
-        "dias_hasta_earnings": 75,
+        "dias_hasta_earnings": 74,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1170,7 +1170,7 @@
         "per_forward": 8.392775,
         "ps": 0.5794567,
         "pb": 0.50901496,
-        "ev_ebitda": 16.947,
+        "ev_ebitda": 16.892,
         "deuda_equity": 501.484,
         "current_ratio": 2.963,
         "quick_ratio": 0.258,
@@ -1179,7 +1179,7 @@
         "dividend_yield": 5.77,
         "payout_ratio": 0.4685,
         "market_cap": 207712624.0,
-        "enterprise_value": 2883736576.0,
+        "enterprise_value": 2874339328.0,
         "beta": 0.765,
         "precio_objetivo": 11.25,
         "recomendacion": "hold"
@@ -1200,7 +1200,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-16",
-        "dias_hasta_earnings": 82,
+        "dias_hasta_earnings": 81,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -1345,7 +1345,7 @@
         "per_forward": 14.972763,
         "ps": 2.034361,
         "pb": 3.2993226,
-        "ev_ebitda": 12.476,
+        "ev_ebitda": 12.373,
         "deuda_equity": 19.595,
         "current_ratio": 2.56,
         "quick_ratio": 1.111,
@@ -1354,7 +1354,7 @@
         "dividend_yield": 0.0,
         "payout_ratio": 0.0,
         "market_cap": 1058850240.0,
-        "enterprise_value": 1100421760.0,
+        "enterprise_value": 1091341184.0,
         "beta": 1.197,
         "precio_objetivo": 55.5,
         "recomendacion": "none"
@@ -1375,7 +1375,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-23",
-        "dias_hasta_earnings": 89,
+        "dias_hasta_earnings": 88,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -1520,7 +1520,7 @@
         "per_forward": 18.130518,
         "ps": 2.3987327,
         "pb": 16.766064,
-        "ev_ebitda": 9.43,
+        "ev_ebitda": 9.356,
         "deuda_equity": 1337.171,
         "current_ratio": 0.844,
         "quick_ratio": 0.622,
@@ -1529,7 +1529,7 @@
         "dividend_yield": 2.16,
         "payout_ratio": 0.52529997,
         "market_cap": 4840783872.0,
-        "enterprise_value": 6586953216.0,
+        "enterprise_value": 6535244800.0,
         "beta": 1.4,
         "precio_objetivo": 67.66667,
         "recomendacion": "strong_buy"
@@ -1550,7 +1550,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-08",
-        "dias_hasta_earnings": 74,
+        "dias_hasta_earnings": 73,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -1838,7 +1838,7 @@
         "per_forward": null,
         "ps": 1.4911392,
         "pb": 23.924416,
-        "ev_ebitda": 39.385,
+        "ev_ebitda": 38.524,
         "deuda_equity": 260.321,
         "current_ratio": 0.888,
         "quick_ratio": 0.737,
@@ -1847,7 +1847,7 @@
         "dividend_yield": 0.0,
         "payout_ratio": 0.0,
         "market_cap": 238102112.0,
-        "enterprise_value": 291289952.0,
+        "enterprise_value": 284925120.0,
         "beta": 0.245,
         "precio_objetivo": null,
         "recomendacion": "none"
@@ -1990,7 +1990,7 @@
         "dividend_yield": 2.44,
         "payout_ratio": 0.5357,
         "market_cap": 279508058112.0,
-        "enterprise_value": 786999279616.0,
+        "enterprise_value": 783987703808.0,
         "beta": 0.566,
         "precio_objetivo": 103.01667,
         "recomendacion": "none"
@@ -2124,7 +2124,7 @@
         "per_forward": 7.4993997,
         "ps": 0.52146745,
         "pb": 1.3478041,
-        "ev_ebitda": 1.671,
+        "ev_ebitda": 1.741,
         "deuda_equity": 44.035,
         "current_ratio": 3.226,
         "quick_ratio": 2.992,
@@ -2133,7 +2133,7 @@
         "dividend_yield": 7.97,
         "payout_ratio": 0.66190004,
         "market_cap": 588508864.0,
-        "enterprise_value": 588214656.0,
+        "enterprise_value": 612735872.0,
         "beta": 0.267,
         "precio_objetivo": 13.144026,
         "recomendacion": "strong_buy"
@@ -2410,7 +2410,7 @@
         "per_forward": 12.185,
         "ps": 0.481605,
         "pb": 1.2725185,
-        "ev_ebitda": 10.122,
+        "ev_ebitda": 10.106,
         "deuda_equity": 78.235,
         "current_ratio": 1.694,
         "quick_ratio": 0.855,
@@ -2419,7 +2419,7 @@
         "dividend_yield": 5.41,
         "payout_ratio": 0.8919,
         "market_cap": 380016672.0,
-        "enterprise_value": 494113344.0,
+        "enterprise_value": 493333664.0,
         "beta": 1.298,
         "precio_objetivo": 31.5,
         "recomendacion": "none"
@@ -2553,7 +2553,7 @@
         "per_forward": 15.136009,
         "ps": 3.7441602,
         "pb": 6.277259,
-        "ev_ebitda": 11.181,
+        "ev_ebitda": 11.078,
         "deuda_equity": 310.407,
         "current_ratio": 3.134,
         "quick_ratio": 2.771,
@@ -2562,7 +2562,7 @@
         "dividend_yield": 0.0,
         "payout_ratio": 0.0,
         "market_cap": 4604369408.0,
-        "enterprise_value": 6527730688.0,
+        "enterprise_value": 6467748352.0,
         "beta": 1.926,
         "precio_objetivo": 21.44444,
         "recomendacion": "buy"
@@ -2696,7 +2696,7 @@
         "per_forward": 9.327585,
         "ps": 1.388004,
         "pb": 3.1387134,
-        "ev_ebitda": 10.603,
+        "ev_ebitda": 10.676,
         "deuda_equity": 45.123,
         "current_ratio": 3.145,
         "quick_ratio": 1.324,
@@ -2705,7 +2705,7 @@
         "dividend_yield": 0.99,
         "payout_ratio": 0.15439999,
         "market_cap": 30841284608.0,
-        "enterprise_value": 34030821376.0,
+        "enterprise_value": 34262636544.0,
         "beta": 1.443,
         "precio_objetivo": 270.46072,
         "recomendacion": "buy"
@@ -2713,8 +2713,8 @@
       "sentimiento": {
         "recomendacion_analistas": null,
         "precio_objetivo": null,
-        "insider_compras": 7,
-        "insider_ventas": 5,
+        "insider_compras": 16,
+        "insider_ventas": 16,
         "nota": "OK"
       },
       "catalizadores": {
@@ -2848,7 +2848,7 @@
         "dividend_yield": 2.35,
         "payout_ratio": 0.24069999,
         "market_cap": 187584331776.0,
-        "enterprise_value": -75073961984.0,
+        "enterprise_value": -75934670848.0,
         "beta": 1.154,
         "precio_objetivo": 150.59525,
         "recomendacion": "buy"
