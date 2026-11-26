@@ -1,11 +1,11 @@
 {
-  "fecha": "2026-11-25 22:50",
-  "total_analizados": 3192,
-  "tiempo_segundos": 2183.2,
+  "fecha": "2026-11-26 02:21",
+  "total_analizados": 3207,
+  "tiempo_segundos": 3393.1,
   "universo_usado": 5200,
   "tickers_solicitados": 5200,
-  "tickers_descartados": 2008,
-  "porcentaje_valido": 61.4,
+  "tickers_descartados": 1993,
+  "porcentaje_valido": 61.7,
   "top_long": [
     {
       "ticker": "BIIB",
