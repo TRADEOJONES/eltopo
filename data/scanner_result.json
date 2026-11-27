@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-26 23:45",
-  "total_analizados": 3166,
-  "tiempo_segundos": 2671.5,
+  "fecha": "2026-11-27 00:26",
+  "total_analizados": 3169,
+  "tiempo_segundos": 2263.5,
   "top_long": [
     {
       "ticker": "NJR",
@@ -148,7 +148,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-01",
-        "dias_hasta_earnings": 66,
+        "dias_hasta_earnings": 65,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -323,7 +323,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-17",
-        "dias_hasta_earnings": 82,
+        "dias_hasta_earnings": 81,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -640,7 +640,7 @@
         "margen_operativo": 0.1246,
         "margen_neto": 0.0934,
         "per": 23.419825,
-        "per_forward": 19.995277,
+        "per_forward": 19.999348,
         "ps": 2.1209235,
         "pb": 10.405104,
         "ev_ebitda": 15.4,
@@ -673,7 +673,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-12-03",
-        "dias_hasta_earnings": 6,
+        "dias_hasta_earnings": 5,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -848,7 +848,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-04",
-        "dias_hasta_earnings": 69,
+        "dias_hasta_earnings": 68,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -1025,7 +1025,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-09",
-        "dias_hasta_earnings": 74,
+        "dias_hasta_earnings": 73,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1200,7 +1200,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-16",
-        "dias_hasta_earnings": 81,
+        "dias_hasta_earnings": 80,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -1225,181 +1225,6 @@
             "actual": 0.5,
             "estimado": 0.4233,
             "sorpresa_pct": 18.1195
-          }
-        ],
-        "nota": "OK"
-      }
-    },
-    {
-      "ticker": "XPEL",
-      "score_long": 5.31,
-      "score_short": 8.655,
-      "precio": 38.46,
-      "desglose_long": {
-        "tendencia": 2.0,
-        "momentum": 5.0,
-        "volumen": 8.0,
-        "estructura": 3.0,
-        "fuerza_relativa": 1.0,
-        "volatilidad": 10.0,
-        "adx": 8.0,
-        "poc": 10.0,
-        "obv": 2.0,
-        "fundamental": 8.0,
-        "sentimiento": 8.0,
-        "catalizadores": 5.0
-      },
-      "desglose_short": {
-        "tendencia": 10.0,
-        "momentum": 8.5,
-        "volumen": 8.0,
-        "estructura": 10.0,
-        "fuerza_relativa": 8.5,
-        "volatilidad": 10.0,
-        "adx": 8.0,
-        "poc": 7.0,
-        "obv": 10.0,
-        "catalizadores": 5.0,
-        "fundamental": 5.0
-      },
-      "rsi": 40.96118838546075,
-      "macd": -1.453361929714795,
-      "macd_signal": -1.6173661764652818,
-      "mm50": 42.50070000000001,
-      "mm200": 44.953225,
-      "vol_relativo": 1.7473062801468646,
-      "atr": 1.376246866445536,
-      "adx": 25.198045546510198,
-      "poc": 38.28506666666667,
-      "obv": 12101.0,
-      "obv_anterior": 25248.0,
-      "precios_historicos": [
-        44.445,
-        44.77,
-        45.51,
-        46.28,
-        44.55,
-        43.79,
-        43.55,
-        42.93,
-        43.995,
-        44.19,
-        44.635,
-        45.035,
-        45.05,
-        45.15,
-        44.39,
-        44.925,
-        44.45,
-        44.07,
-        45.43,
-        43.93,
-        44.33,
-        43.82,
-        44.13,
-        45.21,
-        43.67,
-        44.13,
-        43.135,
-        42.36,
-        42.985,
-        43.96,
-        45.77,
-        45.68,
-        44.83,
-        42.39,
-        42.0,
-        40.145,
-        38.485,
-        38.09,
-        40.11,
-        39.64,
-        37.66,
-        37.82,
-        36.8,
-        37.05,
-        37.56,
-        37.64,
-        38.13,
-        39.22,
-        38.75,
-        38.46
-      ],
-      "fuerza_relativa": -6.11,
-      "stop": 35.02,
-      "objetivo": 48.78,
-      "rb": 3.0,
-      "fundamental": {
-        "nombre": "XPEL, Inc.",
-        "sector": "Consumer Cyclical",
-        "industria": "Auto Parts",
-        "pais": "United States",
-        "empleados": 1337,
-        "ingresos_yoy": 0.099,
-        "beneficios_yoy": 0.262,
-        "crecimiento_beneficios_q": 0.263,
-        "margen_bruto": 0.43625,
-        "margen_operativo": 0.13984,
-        "margen_neto": 0.11169,
-        "per": 18.32381,
-        "per_forward": 14.972763,
-        "ps": 2.034361,
-        "pb": 3.2993226,
-        "ev_ebitda": 12.373,
-        "deuda_equity": 19.595,
-        "current_ratio": 2.56,
-        "quick_ratio": 1.111,
-        "roe": 0.19479,
-        "roa": 0.103,
-        "dividend_yield": 0.0,
-        "payout_ratio": 0.0,
-        "market_cap": 1058850240.0,
-        "enterprise_value": 1091341184.0,
-        "beta": 1.197,
-        "precio_objetivo": 55.5,
-        "recomendacion": "strong_buy"
-      },
-      "sentimiento": {
-        "recomendacion_analistas": {
-          "strong_buy": 2,
-          "buy": 6,
-          "hold": 1,
-          "sell": 0,
-          "strong_sell": 0,
-          "periodo": "2026-11-01"
-        },
-        "precio_objetivo": null,
-        "insider_compras": 4,
-        "insider_ventas": 4,
-        "nota": "OK"
-      },
-      "catalizadores": {
-        "proximos_earnings": "2027-02-23",
-        "dias_hasta_earnings": 88,
-        "historial_earnings": [
-          {
-            "periodo": "2026-09-30",
-            "actual": 0.62,
-            "estimado": 0.6086,
-            "sorpresa_pct": 1.8732
-          },
-          {
-            "periodo": "2026-06-30",
-            "actual": 0.65,
-            "estimado": 0.6154,
-            "sorpresa_pct": 5.6224
-          },
-          {
-            "periodo": "2026-03-31",
-            "actual": 0.37,
-            "estimado": 0.3699,
-            "sorpresa_pct": 0.027
-          },
-          {
-            "periodo": "2025-12-31",
-            "actual": 0.49,
-            "estimado": 0.4563,
-            "sorpresa_pct": 7.3855
           }
         ],
         "nota": "OK"
@@ -1550,7 +1375,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-08",
-        "dias_hasta_earnings": 73,
+        "dias_hasta_earnings": 72,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -1582,7 +1407,7 @@
     },
     {
       "ticker": "FANG",
-      "score_long": 4.995,
+      "score_long": 5.265,
       "score_short": 8.64,
       "precio": 180.15,
       "desglose_long": {
@@ -1596,7 +1421,7 @@
         "poc": 10.0,
         "obv": 2.0,
         "fundamental": 7.0,
-        "sentimiento": 4.0,
+        "sentimiento": 7.0,
         "catalizadores": 5.0
       },
       "desglose_short": {
@@ -1710,16 +1535,48 @@
         "recomendacion": "buy"
       },
       "sentimiento": {
-        "recomendacion_analistas": null,
+        "recomendacion_analistas": {
+          "strong_buy": 10,
+          "buy": 24,
+          "hold": 5,
+          "sell": 0,
+          "strong_sell": 0,
+          "periodo": "2026-11-01"
+        },
         "precio_objetivo": null,
         "insider_compras": 3,
         "insider_ventas": 14,
         "nota": "OK"
       },
       "catalizadores": {
-        "proximos_earnings": null,
-        "dias_hasta_earnings": null,
-        "historial_earnings": null,
+        "proximos_earnings": "2027-02-22",
+        "dias_hasta_earnings": 86,
+        "historial_earnings": [
+          {
+            "periodo": "2026-09-30",
+            "actual": 5.86,
+            "estimado": 5.5683,
+            "sorpresa_pct": 5.2386
+          },
+          {
+            "periodo": "2026-06-30",
+            "actual": 6.48,
+            "estimado": 6.134,
+            "sorpresa_pct": 5.6407
+          },
+          {
+            "periodo": "2026-03-31",
+            "actual": 4.23,
+            "estimado": 3.3704,
+            "sorpresa_pct": 25.5044
+          },
+          {
+            "periodo": "2025-12-31",
+            "actual": 1.74,
+            "estimado": 2.1218,
+            "sorpresa_pct": -17.9942
+          }
+        ],
         "nota": "OK"
       }
     },
@@ -2266,7 +2123,7 @@
         "per": 15.951613,
         "per_forward": 13.0380335,
         "ps": null,
-        "pb": null,
+        "pb": 0.0024681068,
         "ev_ebitda": null,
         "deuda_equity": 80.995,
         "current_ratio": 1.735,
@@ -2275,7 +2132,7 @@
         "roa": 0.036989998,
         "dividend_yield": 3.06,
         "payout_ratio": 0.5802,
-        "market_cap": null,
+        "market_cap": 1831027968.0,
         "enterprise_value": null,
         "beta": 0.237,
         "precio_objetivo": 10.325,
@@ -2408,7 +2265,7 @@
         "margen_neto": 0.03097,
         "per": 16.466217,
         "per_forward": 12.185,
-        "ps": 0.481605,
+        "ps": 0.4971007,
         "pb": 1.2725185,
         "ev_ebitda": 10.106,
         "deuda_equity": 78.235,
@@ -2418,7 +2275,7 @@
         "roa": 0.023239998,
         "dividend_yield": 5.42,
         "payout_ratio": 0.8919,
-        "market_cap": 380016672.0,
+        "market_cap": 392243776.0,
         "enterprise_value": 493333664.0,
         "beta": 1.298,
         "precio_objetivo": 31.5,
@@ -2858,6 +2715,149 @@
         "precio_objetivo": null,
         "insider_compras": 18,
         "insider_ventas": 1,
+        "nota": "OK"
+      },
+      "catalizadores": {
+        "proximos_earnings": null,
+        "dias_hasta_earnings": null,
+        "historial_earnings": null,
+        "nota": "OK"
+      }
+    },
+    {
+      "ticker": "AVO",
+      "score_long": 3.925,
+      "score_short": 8.37,
+      "precio": 10.885,
+      "desglose_long": {
+        "tendencia": 2.0,
+        "momentum": 2.5,
+        "volumen": 3.0,
+        "estructura": 3.0,
+        "fuerza_relativa": 3.0,
+        "volatilidad": 10.0,
+        "adx": 10.0,
+        "poc": 4.0,
+        "obv": 2.0,
+        "fundamental": 5.0,
+        "sentimiento": 4.0,
+        "catalizadores": 5.0
+      },
+      "desglose_short": {
+        "tendencia": 10.0,
+        "momentum": 10.0,
+        "volumen": 3.0,
+        "estructura": 10.0,
+        "fuerza_relativa": 7.0,
+        "volatilidad": 10.0,
+        "adx": 10.0,
+        "poc": 8.0,
+        "obv": 10.0,
+        "catalizadores": 5.0,
+        "fundamental": 5.0
+      },
+      "rsi": 36.67874281135668,
+      "macd": -0.27600714749191724,
+      "macd_signal": -0.21326667390669105,
+      "mm50": 11.9652,
+      "mm200": 12.7141,
+      "vol_relativo": 0.537048424832305,
+      "atr": 0.3339392312282187,
+      "adx": 33.014626631358546,
+      "poc": 11.633683333333334,
+      "obv": 160515.0,
+      "obv_anterior": 186953.0,
+      "precios_historicos": [
+        12.46,
+        12.9,
+        12.77,
+        12.66,
+        12.69,
+        12.94,
+        13.14,
+        13.1,
+        13.07,
+        13.125,
+        12.825,
+        12.83,
+        12.72,
+        12.77,
+        12.51,
+        11.79,
+        11.745,
+        11.57,
+        11.82,
+        12.035,
+        12.085,
+        12.24,
+        11.825,
+        11.88,
+        11.57,
+        11.825,
+        11.7,
+        11.78,
+        11.61,
+        11.52,
+        11.615,
+        11.51,
+        11.48,
+        10.985,
+        11.71,
+        11.53,
+        11.665,
+        11.915,
+        11.85,
+        11.785,
+        11.56,
+        11.855,
+        11.69,
+        11.455,
+        11.4,
+        11.33,
+        10.985,
+        10.73,
+        10.82,
+        10.885
+      ],
+      "fuerza_relativa": -2.8,
+      "stop": 10.05,
+      "objetivo": 13.39,
+      "rb": 3.0,
+      "fundamental": {
+        "nombre": "Mission Produce, Inc.",
+        "sector": "Consumer Defensive",
+        "industria": "Food Distribution",
+        "pais": "United States",
+        "empleados": 3800,
+        "ingresos_yoy": 0.258,
+        "beneficios_yoy": null,
+        "crecimiento_beneficios_q": null,
+        "margen_bruto": 0.11012,
+        "margen_operativo": 0.03332,
+        "margen_neto": 0.0011999999,
+        "per": 362.33334,
+        "per_forward": 13.655779,
+        "ps": 0.712039,
+        "pb": 1.2474179,
+        "ev_ebitda": 17.001,
+        "deuda_equity": 64.841,
+        "current_ratio": 1.917,
+        "quick_ratio": 1.126,
+        "roe": 0.005,
+        "roa": 0.021370001,
+        "dividend_yield": 0.0,
+        "payout_ratio": 0.0,
+        "market_cap": 953064192.0,
+        "enterprise_value": 1460364288.0,
+        "beta": 0.441,
+        "precio_objetivo": 16.32,
+        "recomendacion": "none"
+      },
+      "sentimiento": {
+        "recomendacion_analistas": null,
+        "precio_objetivo": null,
+        "insider_compras": 2,
+        "insider_ventas": 9,
         "nota": "OK"
       },
       "catalizadores": {
