@@ -1,10 +1,10 @@
 {
-  "fecha": "2026-11-26 22:59",
-  "total_analizados": 3191,
-  "tiempo_segundos": 2923.5,
+  "fecha": "2026-11-27 02:30",
+  "total_analizados": 3192,
+  "tiempo_segundos": 3432.6,
   "universo_usado": 5200,
   "tickers_solicitados": 5200,
-  "tickers_descartados": 2009,
+  "tickers_descartados": 2008,
   "porcentaje_valido": 61.4,
   "top_long": [
     {
