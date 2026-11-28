@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-27 23:30",
-  "total_analizados": 3182,
-  "tiempo_segundos": 3026.0,
+  "fecha": "2026-11-28 01:01",
+  "total_analizados": 3180,
+  "tiempo_segundos": 2695.7,
   "top_long": [
     {
       "ticker": "ECL",
@@ -148,7 +148,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-08",
-        "dias_hasta_earnings": 72,
+        "dias_hasta_earnings": 71,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -498,7 +498,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2026-12-02",
-        "dias_hasta_earnings": 4,
+        "dias_hasta_earnings": 3,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -673,7 +673,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-01-27",
-        "dias_hasta_earnings": 60,
+        "dias_hasta_earnings": 59,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -848,7 +848,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-01-26",
-        "dias_hasta_earnings": 59,
+        "dias_hasta_earnings": 58,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -1025,7 +1025,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-04",
-        "dias_hasta_earnings": 68,
+        "dias_hasta_earnings": 67,
         "historial_earnings": null,
         "nota": "OK"
       }
@@ -1175,7 +1175,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-09",
-        "dias_hasta_earnings": 73,
+        "dias_hasta_earnings": 72,
         "historial_earnings": [
           {
             "periodo": "2026-06-30",
@@ -1493,7 +1493,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-10",
-        "dias_hasta_earnings": 74,
+        "dias_hasta_earnings": 73,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
@@ -1668,7 +1668,7 @@
       },
       "catalizadores": {
         "proximos_earnings": "2027-02-01",
-        "dias_hasta_earnings": 65,
+        "dias_hasta_earnings": 64,
         "historial_earnings": [
           {
             "periodo": "2026-09-30",
