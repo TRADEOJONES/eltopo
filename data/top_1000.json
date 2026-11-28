@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-28 02:20",
+  "fecha": "2026-11-28 03:37",
   "total": 1000,
   "tickers": [
     "ECL",
@@ -105,6 +105,7 @@
     "SI",
     "JAKK",
     "MDLZ",
+    "RCBC",
     "SKWD",
     "AUC",
     "CWT",
@@ -515,8 +516,8 @@
     "AOS",
     "ASND",
     "CMG",
-    "DRI",
     "DPZ",
+    "DRI",
     "DV",
     "HD",
     "ITRI",
@@ -806,6 +807,7 @@
     "BBUC",
     "PRM",
     "AGO",
+    "AMAL",
     "ECPG",
     "FOX",
     "FOXA",
@@ -873,6 +875,7 @@
     "HELE",
     "KAI",
     "OMF",
+    "SCPQ",
     "SMC",
     "CLW",
     "CVCO",
@@ -998,9 +1001,6 @@
     "IVZ",
     "LEO",
     "SYRE",
-    "VICI",
-    "MKC",
-    "PRG",
-    "AXL"
+    "VICI"
   ]
 }
