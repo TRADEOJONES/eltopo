@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-28 01:01",
+  "fecha": "2026-11-28 02:20",
   "total": 1000,
   "tickers": [
     "ECL",
@@ -29,6 +29,7 @@
     "OGS",
     "TW",
     "XEL",
+    "AGYS",
     "CALY",
     "FTV",
     "H",
@@ -104,7 +105,6 @@
     "SI",
     "JAKK",
     "MDLZ",
-    "RCBC",
     "SKWD",
     "AUC",
     "CWT",
@@ -271,7 +271,6 @@
     "TPG",
     "TSN",
     "ADUS",
-    "AGYS",
     "CBOE",
     "CME",
     "GD",
@@ -516,8 +515,8 @@
     "AOS",
     "ASND",
     "CMG",
-    "DPZ",
     "DRI",
+    "DPZ",
     "DV",
     "HD",
     "ITRI",
@@ -626,7 +625,6 @@
     "EPC",
     "PRMB",
     "REAL",
-    "AHR",
     "JKHY",
     "MRNA",
     "PVLA",
@@ -829,6 +827,7 @@
     "FLYW",
     "GIS",
     "VIRT",
+    "AHR",
     "AL",
     "PEPG",
     "BLMN",
@@ -1001,6 +1000,7 @@
     "SYRE",
     "VICI",
     "MKC",
-    "PRG"
+    "PRG",
+    "AXL"
   ]
 }
