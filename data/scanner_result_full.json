@@ -1,11 +1,11 @@
 {
-  "fecha": "2026-11-27 22:30",
-  "total_analizados": 3205,
-  "tiempo_segundos": 2338.9,
+  "fecha": "2026-11-28 01:44",
+  "total_analizados": 3213,
+  "tiempo_segundos": 2513.4,
   "universo_usado": 5200,
   "tickers_solicitados": 5200,
-  "tickers_descartados": 1995,
-  "porcentaje_valido": 61.6,
+  "tickers_descartados": 1987,
+  "porcentaje_valido": 61.8,
   "top_long": [
     {
       "ticker": "AOUT",
